@@ -1,4 +1,3 @@
-import { Model } from 'objection';
 import { TenantBaseModel } from '@/modules/System/models/TenantBaseModel';
 
 export class Notification extends TenantBaseModel {
@@ -88,27 +87,6 @@ export class Notification extends TenantBaseModel {
        */
       byType(query, type: string) {
         query.where('type', type);
-      },
-    };
-  }
-
-  /**
-   * Relationship mapping.
-   */
-  static get relationMappings() {
-    const { User } = require('@/modules/UsersModule/models/User.model');
-
-    return {
-      /**
-       * Notification belongs to a user.
-       */
-      user: {
-        relation: Model.BelongsToOneRelation,
-        modelClass: User,
-        join: {
-          from: 'notifications.userId',
-          to: 'users.id',
-        },
       },
     };
   }

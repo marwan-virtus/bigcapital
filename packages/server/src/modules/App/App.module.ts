@@ -113,6 +113,7 @@ import { AppThrottleModule } from './AppThrottle.module';
       rootPath: join(__dirname, '../../..', 'public'),
       serveRoot: '/public',
     }),
+    
     ConfigModule.forRoot({
       envFilePath: '.env',
       load: config,

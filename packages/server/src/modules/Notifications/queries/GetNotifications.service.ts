@@ -1,4 +1,5 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { TenantModelProxy } from '@/modules/System/models/TenantBaseModel';
 import { Notification } from '../models/Notification.model';
 
 interface GetNotificationsOptions {
@@ -10,6 +11,11 @@ interface GetNotificationsOptions {
 
 @Injectable()
 export class GetNotificationsService {
+  constructor(
+    @Inject(Notification.name)
+    private readonly notificationModel: TenantModelProxy<typeof Notification>,
+  ) {}
+
   /**
    * Retrieves notifications for a user with pagination and filtering.
    * @param {number} userId - The user ID
@@ -23,7 +29,8 @@ export class GetNotificationsService {
     const { limit = 20, offset = 0, unreadOnly = false, category } = options;
 
     // Build base query for user's notifications
-    let query = Notification.query()
+    let query = this.notificationModel()
+      .query()
       .modify('forUser', userId)
       .modify('newestFirst');
 
@@ -38,7 +45,8 @@ export class GetNotificationsService {
     }
 
     // Get total count for pagination
-    const countQuery = Notification.query()
+    const countQuery = this.notificationModel()
+      .query()
       .modify('forUser', userId)
       .modify(unreadOnly ? 'unread' : 'newestFirst');
 
@@ -65,7 +73,8 @@ export class GetNotificationsService {
    * @returns {Promise<number>}
    */
   async getUnreadCount(userId: number): Promise<number> {
-    return Notification.query()
+    return this.notificationModel()
+      .query()
       .modify('forUser', userId)
       .modify('unread')
       .resultSize();

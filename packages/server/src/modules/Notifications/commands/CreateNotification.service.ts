@@ -1,4 +1,5 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import { TenantModelProxy } from '@/modules/System/models/TenantBaseModel';
 import { Notification } from '../models/Notification.model';
 
 export interface CreateNotificationPayload {
@@ -12,13 +13,18 @@ export interface CreateNotificationPayload {
 
 @Injectable()
 export class CreateNotificationService {
+  constructor(
+    @Inject(Notification.name)
+    private readonly notificationModel: TenantModelProxy<typeof Notification>,
+  ) {}
+
   /**
    * Creates a new notification.
    * @param {CreateNotificationPayload} payload - Notification data
    * @returns {Promise<Notification>}
    */
   async createNotification(payload: CreateNotificationPayload): Promise<Notification> {
-    const notification = await Notification.query().insert({
+    const notification = await this.notificationModel().query().insert({
       userId: payload.userId ?? null,
       title: payload.title,
       message: payload.message,
@@ -38,7 +44,8 @@ export class CreateNotificationService {
    * @returns {Promise<Notification | null>}
    */
   async markAsRead(notificationId: number, userId: number): Promise<Notification | null> {
-    const notification = await Notification.query()
+    const notification = await this.notificationModel()
+      .query()
       .findById(notificationId)
       .modify('forUser', userId);
 
@@ -46,11 +53,12 @@ export class CreateNotificationService {
       return null;
     }
 
-    await Notification.query()
+    await this.notificationModel()
+      .query()
       .findById(notificationId)
       .patch({ readAt: new Date() });
 
-    return Notification.query().findById(notificationId);
+    return this.notificationModel().query().findById(notificationId);
   }
 
   /**
@@ -59,7 +67,8 @@ export class CreateNotificationService {
    * @returns {Promise<number>} - Number of notifications marked as read
    */
   async markAllAsRead(userId: number): Promise<number> {
-    const result = await Notification.query()
+    const result = await this.notificationModel()
+      .query()
       .modify('forUser', userId)
       .modify('unread')
       .patch({ readAt: new Date() });
@@ -74,7 +83,8 @@ export class CreateNotificationService {
    * @returns {Promise<boolean>}
    */
   async deleteNotification(notificationId: number, userId: number): Promise<boolean> {
-    const notification = await Notification.query()
+    const notification = await this.notificationModel()
+      .query()
       .findById(notificationId)
       .modify('forUser', userId);
 
@@ -82,7 +92,7 @@ export class CreateNotificationService {
       return false;
     }
 
-    await Notification.query().deleteById(notificationId);
+    await this.notificationModel().query().deleteById(notificationId);
     return true;
   }
 }
