@@ -3,6 +3,8 @@ import * as moment from 'moment';
 import { AuditLog } from '../models/AuditLog.model';
 import { TenantModelProxy } from '@/modules/System/models/TenantBaseModel';
 import { GetAuditLogsQueryDto } from '../dtos/GetAuditLogsQuery.dto';
+import { TransformerInjectable } from '@/modules/Transformer/TransformerInjectable.service';
+import { GetAuditLogListTransformer } from './GetAuditLogList.transformer';
 
 export interface AuditLogListItem {
   id: number;
@@ -13,8 +15,10 @@ export interface AuditLogListItem {
   subject: string;
   subjectId: number | null;
   metadata: Record<string, unknown> | null;
+  summary: string;
   ip: string | null;
   createdAt: string;
+  createdAtFormatted: string;
 }
 
 @Injectable()
@@ -22,6 +26,7 @@ export class GetAuditLogsService {
   constructor(
     @Inject(AuditLog.name)
     private readonly auditLogModel: TenantModelProxy<typeof AuditLog>,
+    private readonly transformer: TransformerInjectable,
   ) {}
 
   async getAuditLogs(query: GetAuditLogsQueryDto): Promise<{
@@ -37,11 +42,11 @@ export class GetAuditLogsService {
       .withGraphFetched('tenantUser')
       .orderBy('createdAt', 'desc');
 
-    if (query.subject) {
-      q = q.where('subject', query.subject);
+    if (query.subject?.length) {
+      q = q.whereIn('subject', query.subject);
     }
-    if (query.action) {
-      q = q.where('action', query.action);
+    if (query.action?.length) {
+      q = q.whereIn('action', query.action);
     }
     if (query.userId != null) {
       q = q.where('userId', query.userId);
@@ -57,31 +62,10 @@ export class GetAuditLogsService {
 
     const result = await q.page(pageIndex, pageSize);
 
-    const data: AuditLogListItem[] = result.results.map((row) => {
-      const u = row.tenantUser as
-        | { fullName?: string; firstName?: string; lastName?: string; email?: string }
-        | undefined;
-      const userName = u
-        ? (u.fullName ||
-            `${u.firstName || ''} ${u.lastName || ''}`.trim() ||
-            null)
-        : null;
-      return {
-        id: row.id,
-        userId: row.userId,
-        userName,
-        userEmail: u?.email ?? null,
-        action: row.action,
-        subject: row.subject,
-        subjectId: row.subjectId,
-        metadata: row.metadata,
-        ip: row.ip,
-        createdAt:
-          typeof row.createdAt === 'string'
-            ? row.createdAt
-            : (row.createdAt as Date)?.toISOString?.() ?? String(row.createdAt),
-      };
-    });
+    const data = (await this.transformer.transform(
+      result.results,
+      new GetAuditLogListTransformer(),
+    )) as AuditLogListItem[];
 
     return {
       data,

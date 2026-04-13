@@ -4,7 +4,7 @@ import { AuditLog } from '../models/AuditLog.model';
 import { TenantModelProxy } from '@/modules/System/models/TenantBaseModel';
 import { GetAuditLogsQueryDto } from '../dtos/GetAuditLogsQuery.dto';
 import { TransformerInjectable } from '@/modules/Transformer/TransformerInjectable.service';
-import { GetAuditLogListTransformer } from './GetAuditLogList.transformer';
+import { GetAuditLogListTransformer } from '@/modules/AuditLogs/queries/GetAuditLogList.transformer';
 
 export interface AuditLogListItem {
   id: number;
@@ -42,11 +42,11 @@ export class GetAuditLogsService {
       .withGraphFetched('tenantUser')
       .orderBy('createdAt', 'desc');
 
-    if (query.subject) {
-      q = q.where('subject', query.subject);
+    if (query.subject?.length) {
+      q = q.whereIn('subject', query.subject);
     }
-    if (query.action) {
-      q = q.where('action', query.action);
+    if (query.action?.length) {
+      q = q.whereIn('action', query.action);
     }
     if (query.userId != null) {
       q = q.where('userId', query.userId);
