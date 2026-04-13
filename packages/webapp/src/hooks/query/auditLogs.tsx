@@ -6,6 +6,15 @@ import useApiRequest from '../useRequest';
 import { normalizeApiPath } from '@/utils';
 import t from './types';
 
+const qsArrayOptions = { skipNulls: true, arrayFormat: 'repeat' as const };
+
+/** Normalize subject/action to a non-empty string[] or omit from query. */
+function auditLogStringListParam(value) {
+  if (value == null || value === '') return undefined;
+  if (Array.isArray(value)) return value.length ? value : undefined;
+  return [value];
+}
+
 /**
  * Paginated audit log list (financial domain events).
  */
@@ -14,13 +23,13 @@ export function useAuditLogsQuery(filters, props) {
     {
       page: filters.page ?? 1,
       pageSize: filters.pageSize ?? 20,
-      subject: filters.subject || undefined,
-      action: filters.action || undefined,
+      subject: auditLogStringListParam(filters.subject),
+      action: auditLogStringListParam(filters.action),
       userId: filters.userId || undefined,
       from: filters.from || undefined,
       to: filters.to || undefined,
     },
-    { skipNulls: true },
+    qsArrayOptions,
   );
 
   return useRequestQuery(
@@ -66,13 +75,13 @@ export function useAuditLogsInfinityQuery(filters, infinityProps) {
         {
           page: pageParam,
           pageSize: filters.pageSize ?? 20,
-          subject: filters.subject || undefined,
-          action: filters.action || undefined,
+          subject: auditLogStringListParam(filters.subject),
+          action: auditLogStringListParam(filters.action),
           userId: filters.userId || undefined,
           from: filters.from || undefined,
           to: filters.to || undefined,
         },
-        { skipNulls: true },
+        qsArrayOptions,
       );
 
       const response = await apiRequest.http({
@@ -84,7 +93,7 @@ export function useAuditLogsInfinityQuery(filters, infinityProps) {
     {
       getNextPageParam: (lastPage) => {
         const { pagination } = lastPage;
-        return pagination.total > pagination.pageSize * pagination.page
+        return pagination.total > pagination.page_size * pagination.page
           ? pagination.page + 1
           : undefined;
       },

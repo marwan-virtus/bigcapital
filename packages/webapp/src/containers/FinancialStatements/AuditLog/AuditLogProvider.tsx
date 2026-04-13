@@ -2,6 +2,7 @@
 import React, { createContext, useCallback, useContext, useMemo } from 'react';
 import { flatten, map } from 'lodash';
 import { useAuditLogsInfinityQuery } from '@/hooks/query';
+import { IntersectionObserver } from '@/components';
 
 function flattenInfinityPagesData(data) {
   return flatten(map(data.pages, (page) => page.data));
@@ -15,12 +16,18 @@ const useAuditLogContext = () => useContext(AuditLogContext);
 /**
  * Audit Log Provider
  */
+function toHttpStringList(value) {
+  if (value == null || value === '') return undefined;
+  if (Array.isArray(value)) return value.length ? value : undefined;
+  return [value];
+}
+
 function AuditLogProvider({ query, children }) {
   const httpQuery = useMemo(() => {
     return {
       pageSize: 20,
-      subject: query.subject || undefined,
-      action: query.action || undefined,
+      subject: toHttpStringList(query.subject),
+      action: toHttpStringList(query.action),
       from: query.fromDate || undefined,
       to: query.toDate || undefined,
     };
@@ -65,6 +72,9 @@ function AuditLogProvider({ query, children }) {
   return (
     <AuditLogContext.Provider value={provider}>
       {children}
+      <IntersectionObserver
+        onIntersect={handleObserverInteract}
+      />
     </AuditLogContext.Provider>
   );
 }

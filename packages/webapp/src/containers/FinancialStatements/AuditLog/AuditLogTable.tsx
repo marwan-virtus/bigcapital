@@ -122,14 +122,6 @@ function AuditLogTable() {
         TableCellRenderer={TableFastCell}
         styleName={TableStyle.Constrant}
       />
-      <IntersectionObserver
-        onIntersect={handleObserverInteract}
-      />
-      {isFetchingNextPage && (
-        <div style={{ textAlign: 'center', padding: 10 }}>
-          <Spinner size={20} />
-        </div>
-      )}
     </FinancialSheet>
   );
 }

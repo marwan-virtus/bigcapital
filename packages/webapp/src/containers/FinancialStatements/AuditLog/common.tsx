@@ -5,8 +5,8 @@ import { transformToForm } from '@/utils';
 
 // Default query for audit log
 export const getDefaultAuditLogQuery = () => ({
-  subject: '',
-  action: '',
+  subject: [],
+  action: [],
   fromDate: '',
   toDate: '',
 });

@@ -2,23 +2,33 @@
 import React, { useMemo } from 'react';
 import intl from 'react-intl-universal';
 import moment from 'moment';
-import { Button, Tabs, Tab } from '@blueprintjs/core';
+import { Button, Tabs, Tab, DrawerSize, Position } from '@blueprintjs/core';
 import styled from 'styled-components';
 import { Formik, Form } from 'formik';
 import {
   FormattedMessage as T,
   FFormGroup,
-  FInputGroup,
-  FSelect,
+  FDateInput,
 } from '@/components';
+import { FMultiSelect } from '@/components/Forms';
 import { useAuditLogFilterOptionsQuery } from '@/hooks/query';
 import { saveInvoke, transformToForm } from '@/utils';
 import FinancialStatementHeader from '../FinancialStatementHeader';
 import { getDefaultAuditLogQuery, getAuditLogQuerySchema } from './common';
 
+function normalizeStringListField(value) {
+  return Array.isArray(value) ? value : value ? [value] : [];
+}
+
+const auditLogSelectItemPredicate = (query, item) => {
+  const q = (query || '').toLowerCase();
+  const name = (item?.name ?? '').toLowerCase();
+  return name.includes(q);
+};
+
 const AuditLogDrawerHeader = styled(FinancialStatementHeader)`
   .bp4-drawer {
-    max-height: 420px;
+    max-height: 350px;
   }
 `;
 
@@ -32,39 +42,33 @@ function AuditLogHeader({ onSubmitFilter, pageFilter, isFilterDrawerOpen, toggle
     });
 
   const subjectSelectItems = useMemo(() => {
-    const anyRow = { value: '', name: intl.get('all') };
     const byValue = new Map();
     for (const s of filterOptions.subjects ?? []) {
       byValue.set(s.key, { value: s.key, name: s.label });
     }
-    if (pageFilter.subject) {
-      const s = pageFilter.subject;
-      if (!byValue.has(s)) {
+    for (const s of normalizeStringListField(pageFilter.subject)) {
+      if (s && !byValue.has(s)) {
         byValue.set(s, { value: s, name: s });
       }
     }
-    const sorted = Array.from(byValue.values()).sort((a, b) =>
+    return Array.from(byValue.values()).sort((a, b) =>
       a.name.localeCompare(b.name),
     );
-    return [anyRow, ...sorted];
   }, [filterOptions.subjects, pageFilter.subject]);
 
   const actionSelectItems = useMemo(() => {
-    const anyRow = { value: '', name: intl.get('all') };
     const byValue = new Map();
     for (const a of filterOptions.actions ?? []) {
       byValue.set(a.key, { value: a.key, name: a.label });
     }
-    if (pageFilter.action) {
-      const act = pageFilter.action;
-      if (!byValue.has(act)) {
+    for (const act of normalizeStringListField(pageFilter.action)) {
+      if (act && !byValue.has(act)) {
         byValue.set(act, { value: act, name: act });
       }
     }
-    const sorted = Array.from(byValue.values()).sort((a, b) =>
+    return Array.from(byValue.values()).sort((a, b) =>
       a.name.localeCompare(b.name),
     );
-    return [anyRow, ...sorted];
   }, [filterOptions.actions, pageFilter.action]);
 
   const defaultValues = getDefaultAuditLogQuery();
@@ -84,6 +88,8 @@ function AuditLogHeader({ onSubmitFilter, pageFilter, isFilterDrawerOpen, toggle
   const handleSubmit = (values, { setSubmitting }) => {
     const parsedFilter = {
       ...values,
+      subject: normalizeStringListField(values.subject),
+      action: normalizeStringListField(values.action),
       fromDate: values.fromDate ? moment(values.fromDate).format('YYYY-MM-DD') : '',
       toDate: values.toDate ? moment(values.toDate).format('YYYY-MM-DD') : '',
     };
@@ -120,44 +126,75 @@ function AuditLogHeader({ onSubmitFilter, pageFilter, isFilterDrawerOpen, toggle
                   <FFormGroup
                     name="subject"
                     label={intl.get('audit_log.filter_subject')}
+                    fastField
                   >
-                    <FSelect
+                    <FMultiSelect
                       name="subject"
                       items={subjectSelectItems}
                       valueAccessor="value"
                       textAccessor="name"
+                      tagAccessor="name"
+                      itemPredicate={auditLogSelectItemPredicate}
                       placeholder={intl.get('all')}
                       popoverProps={{ minimal: true }}
                       disabled={isFilterOptionsLoading}
                       fill
+                      resetOnSelect
+                      fastField
                     />
                   </FFormGroup>
+
                   <FFormGroup
                     name="action"
                     label={intl.get('audit_log.filter_action')}
+                    fastField
                   >
-                    <FSelect
+                    <FMultiSelect
                       name="action"
                       items={actionSelectItems}
                       valueAccessor="value"
                       textAccessor="name"
+                      tagAccessor="name"
+                      itemPredicate={auditLogSelectItemPredicate}
                       placeholder={intl.get('all')}
                       popoverProps={{ minimal: true }}
                       disabled={isFilterOptionsLoading}
                       fill
+                      resetOnSelect
+                      fastField
                     />
                   </FFormGroup>
+
                   <FFormGroup
                     name="fromDate"
                     label={intl.get('audit_log.filter_from')}
+                    fastField
                   >
-                    <FInputGroup name="fromDate" type="date" />
+                    <FDateInput
+                      name="fromDate"
+                      popoverProps={{ position: Position.BOTTOM, minimal: true }}
+                      formatDate={(date) => date.toLocaleDateString()}
+                      parseDate={(str) => new Date(str)}
+                      inputProps={{ fill: true }}
+                      fastField
+                    />
                   </FFormGroup>
+
                   <FFormGroup
                     name="toDate"
                     label={intl.get('audit_log.filter_to')}
+                    fill
+                    fastField
                   >
-                    <FInputGroup name="toDate" type="date" />
+                    <FDateInput
+                      name="toDate"
+                      type="date"
+                      popoverProps={{ position: Position.BOTTOM, minimal: true }}
+                      formatDate={(date) => date.toLocaleDateString()}
+                      parseDate={(str) => new Date(str)}
+                      inputProps={{ fill: true }}
+                      fastField
+                    />
                   </FFormGroup>
                 </div>
               }

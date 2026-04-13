@@ -37,8 +37,8 @@ function PreferencesAuditLogContent() {
   const [draftFrom, setDraftFrom] = useState('');
   const [draftTo, setDraftTo] = useState('');
 
-  const [subject, setSubject] = useState('');
-  const [action, setAction] = useState('');
+  const [subject, setSubject] = useState([]);
+  const [action, setAction] = useState([]);
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
 
@@ -56,13 +56,20 @@ function PreferencesAuditLogContent() {
 
   const { data, isLoading, isFetching } = useAuditLogsQuery(filters, {});
 
+  const splitCsvTokens = useCallback((raw) => {
+    return raw
+      .split(',')
+      .map((t) => t.trim())
+      .filter(Boolean);
+  }, []);
+
   const applyFilters = useCallback(() => {
-    setSubject(draftSubject.trim());
-    setAction(draftAction.trim());
+    setSubject(splitCsvTokens(draftSubject));
+    setAction(splitCsvTokens(draftAction));
     setFrom(draftFrom.trim());
     setTo(draftTo.trim());
     setPage(1);
-  }, [draftSubject, draftAction, draftFrom, draftTo]);
+  }, [draftSubject, draftAction, draftFrom, draftTo, splitCsvTokens]);
 
   const pagination = data?.pagination;
   const rows = data?.data ?? [];
@@ -87,14 +94,14 @@ function PreferencesAuditLogContent() {
           <InputGroup
             value={draftSubject}
             onChange={(e) => setDraftSubject(e.target.value)}
-            placeholder="SaleInvoice"
+            placeholder="SaleInvoice, Account (comma-separated)"
           />
         </FormGroup>
         <FormGroup label={intl.get('audit_log.filter_action')}>
           <InputGroup
             value={draftAction}
             onChange={(e) => setDraftAction(e.target.value)}
-            placeholder="created"
+            placeholder="created, updated (comma-separated)"
           />
         </FormGroup>
         <FormGroup label={intl.get('audit_log.filter_from')}>
