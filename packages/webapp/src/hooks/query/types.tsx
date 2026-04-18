@@ -250,6 +250,11 @@ const CUSTOM_FIELDS = {
   CUSTOM_FIELD: 'CUSTOM_FIELD',
 };
 
+const TRACKING_TAGS = {
+  TRACKING_TAGS: 'TRACKING_TAGS',
+  TRACKING_TAG: 'TRACKING_TAG',
+};
+
 export default {
   ...Authentication,
   ...ACCOUNTS,
@@ -287,4 +292,5 @@ export default {
   ...EXCHANGE_RATE,
   ...API_KEYS,
   ...CUSTOM_FIELDS,
+  ...TRACKING_TAGS,
 };

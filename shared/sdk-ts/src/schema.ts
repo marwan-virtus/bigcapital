@@ -4714,6 +4714,43 @@ export interface paths {
         patch: operations["ContactsController_inactivateContact"];
         trace?: never;
     };
+    "/api/tracking-tags": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Retrieves all tracking tags. */
+        get: operations["TrackingTagsController_getTrackingTags"];
+        put?: never;
+        /** Create a new tracking tag. */
+        post: operations["TrackingTagsController_createTrackingTag"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/tracking-tags/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Retrieves the tracking tag details. */
+        get: operations["TrackingTagsController_getTrackingTag"];
+        /** Edit the given tracking tag. */
+        put: operations["TrackingTagsController_editTrackingTag"];
+        post?: never;
+        /** Delete the given tracking tag. */
+        delete: operations["TrackingTagsController_deleteTrackingTag"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/exchange-rates/latest": {
         parameters: {
             query?: never;
@@ -6349,6 +6386,18 @@ export interface components {
              */
             defaultTemplateId: number | null;
         };
+        TrackingTagAssignmentDto: {
+            /**
+             * @description Tag ID
+             * @example 1
+             */
+            tagId: number;
+            /**
+             * @description Option ID
+             * @example 5
+             */
+            optionId: number;
+        };
         ItemEntryDto: {
             /**
              * @description The index of the item entry
@@ -6430,6 +6479,8 @@ export interface components {
              * @example 1021
              */
             costAccountId: number;
+            /** @description The tracking tags of the item entry */
+            trackingTags?: components["schemas"]["TrackingTagAssignmentDto"][];
         };
         AttachmentLinkDto: Record<string, never>;
         PaymentMethodDto: {
@@ -10050,6 +10101,8 @@ export interface components {
              * @example 1021
              */
             costAccountId: number;
+            /** @description The tracking tags of the item entry */
+            trackingTags?: components["schemas"]["TrackingTagAssignmentDto"][];
             /**
              * @description Flag indicating whether the entry contributes to landed cost
              * @example true
@@ -10397,6 +10450,8 @@ export interface components {
             branchId?: number;
             /** @description Project ID */
             projectId?: number;
+            /** @description The tracking tags of the manual journal entry */
+            trackingTags?: components["schemas"]["TrackingTagAssignmentDto"][];
         };
         CreateManualJournalDto: {
             /**
@@ -14600,6 +14655,58 @@ export interface components {
              * @example StrongPassword123!
              */
             password: string;
+        };
+        TrackingTagOptionDto: {
+            /** @description Option ID (for updates) */
+            id?: number;
+            /**
+             * @description Option name
+             * @example New York
+             */
+            name: string;
+            /**
+             * @description Whether the option is active
+             * @example true
+             */
+            active?: boolean;
+        };
+        CreateTrackingTagDto: {
+            /**
+             * @description Tag name
+             * @example Location
+             */
+            name: string;
+            /**
+             * @description Tag description
+             * @example Business location tracking
+             */
+            description?: string;
+            /**
+             * @description Whether the tag is active
+             * @example true
+             */
+            active?: boolean;
+            /** @description Tag options */
+            options: components["schemas"]["TrackingTagOptionDto"][];
+        };
+        EditTrackingTagDto: {
+            /**
+             * @description Tag name
+             * @example Location
+             */
+            name?: string;
+            /**
+             * @description Tag description
+             * @example Business location tracking
+             */
+            description?: string;
+            /**
+             * @description Whether the tag is active
+             * @example true
+             */
+            active?: boolean;
+            /** @description Tag options */
+            options?: components["schemas"]["TrackingTagOptionDto"][];
         };
         ExchangeRateLatestResponseDto: {
             /**
@@ -23238,6 +23345,10 @@ export interface operations {
                 previousYearAmountChange?: boolean;
                 /** @description Whether to show percentage change from previous year */
                 previousYearPercentageChange?: boolean;
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -24645,7 +24756,7 @@ export interface operations {
     };
     CustomerBalanceSummaryController_customerBalanceSummary: {
         parameters: {
-            query?: {
+            query: {
                 /** @description The date as of which the balance summary is calculated */
                 asDate?: string;
                 /** @description Number of decimal places to display */
@@ -24666,6 +24777,10 @@ export interface operations {
                 noneZero?: boolean;
                 /** @description Array of customer IDs to filter the summary */
                 customersIds?: number[];
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -24693,7 +24808,7 @@ export interface operations {
     };
     VendorBalanceSummaryController_vendorBalanceSummary: {
         parameters: {
-            query?: {
+            query: {
                 /** @description The date as of which the balance summary is calculated */
                 asDate?: string;
                 /** @description Number of decimal places to display */
@@ -24714,6 +24829,10 @@ export interface operations {
                 noneZero?: boolean;
                 /** @description Array of vendor IDs to filter the summary */
                 vendorsIds?: number[];
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -26000,7 +26119,7 @@ export interface operations {
     };
     TrialBalanceSheetController_getTrialBalanceSheet: {
         parameters: {
-            query?: {
+            query: {
                 /** @description Start date for the trial balance sheet */
                 fromDate?: string;
                 /** @description End date for the trial balance sheet */
@@ -26025,6 +26144,10 @@ export interface operations {
                 onlyActive?: boolean;
                 /** @description Filter by specific account IDs */
                 accountIds?: number[];
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -26641,7 +26764,7 @@ export interface operations {
     };
     TransactionsByVendorController_transactionsByVendor: {
         parameters: {
-            query?: {
+            query: {
                 /** @description Number of decimal places to display */
                 precision?: number;
                 /** @description Whether to divide the number by 1000 */
@@ -26658,6 +26781,10 @@ export interface operations {
                 noneZero?: boolean;
                 /** @description Array of vendor IDs to include */
                 vendorsIds?: string[];
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -26685,7 +26812,7 @@ export interface operations {
     };
     TransactionsByCustomerController_transactionsByCustomer: {
         parameters: {
-            query?: {
+            query: {
                 /** @description Number of decimal places to display */
                 precision?: number;
                 /** @description Whether to divide the number by 1000 */
@@ -26700,6 +26827,10 @@ export interface operations {
                 noneTransactions?: boolean;
                 /** @description Whether to exclude zero values */
                 noneZero?: boolean;
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -26732,6 +26863,10 @@ export interface operations {
                 referenceType: string;
                 /** @description The ID of the reference */
                 referenceId: number;
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header?: never;
             path?: never;
@@ -27420,7 +27555,7 @@ export interface operations {
     };
     JournalSheetController_journalSheet: {
         parameters: {
-            query?: {
+            query: {
                 /** @description Whether to hide cents in the number format */
                 noCents?: boolean;
                 /** @description Whether to divide numbers by 1000 */
@@ -27433,6 +27568,10 @@ export interface operations {
                 fromRange?: number;
                 /** @description End range for filtering */
                 toRange?: number;
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -27785,6 +27924,10 @@ export interface operations {
                 previousYearAmountChange?: boolean;
                 /** @description Whether to show previous year percentage change */
                 previousYearPercentageChange?: boolean;
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -28054,7 +28197,7 @@ export interface operations {
     };
     CashflowController_getCashflow: {
         parameters: {
-            query?: {
+            query: {
                 /** @description Start date for the cash flow statement period */
                 fromDate?: string;
                 /** @description End date for the cash flow statement period */
@@ -28079,6 +28222,10 @@ export interface operations {
                 negativeFormat?: "parentheses" | "mines";
                 /** @description Basis for the cash flow statement */
                 basis?: string;
+                /** @description Tag ID */
+                tagId: number;
+                /** @description Option ID */
+                optionId: number;
             };
             header: {
                 /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
@@ -29609,6 +29756,135 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    TrackingTagsController_getTrackingTags: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
+                Authorization: string;
+                /** @description Required if Authorization is a JWT token. The organization ID to operate within. */
+                "organization-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The tracking tags have been successfully retrieved. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    TrackingTagsController_createTrackingTag: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
+                Authorization: string;
+                /** @description Required if Authorization is a JWT token. The organization ID to operate within. */
+                "organization-id": string;
+            };
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CreateTrackingTagDto"];
+            };
+        };
+        responses: {
+            /** @description The tracking tag has been successfully created. */
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    TrackingTagsController_getTrackingTag: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
+                Authorization: string;
+                /** @description Required if Authorization is a JWT token. The organization ID to operate within. */
+                "organization-id": string;
+            };
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The tracking tag details have been successfully retrieved. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    TrackingTagsController_editTrackingTag: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
+                Authorization: string;
+                /** @description Required if Authorization is a JWT token. The organization ID to operate within. */
+                "organization-id": string;
+            };
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["EditTrackingTagDto"];
+            };
+        };
+        responses: {
+            /** @description The tracking tag has been successfully updated. */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    TrackingTagsController_deleteTrackingTag: {
+        parameters: {
+            query?: never;
+            header: {
+                /** @description Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token. */
+                Authorization: string;
+                /** @description Required if Authorization is a JWT token. The organization ID to operate within. */
+                "organization-id": string;
+            };
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description The tracking tag has been successfully deleted. */
             200: {
                 headers: {
                     [name: string]: unknown;

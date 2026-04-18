@@ -20,6 +20,7 @@ export * from './import';
 export * from './manual-journals';
 export * from './roles';
 export * from './custom-fields';
+export * from './tracking-tags';
 export * from './users';
 export * from './dashboard';
 export * from './settings';

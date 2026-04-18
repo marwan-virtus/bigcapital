@@ -15342,6 +15342,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -17017,6 +17037,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -17188,6 +17228,26 @@
               "items": {
                 "type": "number"
               }
+            }
+          },
+          {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
             }
           },
           {
@@ -18871,6 +18931,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -19606,6 +19686,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -19742,6 +19842,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -19794,6 +19914,26 @@
             "description": "The ID of the reference",
             "schema": {
               "example": "1",
+              "type": "number"
+            }
+          },
+          {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
               "type": "number"
             }
           }
@@ -21100,6 +21240,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -21645,6 +21805,26 @@
             }
           },
           {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
+            }
+          },
+          {
             "name": "accept",
             "required": true,
             "in": "header",
@@ -22075,6 +22255,26 @@
             "description": "Basis for the cash flow statement",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "description": "Tag ID",
+            "name": "tagId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 1,
+              "type": "number"
+            }
+          },
+          {
+            "description": "Option ID",
+            "name": "optionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "example": 5,
+              "type": "number"
             }
           },
           {
@@ -24124,6 +24324,219 @@
         },
         "tags": [
           "Contacts"
+        ]
+      }
+    },
+    "/api/tracking-tags": {
+      "post": {
+        "operationId": "TrackingTagsController_createTrackingTag",
+        "summary": "Create a new tracking tag.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Bearer bc_1234567890abcdef"
+            }
+          },
+          {
+            "name": "organization-id",
+            "in": "header",
+            "description": "Required if Authorization is a JWT token. The organization ID to operate within.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTrackingTagDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The tracking tag has been successfully created."
+          }
+        },
+        "tags": [
+          "Tracking Tags"
+        ]
+      },
+      "get": {
+        "operationId": "TrackingTagsController_getTrackingTags",
+        "summary": "Retrieves all tracking tags.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Bearer bc_1234567890abcdef"
+            }
+          },
+          {
+            "name": "organization-id",
+            "in": "header",
+            "description": "Required if Authorization is a JWT token. The organization ID to operate within.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The tracking tags have been successfully retrieved."
+          }
+        },
+        "tags": [
+          "Tracking Tags"
+        ]
+      }
+    },
+    "/api/tracking-tags/{id}": {
+      "put": {
+        "operationId": "TrackingTagsController_editTrackingTag",
+        "summary": "Edit the given tracking tag.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Bearer bc_1234567890abcdef"
+            }
+          },
+          {
+            "name": "organization-id",
+            "in": "header",
+            "description": "Required if Authorization is a JWT token. The organization ID to operate within.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EditTrackingTagDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The tracking tag has been successfully updated."
+          }
+        },
+        "tags": [
+          "Tracking Tags"
+        ]
+      },
+      "delete": {
+        "operationId": "TrackingTagsController_deleteTrackingTag",
+        "summary": "Delete the given tracking tag.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Bearer bc_1234567890abcdef"
+            }
+          },
+          {
+            "name": "organization-id",
+            "in": "header",
+            "description": "Required if Authorization is a JWT token. The organization ID to operate within.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The tracking tag has been successfully deleted."
+          }
+        },
+        "tags": [
+          "Tracking Tags"
+        ]
+      },
+      "get": {
+        "operationId": "TrackingTagsController_getTrackingTag",
+        "summary": "Retrieves the tracking tag details.",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Value must be 'Bearer <token>' where <token> is an API key prefixed with 'bc_' or a JWT token.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Bearer bc_1234567890abcdef"
+            }
+          },
+          {
+            "name": "organization-id",
+            "in": "header",
+            "description": "Required if Authorization is a JWT token. The organization ID to operate within.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The tracking tag details have been successfully retrieved."
+          }
+        },
+        "tags": [
+          "Tracking Tags"
         ]
       }
     },
@@ -26480,6 +26893,25 @@
           "defaultTemplateId"
         ]
       },
+      "TrackingTagAssignmentDto": {
+        "type": "object",
+        "properties": {
+          "tagId": {
+            "type": "number",
+            "description": "Tag ID",
+            "example": 1
+          },
+          "optionId": {
+            "type": "number",
+            "description": "Option ID",
+            "example": 5
+          }
+        },
+        "required": [
+          "tagId",
+          "optionId"
+        ]
+      },
       "ItemEntryDto": {
         "type": "object",
         "properties": {
@@ -26562,6 +26994,13 @@
             "type": "number",
             "description": "The cost account id of the item entry",
             "example": 1021
+          },
+          "trackingTags": {
+            "description": "The tracking tags of the item entry",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackingTagAssignmentDto"
+            }
           }
         },
         "required": [
@@ -31659,6 +32098,13 @@
             "description": "The cost account id of the item entry",
             "example": 1021
           },
+          "trackingTags": {
+            "description": "The tracking tags of the item entry",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackingTagAssignmentDto"
+            }
+          },
           "landedCost": {
             "type": "boolean",
             "description": "Flag indicating whether the entry contributes to landed cost",
@@ -32131,6 +32577,13 @@
           "projectId": {
             "type": "number",
             "description": "Project ID"
+          },
+          "trackingTags": {
+            "description": "The tracking tags of the manual journal entry",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackingTagAssignmentDto"
+            }
           }
         },
         "required": [
@@ -40638,6 +41091,86 @@
           "lastName",
           "password"
         ]
+      },
+      "TrackingTagOptionDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number",
+            "description": "Option ID (for updates)"
+          },
+          "name": {
+            "type": "string",
+            "description": "Option name",
+            "example": "New York"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the option is active",
+            "example": true
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "CreateTrackingTagDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tag name",
+            "example": "Location"
+          },
+          "description": {
+            "type": "string",
+            "description": "Tag description",
+            "example": "Business location tracking"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the tag is active",
+            "example": true
+          },
+          "options": {
+            "description": "Tag options",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackingTagOptionDto"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "options"
+        ]
+      },
+      "EditTrackingTagDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Tag name",
+            "example": "Location"
+          },
+          "description": {
+            "type": "string",
+            "description": "Tag description",
+            "example": "Business location tracking"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the tag is active",
+            "example": true
+          },
+          "options": {
+            "description": "Tag options",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TrackingTagOptionDto"
+            }
+          }
+        }
       },
       "ExchangeRateLatestResponseDto": {
         "type": "object",

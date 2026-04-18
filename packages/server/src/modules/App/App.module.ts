@@ -99,6 +99,7 @@ import { UsersModule } from '../UsersModule/Users.module';
 import { ContactsModule } from '../Contacts/Contacts.module';
 import { BankingPlaidModule } from '../BankingPlaid/BankingPlaid.module';
 import { CustomFieldsModule } from '../CustomFields/CustomFields.module';
+import { TrackingTagsModule } from '../TrackingTags/TrackingTags.module';
 import { BankingCategorizeModule } from '../BankingCategorize/BankingCategorize.module';
 import { ExchangeRatesModule } from '../ExchangeRates/ExchangeRates.module';
 import { TenantModelsInitializeModule } from '../Tenancy/TenantModelsInitialize.module';
@@ -258,6 +259,7 @@ import { AppThrottleModule } from './AppThrottle.module';
     UsersModule,
     ContactsModule,
     CustomFieldsModule,
+    TrackingTagsModule,
     SocketModule,
     ExchangeRatesModule,
   ],
