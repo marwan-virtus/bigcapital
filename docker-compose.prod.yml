@@ -33,9 +33,11 @@ services:
     links:
       - mysql
       - redis
+      - clickhouse
     depends_on:
       - mysql
       - redis
+      - clickhouse
     restart: on-failure
     networks:
       - bigcapital_network
@@ -127,6 +129,14 @@ services:
       - STRIPE_PAYMENT_WEBHOOKS_SECRET=${STRIPE_PAYMENT_WEBHOOKS_SECRET}
       - STRIPE_PAYMENT_REDIRECT_URL=${STRIPE_PAYMENT_REDIRECT_URL}
 
+      # ClickHouse
+      - CLICKHOUSE_ENABLED=${CLICKHOUSE_ENABLED:-true}
+      - CLICKHOUSE_HOST=${CLICKHOUSE_HOST:-clickhouse}
+      - CLICKHOUSE_PORT=${CLICKHOUSE_PORT:-8123}
+      - CLICKHOUSE_USER=${CLICKHOUSE_USER:-default}
+      - CLICKHOUSE_PASSWORD=${CLICKHOUSE_PASSWORD}
+      - CLICKHOUSE_DATABASE=${CLICKHOUSE_DATABASE:-bigcapital_analytics}
+
   database_migration:
     container_name: bigcapital-database-migration
     build:
@@ -175,6 +185,18 @@ services:
     networks:
       - bigcapital_network
 
+  clickhouse:
+    container_name: bigcapital-clickhouse
+    image: clickhouse/clickhouse-server:24.8
+    restart: on-failure
+    expose:
+      - '8123'
+      - '9000'
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+    networks:
+      - bigcapital_network
+
   gotenberg:
     image: gotenberg/gotenberg:7
     expose:
@@ -190,6 +212,10 @@ volumes:
 
   redis:
     name: bigcapital_prod_redis
+    driver: local
+
+  clickhouse:
+    name: bigcapital_prod_clickhouse
     driver: local
 
 # Networks

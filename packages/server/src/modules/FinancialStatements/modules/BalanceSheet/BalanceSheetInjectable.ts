@@ -3,7 +3,7 @@ import {
   IBalanceSheetDOO,
   IBalanceSheetQuery,
 } from './BalanceSheet.types';
-import { BalanceSheetRepository } from './BalanceSheetRepository';
+import { BalanceSheetRepositoryFactory } from './BalanceSheetRepositoryFactory';
 import { BalanceSheetMetaInjectable } from './BalanceSheetMeta';
 import { Inject, Injectable } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
@@ -20,7 +20,8 @@ export class BalanceSheetInjectable {
     private readonly eventPublisher: EventEmitter2,
     private readonly tenancyContext: TenancyContext,
     private readonly i18n: I18nService,
-    private readonly balanceSheetRepository: BalanceSheetRepository,
+    @Inject(BalanceSheetRepositoryFactory)
+    private readonly repositoryFactory: BalanceSheetRepositoryFactory,
   ) {}
 
   /**
@@ -38,7 +39,8 @@ export class BalanceSheetInjectable {
     const tenantMetadata = await this.tenancyContext.getTenantMetadata(true);
 
     // Loads all resources.
-    await this.balanceSheetRepository.asyncInitialize(filter);
+    const repository = this.repositoryFactory.getRepository();
+    await repository.asyncInitialize(filter);
 
     // Balance sheet meta first to get date format.
     const meta = await this.balanceSheetMeta.meta(filter);
@@ -46,7 +48,7 @@ export class BalanceSheetInjectable {
     // Balance sheet report instance.
     const balanceSheetInstanace = new BalanceSheet(
       filter,
-      this.balanceSheetRepository,
+      repository,
       this.i18n,
       { baseCurrency: tenantMetadata.baseCurrency, dateFormat: meta.dateFormat },
     );

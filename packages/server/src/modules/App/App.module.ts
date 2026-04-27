@@ -85,6 +85,7 @@ import { TenantDBManagerModule } from '../TenantDBManager/TenantDBManager.module
 import { PaymentServicesModule } from '../PaymentServices/PaymentServices.module';
 import { AuthModule } from '../Auth/Auth.module';
 import { TenancyModule } from '../Tenancy/Tenancy.module';
+import { ClickHouseModule } from '../ClickHouse/ClickHouse.module';
 import { LoopsModule } from '../Loops/Loops.module';
 import { AttachmentsModule } from '../Attachments/Attachment.module';
 import { S3Module } from '../S3/S3.module';
@@ -119,6 +120,7 @@ import { AppThrottleModule } from './AppThrottle.module';
     }),
     SystemDatabaseModule,
     SystemModelsModule,
+    ClickHouseModule,
     EventEmitterModule.forRoot(),
     I18nModule.forRootAsync({
       useFactory: () => ({

@@ -42,6 +42,20 @@ services:
     ports:
       - '9000:3000'
 
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    container_name: bigcapital-clickhouse
+    ports:
+      - '8123:8123'
+      - '9001:9000'
+    volumes:
+      - clickhouse:/var/lib/clickhouse
+    environment:
+      CLICKHOUSE_DB: bigcapital_analytics
+    deploy:
+      restart_policy:
+        condition: unless-stopped
+
 # Volumes
 volumes:
   mysql:
@@ -50,4 +64,8 @@ volumes:
 
   redis:
     name: bigcapital_dev_redis
+    driver: local
+
+  clickhouse:
+    name: bigcapital_dev_clickhouse
     driver: local

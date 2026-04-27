@@ -58,6 +58,11 @@ export class BalanceSheetRepository extends R.compose(
   public accountsByType: any;
 
   /**
+   *
+   */
+  public accountsByParentType: any;
+
+  /**
    * PY from date.
    * @param {Date}
    */
@@ -96,6 +101,18 @@ export class BalanceSheetRepository extends R.compose(
    * Total expense accounts ledger.
    */
   public expensesLedger: Ledger;
+
+  /**
+   * Income accounts.
+   */
+  public incomeAccounts: any;
+  public incomeAccountsIds: number[];
+
+  /**
+   * Expense accounts.
+   */
+  public expenseAccounts: any;
+  public expenseAccountsIds: number[];
 
   /**
    * Transactions group type.

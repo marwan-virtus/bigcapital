@@ -9,13 +9,18 @@ import { TenancyContext } from '@/modules/Tenancy/TenancyContext.service';
 import { FinancialSheetCommonModule } from '../../common/FinancialSheetCommon.module';
 import { BalanceSheetStatementController } from './BalanceSheet.controller';
 import { BalanceSheetRepository } from './BalanceSheetRepository';
+import { BalanceSheetClickHouseRepository } from './BalanceSheetClickHouseRepository';
+import { BalanceSheetRepositoryFactory } from './BalanceSheetRepositoryFactory';
 import { AccountsModule } from '@/modules/Accounts/Accounts.module';
+import { ClickHouseModule } from '@/modules/ClickHouse/ClickHouse.module';
 
 @Module({
-  imports: [FinancialSheetCommonModule, AccountsModule],
+  imports: [FinancialSheetCommonModule, AccountsModule, ClickHouseModule],
   controllers: [BalanceSheetStatementController],
   providers: [
     BalanceSheetRepository,
+    BalanceSheetClickHouseRepository,
+    BalanceSheetRepositoryFactory,
     BalanceSheetInjectable,
     BalanceSheetTableInjectable,
     BalanceSheetExportInjectable,
