@@ -1,3 +1,4 @@
+// packages/webapp/src/components/Dashboard/DashboardThemeProvider.tsx
 import React from 'react';
 import {
   ThemeProvider as StyleComponentsThemeProvider,
@@ -9,6 +10,7 @@ import {
   ThemeProvider as XStyledEmotionThemeProvider,
 } from '@xstyled/emotion';
 import { useAppIntlContext } from '../AppIntlProvider';
+import { ThemePreferenceProvider } from './ThemePreferenceContext';
 
 const theme = {
   ...defaultTheme,
@@ -25,14 +27,16 @@ export function DashboardThemeProvider({
   const { direction } = useAppIntlContext();
 
   return (
-    <StyleSheetManager
-      {...(direction === 'rtl' ? { stylisPlugins: [rtlcss] } : {})}
-    >
-      <StyleComponentsThemeProvider theme={{ dir: direction }}>
-        <XStyledEmotionThemeProvider theme={theme}>
-          {children}
-        </XStyledEmotionThemeProvider>
-      </StyleComponentsThemeProvider>
-    </StyleSheetManager>
+    <ThemePreferenceProvider>
+      <StyleSheetManager
+        {...(direction === 'rtl' ? { stylisPlugins: [rtlcss] } : {})}
+      >
+        <StyleComponentsThemeProvider theme={{ dir: direction }}>
+          <XStyledEmotionThemeProvider theme={theme}>
+            {children}
+          </XStyledEmotionThemeProvider>
+        </StyleComponentsThemeProvider>
+      </StyleSheetManager>
+    </ThemePreferenceProvider>
   );
 }
