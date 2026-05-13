@@ -1,0 +1,43 @@
+// packages/webapp/src/style/theme/_palette.scss
+// Verus Virtus brand palette + functional + chart colours.
+// All values from vv-landing-page/docs/brand.md (slate scale aligned with Tailwind defaults).
+
+:root {
+  // Emerald — brand accent
+  --vv-emerald-50:  #ECFDF5;
+  --vv-emerald-100: #D1FAE5;
+  --vv-emerald-200: #A7F3D0;
+  --vv-emerald-300: #6EE7B7;
+  --vv-emerald-400: #34D399;
+  --vv-emerald-500: #22C55E;  // brand default (dark surfaces)
+  --vv-emerald-600: #16A34A;
+  --vv-emerald-700: #15803D;  // light-mode accent (AA on white)
+  --vv-emerald-800: #166534;
+  --vv-emerald-900: #14532D;
+
+  // Slate — brand neutral
+  --vv-slate-50:  #F8FAFC;
+  --vv-slate-100: #F1F5F9;
+  --vv-slate-200: #E2E8F0;
+  --vv-slate-300: #CBD5E1;
+  --vv-slate-400: #94A3B8;
+  --vv-slate-500: #64748B;
+  --vv-slate-600: #475569;
+  --vv-slate-700: #334155;
+  --vv-slate-800: #1E293B;
+  --vv-slate-900: #0F172A;  // brand black
+  --vv-slate-950: #020617;
+
+  // Functional
+  --vv-color-success: var(--vv-emerald-500);
+  --vv-color-danger:  #EF4444;
+  --vv-color-warning: #F59E0B;
+  --vv-color-info:    #3B82F6;
+
+  // Data viz (ordered per brand.md)
+  --vv-chart-1: var(--vv-emerald-500);
+  --vv-chart-2: #3B82F6;
+  --vv-chart-3: #F59E0B;
+  --vv-chart-4: #8B5CF6;
+  --vv-chart-5: #EC4899;
+}
