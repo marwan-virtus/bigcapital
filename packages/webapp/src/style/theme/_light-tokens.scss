@@ -1,0 +1,298 @@
+// packages/webapp/src/style/theme/_light-tokens.scss
+// Semantic tokens for LIGHT mode. Names match _variables.scss (legacy) so
+// no JSX changes are required. Values map to the VV palette.
+//
+// Parity rule: every token defined here MUST also exist in _dark-tokens.scss.
+// Verified by `pnpm theme:check` (see Task 5.2).
+
+:root {
+  // ─── Brand ────────────────────────────────────────────────
+  --color-primary: var(--vv-emerald-700);   // emerald-700 for AA on white (was: #8abbff)
+  --color-danger:  var(--vv-color-danger);  // was: keyword `red`
+
+  // ─── Brand scales (kept for backward-compat with components that reference them) ───
+  --color-green-500: var(--vv-emerald-900);
+  --color-green-400: var(--vv-emerald-800);
+  --color-green-300: var(--vv-emerald-700);
+  --color-green-200: var(--vv-emerald-500);
+  --color-green-100: var(--vv-emerald-300);
+
+  --color-red-500: #8e292c;
+  --color-red-400: #ac2f33;
+  --color-red-300: #cd4246;
+  --color-red-200: #e76a6e;
+  --color-red-100: #fa999c;
+
+  --color-orange-500: #77450d;
+  --color-orange-400: #935610;
+  --color-orange-300: #c87619;
+  --color-orange-200: #ec9a3c;
+  --color-orange-100: #fbb360;
+
+  // Gray scales (kept as-is; not VV-branded surface but referenced in legacy SCSS)
+  --color-dark-gray5: #404854;
+  --color-dark-gray4: #383e47;
+  --color-dark-gray3: #2f343c;
+  --color-dark-gray2: #252a31;
+  --color-dark-gray1: #1c2127;
+
+  --color-light-gray1: #d3d8de;
+  --color-light-gray2: #dce0e5;
+  --color-light-gray3: #e5e8eb;
+  --color-light-gray4: #edeff2;
+  --color-light-gray5: #f6f7f9;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-muted-text: var(--vv-slate-500);
+
+  // ─── UI surface ───────────────────────────────────────────
+  // Fix: --color-base-sand-* were referenced but never defined.
+  // Re-map to concrete slate values.
+  --color-ui-background-primary:   var(--vv-slate-50);
+  --color-ui-background-secondary: var(--vv-slate-100);
+  --color-ui-background-tertiary:  var(--vv-slate-200);
+
+  // ─── Alerts ───────────────────────────────────────────────
+  --color-alert-default-background:        transparent;
+  --color-alert-default-description-text:  var(--vv-slate-600);
+  --color-alert-default-title-text:        var(--vv-slate-900);
+
+  --color-alert-danger-background:         #FEF2F2;
+  --color-alert-danger-border:             #FECACA;
+  --color-alert-danger-description-text:   #B91C1C;
+  --color-alert-danger-title-text:         #991B1B;
+
+  --color-alert-primary-background:        var(--vv-emerald-50);
+  --color-alert-primary-border:            var(--vv-emerald-200);
+  --color-alert-primary-title-text:        var(--vv-emerald-800);
+  --color-alert-primary-description-text:  var(--vv-emerald-700);
+
+  // ─── Inputs ───────────────────────────────────────────────
+  --color-ui-input-border:                  var(--vv-slate-200);
+  --color-ui-input-background:              #fff;
+  --color-ui-input-group-prepend-background: var(--vv-slate-100);
+  --color-ui-input-group-prepend-color:     var(--vv-slate-700);
+  --color-ui-input-group-prepend-border:    var(--vv-slate-200);
+
+  --color-ui-html-select-background: #fff;
+  --color-ui-html-select-border:     var(--vv-slate-200);
+
+  --color-ui-menu-select-item-hover-background:  var(--vv-slate-100);
+  --color-ui-menu-select-item-active-background: var(--color-primary);
+
+  --color-app-body: #fff;
+
+  // ─── Splash ───────────────────────────────────────────────
+  --color-splash-screen-background: #fff;
+
+  // ─── Dashboard shell ──────────────────────────────────────
+  --color-dashboard-insider-background:           var(--vv-slate-50);
+  --color-dashboard-topbar-background:            #fff;
+  --color-dashboard-fallback-loading-background:  var(--vv-slate-50);
+  --color-dashboard-topbar-border-color:          var(--vv-slate-200);
+  --color-dashboard-datatable-background:         #fff;
+  --color-dashboard-datatable-border:             var(--vv-slate-200);
+
+  // ─── Dashboard error boundary ─────────────────────────────
+  --color-dashboard-error-boundary-title-text:       var(--vv-slate-900);
+  --color-dashboard-error-boundary-description-text: var(--vv-slate-700);
+  --color-dashboard-error-boundary-logo:             var(--vv-slate-400);
+
+  // ─── Dashboard navbar ─────────────────────────────────────
+  --color-dashboard-navbar-background:            transparent;
+  --color-dashboard-navbar-item-text:             var(--vv-slate-900);
+  --color-dashboard-navbar-item-hover-text:       var(--vv-slate-900);
+  --color-dashboard-navbar-item-hover-background: rgba(15, 23, 42, 0.06);
+  --color-dashboard-navbar-item-active-text:      var(--vv-slate-900);
+  --color-dashboard-navbar-item-active-background: rgba(15, 23, 42, 0.10);
+  --color-dashboard-navbar-item-icon:             var(--vv-slate-700);
+  --color-dashboard-topbar-title-text:            var(--vv-slate-900);
+
+  // ─── Dashboard actionsbar ─────────────────────────────────
+  --color-dashboard-actionsbar-border:  var(--vv-slate-200);
+  --color-dashboard-actionsbar-divider: var(--vv-slate-300);
+
+  // ─── DataTable ────────────────────────────────────────────
+  --color-datatable-head-background:    var(--vv-slate-100);
+  --color-datatable-head-text:          var(--vv-slate-600);
+  --color-datatable-head-border:        var(--vv-slate-200);
+  --color-datatable-cell-hover-background: var(--vv-slate-50);
+  --color-datatable-cell-border:        var(--vv-slate-200);
+  --color-datatable-cell-focus-border:  var(--vv-emerald-500);
+  --color-datatable-no-results-text:    var(--vv-slate-500);
+  --color-datatable-caret:              var(--vv-slate-400);
+  --color-datatable-caret-hover:        var(--vv-slate-600);
+  --color-datatable-checkbox-border:    var(--vv-slate-300);
+
+  --color-datatable-empty-status-title:       var(--vv-slate-900);
+  --color-datatable-empty-status-description: var(--vv-slate-600);
+
+  --color-datatable-text:                    var(--vv-slate-900);
+  --color-datatable-constrant-text:          #000;
+  --color-datatable-constrant-cell-border:   #000;
+  --color-datatable-constrant-head-text:     #000;
+  --color-datatable-constrant-head-border:   #000;
+
+  --color-dashboard-card-background: #fff;
+  --color-dashboard-card-border:     var(--vv-slate-200);
+
+  // ─── Sidebar ──────────────────────────────────────────────
+  // Sidebar stays slate-900 in both modes (brand identity)
+  --color-sidebar-toggle:                  rgba(255, 255, 255, 0.6);
+  --color-sidebar-background:              var(--vv-slate-900);
+  --color-sidebar-text:                    #fff;
+  --color-sidebar-scrollbars-background:   rgba(255, 255, 255, 0.25);
+
+  --color-sidebar-menu-item-text:              #fff;
+  --color-sidebar-menu-item-hover-background:  rgba(255, 255, 255, 0.06);
+  --color-sidebar-menu-item-text-hover:        #fff;
+  --color-sidebar-menu-item-active-background: rgba(34, 197, 94, 0.12);
+  --color-sidebar-menu-item-active-text:       var(--vv-emerald-400);
+  --color-sidebar-menu-item-focus-background:  rgba(255, 255, 255, 0.08);
+  --color-sidebar-menu-label-color:            rgba(255, 255, 255, 0.5);
+
+  --color-sidebar-overlay-background:        #fff;
+  --color-sidebar-overlay-hover-background:  var(--vv-slate-100);
+  --color-sidebar-overlay-item-text:         var(--vv-slate-900);
+  --color-sidebar-overlay-item-hover-text:   var(--vv-slate-900);
+  --color-sidebar-overlay-divider-background: var(--vv-slate-200);
+  --color-sidebar-overlay-label-text:        var(--vv-slate-500);
+  --color-sidebar-overlay-label-border:      var(--color-sidebar-overlay-divider-background);
+  --color-sidebar-overlay-backdrop:          rgba(15, 23, 42, 0.15);
+
+  --color-financial-report-background: #fff;
+
+  // ─── Card ─────────────────────────────────────────────────
+  --color-card-background: #fff;
+  --color-card-border:     var(--vv-slate-200);
+
+  // ─── Bank accounts ────────────────────────────────────────
+  --color-bank-account-card-background:    #fff;
+  --color-bank-account-card-text:          var(--vv-slate-900);
+  --color-bank-account-card-border:        var(--vv-slate-200);
+  --color-bank-account-card-hover-border:  var(--vv-emerald-500);
+  --color-bank-account-card-tag-background: var(--vv-slate-100);
+  --color-bank-account-code-text:          var(--vv-slate-900);
+
+  --color-bank-transactions-details-bar-background: #fff;
+  --color-bank-transactions-details-bar-text:       var(--vv-slate-700);
+  --color-bank-transactions-details-bar-divider:    var(--vv-slate-200);
+
+  --color-bank-transactions-content-background: #fff;
+  --color-bank-transactions-content-border:     var(--vv-slate-200);
+
+  --color-bank-transactions-datatable-card-background: #fff;
+  --color-bank-transactions-datatable-card-border:     var(--vv-slate-200);
+
+  --color-bank-transaction-matching-aside:        var(--vv-emerald-500);
+  --color-bank-transaction-matching-divider:      var(--vv-slate-200);
+  --color-bank-transaction-matching-aside-header: #fff;
+  --color-bank-transaction-matching-aside-footer: var(--vv-slate-50);
+
+  // ─── Preferences ──────────────────────────────────────────
+  --color-sidebar-preferences-background: var(--vv-slate-100);
+  --color-sidebar-preferences-border:     var(--vv-slate-200);
+
+  --color-sidebar-preferences-item-background: transparent;
+  --color-sidebar-preferences-item-text:       var(--vv-slate-700);
+
+  --color-sidebar-preferences-item-hover-background: rgba(255, 255, 255, 0.6);
+  --color-sidebar-preferences-item-hover-text:       var(--vv-slate-900);
+
+  --color-preferences-sidebar-head-border: var(--vv-slate-300);
+  --color-preferences-sidebar-head-text:   var(--vv-slate-800);
+
+  --color-preferences-topbar-background: #fff;
+  --color-preferences-topbar-border:     var(--vv-slate-200);
+  --color-preferences-topbar-title:      var(--vv-slate-900);
+
+  --color-preferences-content-background: var(--vv-slate-50);
+
+  // ─── Financial sheet ──────────────────────────────────────
+  --color-financial-sheet-card-border:        var(--vv-slate-200);
+  --color-financial-sheet-title-text:         var(--vv-slate-900);
+  --color-financial-sheet-type-text:          var(--vv-slate-900);
+  --color-financial-sheet-date-text:          var(--vv-slate-900);
+  --color-financial-sheet-footer-text:        var(--vv-slate-500);
+  --color-financial-sheet-minimal-title-text: var(--vv-slate-900);
+
+  // ─── Transaction locking ──────────────────────────────────
+  --color-transaction-locking-item-background:      #fff;
+  --color-transaction-locking-item-border:          var(--vv-slate-200);
+  --color-transaction-locking-item-icon-border:     var(--vv-slate-200);
+  --color-transaction-locking-item-enabled-border:  var(--vv-slate-200);
+
+  // ─── Report items ─────────────────────────────────────────
+  --color-report-section-title-text: var(--vv-slate-900);
+  --color-report-item-background:    #fff;
+  --color-report-item-border:        var(--vv-slate-200);
+  --color-report-item-top-border:    var(--vv-slate-200);
+  --color-report-item-text:          var(--vv-slate-900);
+
+  --color-financial-report-drawer-tab-text: var(--vv-slate-700);
+
+  // ─── Element customize ────────────────────────────────────
+  // Fix: original typo `ekement` renamed to `element`.
+  --color-element-customize-header-background:        #fff;
+  --color-element-customize-header-title-text:        var(--vv-slate-900);
+  --color-element-customize-background:               #fff;
+  --color-element-customize-preview-background:       var(--vv-slate-100);
+  --color-element-customize-header-tabs-background:   #fff;
+  --color-element-customize-header-tabs-text:         var(--vv-slate-600);
+  --color-element-customize-divider:                  var(--vv-slate-200);
+
+  // ─── Universal search ─────────────────────────────────────
+  --color-universal-search-background:      #fff;
+  --color-universal-search-footer-divider:  var(--vv-slate-200);
+  --color-universal-search-icon:            var(--vv-slate-500);
+  --color-universal-search-tag-background:  var(--vv-slate-600);
+  --color-universal-search-tag-text:        #fff;
+  --color-universal-search-menu-border:     var(--vv-slate-200);
+
+  // ─── Content tabs ─────────────────────────────────────────
+  --color-content-tab-background:       #fff;
+  --color-content-tab-border:           var(--vv-slate-200);
+  --color-content-tab-hover-border:     var(--vv-emerald-500);
+  --color-content-tab-active-border:    var(--vv-emerald-500);
+  --color-content-tab-text:             var(--vv-slate-700);
+  --color-content-tab-active-text:      var(--vv-emerald-700);
+
+  // ─── Aside ────────────────────────────────────────────────
+  --color-aside-background:        #fff;
+  --color-aside-title-background:  #fff;
+  --color-aside-divider:           var(--vv-slate-200);
+
+  // ─── App shell ────────────────────────────────────────────
+  --color-app-shell-divider: var(--vv-slate-200);
+
+  // ─── Select ───────────────────────────────────────────────
+  --color-select-button-background: #fff;
+  --color-select-button-border:     var(--vv-slate-200);
+
+  // ─── Stepper ──────────────────────────────────────────────
+  --color-stepper-step-title-text:           var(--vv-slate-500);
+  --color-stepper-step-title-active-text:    var(--color-primary);
+  --color-stepper-step-description-text:     var(--vv-slate-500);
+  --color-stepper-step-description-active-text: var(--color-primary);
+  --color-stepper-step-background:           var(--vv-slate-300);
+  --color-stepper-step-active-background:    var(--color-primary);
+  --color-stepper-separator:                 var(--vv-slate-300);
+  --color-stepper-step-text:                 #fff;
+
+  // ─── Drawer ───────────────────────────────────────────────
+  --color-drawer-border-left:        var(--color-primary);
+  --color-drawer-header-background:  #fff;
+  --color-drawer-header-border:      transparent;
+  --color-drawer-header-text:        var(--vv-slate-900);
+  --color-drawer-insider-background: var(--vv-slate-50);
+  --color-drawer-tabs-background:    #fff;
+
+  // ─── Skeleton ─────────────────────────────────────────────
+  --color-skeleton-background-start: rgba(15, 23, 42, 0.06);
+  --color-skeleton-background-end:   rgba(15, 23, 42, 0.12);
+  --color-skeleton-border-start:     rgba(15, 23, 42, 0.06);
+  --color-skeleton-border-end:       rgba(15, 23, 42, 0.12);
+  --color-skeleton-border-radius:    var(--radius-sm);  // referenced by Skeleton.scss
+}
