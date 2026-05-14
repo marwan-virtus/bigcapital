@@ -148,8 +148,8 @@
   --color-sidebar-menu-item-text:              var(--text-on-tier-0);
   --color-sidebar-menu-item-hover-background:  rgba(255, 255, 255, 0.06);
   --color-sidebar-menu-item-text-hover:        var(--text-on-tier-0);
-  --color-sidebar-menu-item-active-background: rgba(34, 197, 94, 0.12);
-  --color-sidebar-menu-item-active-text:       var(--vv-emerald-400);
+  --color-sidebar-menu-item-active-background: var(--state-selected-bg);
+  --color-sidebar-menu-item-active-text:       var(--state-selected-fg);
   --color-sidebar-menu-item-focus-background:  rgba(255, 255, 255, 0.08);
   --color-sidebar-menu-label-color:            var(--text-on-tier-0-muted);
   --color-sidebar-menu-item-icon:              var(--text-on-tier-0-muted);
