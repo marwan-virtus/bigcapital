@@ -168,17 +168,38 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
   border-radius: var(--radius-md);
 }
 
-// Card — soft surface for hierarchy in light mode, subtle border in both modes
+// Card — Tier 2 surface, no drop shadow, interactive hover when clickable
 .bp4-card {
   background-color: var(--color-card-background);
   border-radius: var(--radius-xl);
   border: 1px solid var(--color-card-border);
   box-shadow: none;
+  transition: border-color 120ms ease, transform 120ms ease;
 
   &.bp4-elevation-1,
   &.bp4-elevation-2,
   &.bp4-elevation-3 {
-    box-shadow: none;  // brand.md: no shadows on body cards
+    box-shadow: none;
+  }
+
+  // Interactive cards (anchors, buttons): hover slightly strengthens the border
+  &.bp4-interactive {
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--state-hover-overlay);
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow:
+        0 0 0 1px var(--surface-tier-1),
+        0 0 0 3px var(--state-focus-ring);
+    }
   }
 }
 
