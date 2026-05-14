@@ -260,3 +260,31 @@ body.bp4-dark ::-webkit-scrollbar-thumb {
   background-size: 200% 100%;
   border-radius: var(--radius-sm);
 }
+
+// Drawer header — slightly elevated above the drawer body (Tier 2)
+.bp4-drawer .bp4-drawer-header {
+  background-color: var(--surface-tier-2);
+  border-bottom: 1px solid var(--border-on-tier-2);
+}
+
+// Toast — Tier 2 surface, replaces Blueprint's default #2f343c
+.bp4-dark .bp4-toast,
+.bp4-toast {
+  background-color: var(--surface-tier-2);
+  color: var(--text-on-tier-2);
+  border: 1px solid var(--border-on-tier-2);
+}
+
+// Tooltip — Tier 2 surface in both modes
+.bp4-tooltip .bp4-popover2-content,
+.bp4-tooltip .bp4-popover-content {
+  background-color: var(--surface-tier-2);
+  color: var(--text-on-tier-2);
+  border: 1px solid var(--border-on-tier-2);
+}
+
+// Dialog body — explicitly Tier 2 (Blueprint mostly defaults here, but we anchor it)
+.bp4-dialog {
+  background-color: var(--surface-tier-2);
+  color: var(--text-on-tier-2);
+}
