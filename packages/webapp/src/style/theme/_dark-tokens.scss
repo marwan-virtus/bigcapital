@@ -88,38 +88,38 @@ body.bp4-dark {
   --color-dashboard-datatable-background:         var(--surface-tier-1);
   --color-dashboard-datatable-border:             rgba(255, 255, 255, 0.06);
 
-  --color-dashboard-error-boundary-title-text:       rgba(255, 255, 255, 0.85);
-  --color-dashboard-error-boundary-description-text: rgba(255, 255, 255, 0.6);
+  --color-dashboard-error-boundary-title-text:       var(--text-on-tier-1);
+  --color-dashboard-error-boundary-description-text: var(--text-on-tier-1-muted);
   --color-dashboard-error-boundary-logo:             rgba(255, 255, 255, 0.45);
 
   --color-dashboard-navbar-background:            transparent;
-  --color-dashboard-navbar-item-text:             rgba(255, 255, 255, 0.85);
-  --color-dashboard-navbar-item-hover-text:       #fff;
+  --color-dashboard-navbar-item-text:             var(--text-on-tier-1);
+  --color-dashboard-navbar-item-hover-text:       var(--text-on-tier-1);
   --color-dashboard-navbar-item-hover-background: rgba(255, 255, 255, 0.06);
-  --color-dashboard-navbar-item-active-text:      #fff;
+  --color-dashboard-navbar-item-active-text:      var(--text-on-tier-1);
   --color-dashboard-navbar-item-active-background: rgba(255, 255, 255, 0.10);
   --color-dashboard-navbar-item-icon:             rgba(255, 255, 255, 0.7);
-  --color-dashboard-topbar-title-text:            #fff;
+  --color-dashboard-topbar-title-text:            var(--text-on-tier-1);
 
   --color-dashboard-actionsbar-border:  var(--border-on-tier-1);
   --color-dashboard-actionsbar-divider: var(--border-on-tier-1);
 
   // ─── DataTable ────────────────────────────────────────────
   --color-datatable-head-background:    var(--surface-tier-2);
-  --color-datatable-head-text:          rgba(255, 255, 255, 0.7);
+  --color-datatable-head-text:          var(--text-on-tier-2-muted);
   --color-datatable-head-border:        var(--border-on-tier-2);
   --color-datatable-cell-hover-background: rgba(255, 255, 255, 0.03);
   --color-datatable-cell-border:        var(--border-on-tier-2);
   --color-datatable-cell-focus-border:  var(--vv-emerald-500);
-  --color-datatable-no-results-text:    rgba(255, 255, 255, 0.5);
+  --color-datatable-no-results-text:    var(--text-on-tier-1-muted);
   --color-datatable-caret:              rgba(255, 255, 255, 0.25);
   --color-datatable-caret-hover:        rgba(255, 255, 255, 0.6);
   --color-datatable-checkbox-border:    rgba(255, 255, 255, 0.3);
 
-  --color-datatable-empty-status-title:       rgba(255, 255, 255, 0.9);
-  --color-datatable-empty-status-description: rgba(255, 255, 255, 0.6);
+  --color-datatable-empty-status-title:       var(--text-on-tier-1);
+  --color-datatable-empty-status-description: var(--text-on-tier-1-muted);
 
-  --color-datatable-text:                  #fff;
+  --color-datatable-text:                  var(--text-on-tier-1);
   --color-datatable-constrant-text:        rgba(255, 255, 255, 0.85);
   --color-datatable-constrant-cell-border: rgba(255, 255, 255, 0.15);
   --color-datatable-constrant-head-text:   rgba(255, 255, 255, 0.85);
@@ -131,18 +131,18 @@ body.bp4-dark {
   // ─── Sidebar (slate-950 in dark for subtle contrast against body slate-900) ───
   --color-sidebar-toggle:                  rgba(255, 255, 255, 0.5);
   --color-sidebar-background:              var(--surface-tier-0);  // unified with --color-app-body for seamless dark surface
-  --color-sidebar-text:                    #fff;
+  --color-sidebar-text:                    var(--text-on-tier-0);
   --color-sidebar-scrollbars-background:   rgba(255, 255, 255, 0.25);
 
-  --color-sidebar-menu-item-text:              #fff;
+  --color-sidebar-menu-item-text:              var(--text-on-tier-0);
   --color-sidebar-menu-item-hover-background:  rgba(255, 255, 255, 0.06);
-  --color-sidebar-menu-item-text-hover:        #fff;
+  --color-sidebar-menu-item-text-hover:        var(--text-on-tier-0);
   --color-sidebar-menu-item-active-background: rgba(34, 197, 94, 0.18);
   --color-sidebar-menu-item-active-text:       var(--vv-emerald-300);
   --color-sidebar-menu-item-focus-background:  rgba(255, 255, 255, 0.10);
-  --color-sidebar-menu-label-color:            rgba(255, 255, 255, 0.4);
-  --color-sidebar-menu-item-icon:              #8b90a8;
-  --color-sidebar-menu-divider-text:           rgba(255, 255, 255, 0.5);
+  --color-sidebar-menu-label-color:            var(--text-on-tier-0-muted);
+  --color-sidebar-menu-item-icon:              var(--text-on-tier-0-muted);
+  --color-sidebar-menu-divider-text:           var(--text-on-tier-0-muted);
   --color-sidebar-org-logo-background:         var(--vv-emerald-500);  // was #CB22E5 magenta
 
   --color-sidebar-overlay-background:        var(--surface-tier-2);  // floating popover — solid elevation to obscure body beneath
@@ -162,14 +162,14 @@ body.bp4-dark {
 
   // ─── Bank accounts ────────────────────────────────────────
   --color-bank-account-card-background:    var(--surface-tier-2);
-  --color-bank-account-card-text:          rgba(255, 255, 255, 0.95);
+  --color-bank-account-card-text:          var(--text-on-tier-2);
   --color-bank-account-card-border:        var(--border-on-tier-2);
   --color-bank-account-card-hover-border:  var(--vv-emerald-500);
   --color-bank-account-card-tag-background: rgba(255, 255, 255, 0.10);
-  --color-bank-account-code-text:          rgba(255, 255, 255, 0.7);
+  --color-bank-account-code-text:          var(--text-on-tier-2-muted);
 
   --color-bank-transactions-details-bar-background: var(--surface-tier-1);
-  --color-bank-transactions-details-bar-text:       rgba(255, 255, 255, 0.85);
+  --color-bank-transactions-details-bar-text:       var(--text-on-tier-1);
   --color-bank-transactions-details-bar-divider:    var(--border-on-tier-1);
 
   --color-bank-transactions-content-background: var(--surface-tier-1);
@@ -188,27 +188,27 @@ body.bp4-dark {
   --color-sidebar-preferences-border:     var(--border-on-tier-1);
 
   --color-sidebar-preferences-item-background: transparent;
-  --color-sidebar-preferences-item-text:       rgba(255, 255, 255, 0.85);
+  --color-sidebar-preferences-item-text:       var(--text-on-tier-1);
 
   --color-sidebar-preferences-item-hover-background: rgba(255, 255, 255, 0.06);
-  --color-sidebar-preferences-item-hover-text:       #fff;
+  --color-sidebar-preferences-item-hover-text:       var(--text-on-tier-1);
 
   --color-preferences-sidebar-head-border: var(--border-on-tier-1);
-  --color-preferences-sidebar-head-text:   rgba(255, 255, 255, 0.85);
+  --color-preferences-sidebar-head-text:   var(--text-on-tier-1);
 
   --color-preferences-topbar-background: var(--surface-tier-1);
   --color-preferences-topbar-border:     var(--border-on-tier-1);
-  --color-preferences-topbar-title:      rgba(255, 255, 255, 0.9);
+  --color-preferences-topbar-title:      var(--text-on-tier-1);
 
   --color-preferences-content-background: var(--surface-tier-1);
 
   // ─── Financial sheet ──────────────────────────────────────
   --color-financial-sheet-card-border:        var(--border-on-tier-2);
-  --color-financial-sheet-title-text:         rgba(255, 255, 255, 0.9);
-  --color-financial-sheet-type-text:          rgba(255, 255, 255, 0.9);
-  --color-financial-sheet-date-text:          rgba(255, 255, 255, 0.9);
-  --color-financial-sheet-footer-text:        rgba(255, 255, 255, 0.55);
-  --color-financial-sheet-minimal-title-text: #fff;
+  --color-financial-sheet-title-text:         var(--text-on-tier-1);
+  --color-financial-sheet-type-text:          var(--text-on-tier-1);
+  --color-financial-sheet-date-text:          var(--text-on-tier-1);
+  --color-financial-sheet-footer-text:        var(--text-on-tier-1-muted);
+  --color-financial-sheet-minimal-title-text: var(--text-on-tier-1);
 
   // ─── Transaction locking ──────────────────────────────────
   --color-transaction-locking-item-background:      rgba(255, 255, 255, 0.04);
@@ -217,27 +217,27 @@ body.bp4-dark {
   --color-transaction-locking-item-enabled-border:  rgba(255, 255, 255, 0.10);
 
   // ─── Report items ─────────────────────────────────────────
-  --color-report-section-title-text: rgba(255, 255, 255, 0.9);
+  --color-report-section-title-text: var(--text-on-tier-1);
   --color-report-item-background:    rgba(255, 255, 255, 0.04);
   --color-report-item-border:        var(--border-on-tier-2);
   --color-report-item-top-border:    var(--border-on-tier-2);
-  --color-report-item-text:          rgba(255, 255, 255, 0.85);
+  --color-report-item-text:          var(--text-on-tier-1);
 
-  --color-financial-report-drawer-tab-text: rgba(255, 255, 255, 0.7);
+  --color-financial-report-drawer-tab-text: var(--text-on-tier-1-muted);
 
   // ─── Element customize (typo `ekement` fixed) ─────────────
   --color-element-customize-header-background:        var(--surface-tier-2);
-  --color-element-customize-header-title-text:        rgba(255, 255, 255, 0.9);
+  --color-element-customize-header-title-text:        var(--text-on-tier-2);
   --color-element-customize-background:               var(--surface-tier-2);
   --color-element-customize-preview-background:       rgba(255, 255, 255, 0.04);
   --color-element-customize-header-tabs-background:   var(--surface-tier-2);
-  --color-element-customize-header-tabs-text:         rgba(255, 255, 255, 0.55);
+  --color-element-customize-header-tabs-text:         var(--text-on-tier-2-muted);
   --color-element-customize-divider:                  var(--border-on-tier-2);
 
   // ─── Universal search ─────────────────────────────────────
   --color-universal-search-background:      var(--surface-tier-2);  // floating popover — solid elevation
   --color-universal-search-footer-divider:  var(--border-on-tier-2);
-  --color-universal-search-icon:            rgba(255, 255, 255, 0.5);
+  --color-universal-search-icon:            var(--text-on-tier-2-muted);
   --color-universal-search-tag-background:  rgba(255, 255, 255, 0.10);
   --color-universal-search-tag-text:        #fff;
   --color-universal-search-menu-border:     var(--border-on-tier-2);
@@ -247,8 +247,8 @@ body.bp4-dark {
   --color-content-tab-border:           var(--border-on-tier-2);
   --color-content-tab-hover-border:     rgba(34, 197, 94, 0.4);
   --color-content-tab-active-border:    var(--vv-emerald-500);
-  --color-content-tab-text:             rgba(255, 255, 255, 0.85);
-  --color-content-tab-active-text:      #fff;
+  --color-content-tab-text:             var(--text-on-tier-2-muted);
+  --color-content-tab-active-text:      var(--text-on-tier-2);
 
   // ─── Aside ────────────────────────────────────────────────
   --color-aside-background:        var(--surface-tier-1);
@@ -276,7 +276,7 @@ body.bp4-dark {
   --color-drawer-border-left:        transparent;
   --color-drawer-header-background:  var(--surface-tier-2);
   --color-drawer-header-border:      var(--border-on-tier-2);
-  --color-drawer-header-text:        #fff;
+  --color-drawer-header-text:        var(--text-on-tier-2);
   --color-drawer-insider-background: var(--surface-tier-1);
   --color-drawer-tabs-background:    var(--surface-tier-1);
 
