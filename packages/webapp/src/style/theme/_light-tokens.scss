@@ -154,7 +154,7 @@
   --color-sidebar-menu-label-color:            rgba(255, 255, 255, 0.5);
   --color-sidebar-menu-item-icon:              #767b9b;
   --color-sidebar-menu-divider-text:           #6b708c;
-  --color-sidebar-org-logo-background:         #CB22E5;
+  --color-sidebar-org-logo-background:         var(--vv-emerald-700);  // was #CB22E5 magenta (AA on white)
 
   --color-sidebar-overlay-background:        #fff;
   --color-sidebar-overlay-hover-background:  var(--vv-slate-100);
@@ -302,17 +302,17 @@
   --color-drawer-template-bullet: #b7b7b7;
 
   // ─── Dashboard extended ───────────────────────────────────
-  --color-dashboard-topbar-navbar-text:       #1552c8;
-  --color-dashboard-user-avatar-background:   #cb20e5;
-  --color-dashboard-filter-active-background: #eafbe4;
-  --color-dashboard-navbar-success-text:      #1c6e42;
-  --color-dashboard-navbar-warning-text:      #cc7e25;
-  --color-dashboard-navbar-primary-text:      #223fc5;
-  --color-dashboard-navbar-blue-highlight:    #ebfaff;
-  --color-dashboard-table-views-icon:         #1183da;
-  --color-dashboard-switch-active:            #0069ff;
-  --color-dashboard-views-tab-text:           #646a7d;
-  --color-dashboard-navbar-danger-text:       #c23030;
+  --color-dashboard-topbar-navbar-text:       var(--vv-emerald-700);   // was #1552c8 blue
+  --color-dashboard-user-avatar-background:   var(--vv-emerald-700);   // was #cb20e5 magenta
+  --color-dashboard-filter-active-background: rgba(34, 197, 94, 0.10); // was #eafbe4
+  --color-dashboard-navbar-success-text:      var(--vv-emerald-700);   // was #1c6e42
+  --color-dashboard-navbar-warning-text:      var(--vv-color-warning); // was #cc7e25
+  --color-dashboard-navbar-primary-text:      var(--vv-emerald-700);   // was #223fc5 blue
+  --color-dashboard-navbar-blue-highlight:    rgba(34, 197, 94, 0.08); // was #ebfaff (blue-tint), now emerald
+  --color-dashboard-table-views-icon:         var(--vv-slate-500);     // was #1183da blue
+  --color-dashboard-switch-active:            var(--color-primary);    // was #0069ff blue
+  --color-dashboard-views-tab-text:           var(--vv-slate-500);     // was #646a7d
+  --color-dashboard-navbar-danger-text:       var(--vv-color-danger);  // was #c23030
   --color-dashboard-org-name-text:            var(--vv-slate-500);
 
   // ─── DataTable Editable ───────────────────────────────────

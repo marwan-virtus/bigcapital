@@ -143,9 +143,9 @@ body.bp4-dark {
   --color-sidebar-menu-label-color:            rgba(255, 255, 255, 0.4);
   --color-sidebar-menu-item-icon:              #8b90a8;
   --color-sidebar-menu-divider-text:           rgba(255, 255, 255, 0.5);
-  --color-sidebar-org-logo-background:         #CB22E5;
+  --color-sidebar-org-logo-background:         var(--vv-emerald-500);  // was #CB22E5 magenta
 
-  --color-sidebar-overlay-background:        var(--vv-slate-800);
+  --color-sidebar-overlay-background:        rgba(255, 255, 255, 0.04);  // standardised elevated surface (was vv-slate-800)
   --color-sidebar-overlay-hover-background:  rgba(255, 255, 255, 0.06);
   --color-sidebar-overlay-item-text:         #fff;
   --color-sidebar-overlay-item-hover-text:   #fff;
@@ -235,7 +235,7 @@ body.bp4-dark {
   --color-element-customize-divider:                  rgba(255, 255, 255, 0.06);
 
   // ─── Universal search ─────────────────────────────────────
-  --color-universal-search-background:      var(--vv-slate-800);
+  --color-universal-search-background:      rgba(255, 255, 255, 0.04);  // standardised elevated surface
   --color-universal-search-footer-divider:  rgba(255, 255, 255, 0.06);
   --color-universal-search-icon:            rgba(255, 255, 255, 0.5);
   --color-universal-search-tag-background:  rgba(255, 255, 255, 0.10);
@@ -290,15 +290,15 @@ body.bp4-dark {
   --color-drawer-template-bullet: rgba(255, 255, 255, 0.35);
 
   // ─── Dashboard extended ───────────────────────────────────
-  --color-dashboard-topbar-navbar-text:       #6a9fef;
-  --color-dashboard-user-avatar-background:   #cb20e5;
+  --color-dashboard-topbar-navbar-text:       var(--vv-emerald-400);   // was #6a9fef blue
+  --color-dashboard-user-avatar-background:   var(--vv-emerald-500);   // was #cb20e5 magenta
   --color-dashboard-filter-active-background: rgba(34, 197, 94, 0.12);
   --color-dashboard-navbar-success-text:      var(--vv-emerald-400);
-  --color-dashboard-navbar-warning-text:      #ec9a3c;
-  --color-dashboard-navbar-primary-text:      #6a9fef;
-  --color-dashboard-navbar-blue-highlight:    rgba(0, 123, 255, 0.08);
-  --color-dashboard-table-views-icon:         #4a90d9;
-  --color-dashboard-switch-active:            #338fef;
+  --color-dashboard-navbar-warning-text:      var(--vv-color-warning);  // was #ec9a3c
+  --color-dashboard-navbar-primary-text:      var(--vv-emerald-400);   // was #6a9fef blue
+  --color-dashboard-navbar-blue-highlight:    rgba(34, 197, 94, 0.08);  // was blue, now emerald tint
+  --color-dashboard-table-views-icon:         rgba(255, 255, 255, 0.6);  // was #4a90d9 blue
+  --color-dashboard-switch-active:            var(--color-primary);       // was #338fef blue
   --color-dashboard-views-tab-text:           rgba(255, 255, 255, 0.6);
   --color-dashboard-navbar-danger-text:       var(--color-red-200);
   --color-dashboard-org-name-text:            rgba(255, 255, 255, 0.55);
