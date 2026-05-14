@@ -548,7 +548,7 @@ $dashboard-views-bar-height: 44px;
     padding-top: 2px;
 
     &[aria-selected='true'] {
-      color: #0052cc;
+      color: var(--color-primary);
       font-weight: 600;
     }
   }
@@ -592,7 +592,7 @@ $dashboard-views-bar-height: 44px;
   }
 
   .bp4-tab[aria-selected='true'] {
-    box-shadow: inset 0 -2px 0 #0052cc;
+    box-shadow: inset 0 -2px 0 var(--color-primary);
   }
 
   .bp4-button {
