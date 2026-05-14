@@ -317,8 +317,11 @@ const AccountsEmptyStateBase = styled.div`
   margin: 2rem 0;
 `;
 const AccountsEmptyStateTitle = styled.h1`
-  --x-text-color: var(--text-on-tier-1-muted);
-
+  --x-text-color: #626b76;
+  
+  .bp4-dark & {
+    --x-text-color: rgba(255, 255, 255, 0.6);
+  }
   font-size: 18px;
   color: var(--x-text-color);
   opacity: 0.8;

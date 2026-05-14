@@ -182,7 +182,11 @@ const DashboardConstrantTable = styled(DataTable)`
 `;
 
 const CashflowTransactionsTable = styled(DashboardConstrantTable)`
-  --table-cell-border-color: var(--border-on-tier-1);
+  --table-cell-border-color: #e6e6e6;
+
+  .bp4-dark & {
+    --table-cell-border-color: rgba(255, 255, 255, 0.15);
+  }
 
   .table .tbody {
     .tbody-inner .tr.no-results {
