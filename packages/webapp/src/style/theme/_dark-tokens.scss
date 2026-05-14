@@ -130,7 +130,7 @@ body.bp4-dark {
 
   // ─── Sidebar (slate-950 in dark for subtle contrast against body slate-900) ───
   --color-sidebar-toggle:                  rgba(255, 255, 255, 0.5);
-  --color-sidebar-background:              var(--vv-slate-950);
+  --color-sidebar-background:              var(--vv-slate-900);  // unified with --color-app-body for seamless dark surface
   --color-sidebar-text:                    #fff;
   --color-sidebar-scrollbars-background:   rgba(255, 255, 255, 0.25);
 
