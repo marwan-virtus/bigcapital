@@ -71,6 +71,8 @@ Total: **21 files** (target ≤ 50).
 | `packages/webapp/src/containers/Sales/Estimates/EstimateForm/EstimateFormHeader.tsx` | 2+/12- | Same pattern as CreditNote: removed `useIsDarkMode` + `style={{}}` block; replaced with tier tokens |
 | `packages/webapp/src/containers/Sales/PaymentsReceived/PaymentReceiveForm/PaymentReceiveFormHeader.tsx` | 2+/12- | Same pattern: removed `useIsDarkMode` + `style={{}}` block; replaced with tier tokens |
 | `packages/webapp/src/containers/Sales/Receipts/ReceiptForm/ReceiptFormHeader.tsx` | 2+/12- | Same pattern: removed `useIsDarkMode` + `style={{}}` block; replaced with tier tokens |
+| `packages/webapp/src/components/PageForm/PageForm.tsx` | 4+/16- | Shared `<PageForm.Header>` and `<PageForm.FooterActions>` painted form header strip + floating actions bar via emotion css setting local CSS variables (`--color-invoice-form-header-background: #fff` light / `var(--color-dark-gray1)` dark). Replaced with direct `var(--surface-tier-1)` / `var(--border-on-tier-1)`. Drives every Sales/Purchases form header. |
+| `packages/webapp/src/components/PageForm/FormTopbar.tsx` | 8+/20- | Top bar above page-form header (`<FormTopbar>` styled-Navbar). Had local CSS variables for bg/border that resolved to `#fff` / `--color-dark-gray1`. Replaced with `var(--surface-tier-1)` / `var(--border-on-tier-1)`. |
 
 ---
 
