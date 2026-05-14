@@ -141,3 +141,33 @@ body.bp4-dark .bp4-dialog .bp4-dialog-header,
 body.bp4-dark .bp4-drawer .bp4-drawer-header {
   border-left-color: transparent;
 }
+
+// Scrollbar — both modes (today's dark mode scrollbars remained white)
+:root {
+  scrollbar-color: var(--vv-slate-300) transparent;
+  scrollbar-width: thin;
+}
+
+body.bp4-dark {
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--vv-slate-300);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+body.bp4-dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
