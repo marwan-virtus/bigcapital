@@ -191,3 +191,16 @@ body.bp4-dark ::-webkit-scrollbar-thumb {
     --color-report-item-text: #0F172A;
   }
 }
+
+// Skeleton — align loading placeholders with new palette
+.bp4-skeleton,
+.TableSkeletonRows {
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton-background-start) 0%,
+    var(--color-skeleton-background-end) 50%,
+    var(--color-skeleton-background-start) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-sm);
+}
