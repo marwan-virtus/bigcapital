@@ -68,8 +68,11 @@ const AllocateDialogFooter = styled(DialogFooter)`
 `;
 
 const UnallocatedAmount = styled.div`
-  --x-color-text: var(--text-on-tier-1);
+  --x-color-text: #3f5278;
 
+  .bp4-dark & {
+    --x-color-text: var(--color-light-gray1);
+  }
   color: var(--x-color-text);
   align-self: center;
 
