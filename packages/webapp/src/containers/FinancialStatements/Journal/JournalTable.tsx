@@ -64,9 +64,10 @@ export function JournalTable({ companyName }) {
 }
 
 const JournalDataTable = styled(ReportDataTable)`
-  --color-table-text-color: var(--text-on-tier-1);
-  --color-table-total-text-color: var(--text-on-tier-1);
-  --color-table-border-color: var(--border-on-tier-1);
+  --color-table-text-color: var(--color-light-gray1);
+  --color-table-total-text-color: var(--color-light-gray4);
+  --color-table-border-color: var(--color-dark-gray4);
+  --color-table-total-border-color: #dbdbdb;
   --color-table-total-border-color: var(--color-table-border-color);
 
   .table {

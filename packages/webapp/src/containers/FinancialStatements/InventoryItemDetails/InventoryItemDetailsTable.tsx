@@ -55,11 +55,12 @@ export function InventoryItemDetailsTable({
 }
 
 const InventoryItemDetailsDataTable = styled(ReportDataTable)`
-  --color-table-text: var(--text-on-tier-1);
-  --color-table-total-text: var(--text-on-tier-1);
-  --color-table-border: var(--border-on-tier-1);
-  --color-report-table-border: var(--border-on-tier-1);
-  --color-table-total-border: var(--border-on-tier-1);
+  --color-table-text: var(--color-light-gray1);
+  --color-table-total-text: var(--color-light-gray4);
+  --color-table-border: #ececec;
+  --color-report-table-border: var(--color-dark-gray4);
+  --color-table-total-border: #ddd;
+  --color-table-total-border: var(--color-dark-gray4);
 
   .table {
     .tbody {
