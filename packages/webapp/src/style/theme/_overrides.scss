@@ -149,7 +149,7 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
 
   tbody tr:hover,
   .table-tbody .tr:hover {
-    background-color: var(--color-datatable-cell-hover-background);
+    background-color: var(--state-hover-overlay);
   }
 
   // Tabular nums on every column that contains amount-style content.
