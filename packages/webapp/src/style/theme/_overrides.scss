@@ -41,26 +41,54 @@ a:not([class*="bp4-"]) {
   }
 }
 
-// Button — primary intent fill + states
+// Button — primary intent (emerald) + unified states
 .bp4-button.bp4-intent-primary {
   background-color: var(--color-primary);
   background-image: none;
   color: #fff;
   border-radius: var(--radius-md);
-  transition: background-color 120ms ease, box-shadow 120ms ease;
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
 
   &:hover:not(:disabled) {
-    background-color: var(--vv-emerald-700);
+    background-color: var(--vv-emerald-700);  // darker emerald
   }
 
   &:active:not(:disabled),
   &.bp4-active {
-    background-color: var(--vv-emerald-800);
+    background-color: var(--vv-emerald-800);  // darker still
   }
 
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-app-body), 0 0 0 4px var(--vv-emerald-300);
+    box-shadow:
+      0 0 0 1px var(--surface-tier-1),
+      0 0 0 3px var(--state-focus-ring);
+  }
+
+  &:disabled {
+    opacity: var(--state-disabled-opacity);
+    cursor: not-allowed;
+  }
+}
+
+// Button — default (non-intent) — hover/active overlay only
+.bp4-button:not([class*="bp4-intent-"]):not(.bp4-minimal):not(.bp4-disabled) {
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+
+  &:hover {
+    background-color: var(--state-hover-overlay);
+  }
+
+  &:active,
+  &.bp4-active {
+    background-color: var(--state-active-overlay);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 1px var(--surface-tier-1),
+      0 0 0 3px var(--state-focus-ring);
   }
 }
 
