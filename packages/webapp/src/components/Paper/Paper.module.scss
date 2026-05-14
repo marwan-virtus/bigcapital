@@ -2,7 +2,7 @@
 
 .root{
   --x-color-background: #fff;
-  --x-color-border: #d2dce2;
+  --x-color-border: var(--vv-slate-200);
 
   :global(.bp4-dark) & {
     --x-color-background: var(--color-dark-gray1);

@@ -4,7 +4,7 @@
     margin-bottom: 0;
   }
   .table {
-    border: 1px solid #d2dce2;
+    border: 1px solid var(--vv-slate-200);
     border-left: transparent;
     background-color: #FFF;
 
@@ -21,7 +21,7 @@
         }
       }
       &:first-child {
-        border-left: 1px solid #d2dce2;
+        border-left: 1px solid var(--vv-slate-200);
       }
     }
 
@@ -31,7 +31,7 @@
         background-color: #f0f2f8;
         font-size: 14px;
         color: #415060;
-        border-bottom: 1px solid #d2dce2;
+        border-bottom: 1px solid var(--vv-slate-200);
 
         &.index > div {
           width: 100%;

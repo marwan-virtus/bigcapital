@@ -476,7 +476,7 @@ $dashboard-views-bar-height: 44px;
   &__footer {
     margin-top: auto;
     padding: 8px 0;
-    border-top: 1px solid #d2dce2;
+    border-top: 1px solid var(--vv-slate-200);
 
     .footer-links {
       text-align: center;
@@ -583,7 +583,7 @@ $dashboard-views-bar-height: 44px;
 
 .navbar--dashboard-views {
   box-shadow: 0 0 0;
-  border-bottom: 1px solid #d2dce2;
+  border-bottom: 1px solid var(--vv-slate-200);
   height: $dashboard-views-bar-height;
   padding: 0 20px;
 
