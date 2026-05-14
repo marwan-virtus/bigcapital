@@ -1,0 +1,47 @@
+// packages/webapp/src/style/theme/_tiers.scss
+// Three-tier surface model. Every semantic --color-*-background, --color-*-border,
+// and --color-*-text token maps to one of the tier tokens below.
+//
+// Tier 0: Brand surface (sidebar) — darkest in both modes
+// Tier 1: Working surface (body, topbar, drawer body) — mid
+// Tier 2: Elevated surface (cards, popovers, dialogs, toasts) — lightest
+
+:root {
+  // Light mode surfaces
+  --surface-tier-0: var(--vv-slate-900);   // sidebar (brand-dark always)
+  --surface-tier-1: var(--vv-slate-100);   // body / drawer body / topbar
+  --surface-tier-2: #FFFFFF;               // cards / popovers / dialogs
+
+  // Light mode borders (per surface tier they sit on)
+  --border-on-tier-0: rgba(255, 255, 255, 0.06);
+  --border-on-tier-1: var(--vv-slate-200);
+  --border-on-tier-2: var(--vv-slate-200);
+
+  // Light mode text
+  --text-on-tier-0:        #FFFFFF;
+  --text-on-tier-0-muted:  rgba(255, 255, 255, 0.6);
+  --text-on-tier-1:        var(--vv-slate-900);
+  --text-on-tier-1-muted:  var(--vv-slate-500);
+  --text-on-tier-2:        var(--vv-slate-900);
+  --text-on-tier-2-muted:  var(--vv-slate-500);
+}
+
+body.bp4-dark {
+  // Dark mode surfaces
+  --surface-tier-0: var(--vv-slate-950);
+  --surface-tier-1: var(--vv-slate-900);
+  --surface-tier-2: var(--vv-slate-800);
+
+  // Dark mode borders
+  --border-on-tier-0: rgba(255, 255, 255, 0.06);
+  --border-on-tier-1: rgba(255, 255, 255, 0.06);
+  --border-on-tier-2: rgba(255, 255, 255, 0.08);
+
+  // Dark mode text
+  --text-on-tier-0:        #FFFFFF;
+  --text-on-tier-0-muted:  rgba(255, 255, 255, 0.6);
+  --text-on-tier-1:        #F0F0F0;
+  --text-on-tier-1-muted:  rgba(255, 255, 255, 0.55);
+  --text-on-tier-2:        #F0F0F0;
+  --text-on-tier-2-muted:  rgba(255, 255, 255, 0.55);
+}
