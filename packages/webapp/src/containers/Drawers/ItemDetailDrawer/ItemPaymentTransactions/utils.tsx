@@ -53,8 +53,11 @@ export const ItemManuTransaction = ({ onChange }) => {
 ItemManuTransaction.displayName = 'ItemManuTransaction';
 
 const ItemSwitchButton = styled(Button)`
-  --button-text-color: var(--text-on-tier-1-muted);
+  --button-text-color: #727983;
 
+  .bp4-dark & {
+    --button-text-color: rgba(255, 255, 255, 0.65);
+  }
   .bp4-button-text {
     display: flex;
     color: var(--button-text-color);
@@ -62,8 +65,11 @@ const ItemSwitchButton = styled(Button)`
 `;
 
 const ItemSwitchText = styled.span`
-  --button-text-color: var(--text-on-tier-1);
+  --button-text-color: #33304a;
 
+  .bp4-dark & {
+    --button-text-color: rgba(255, 255, 255, 0.85);
+  }
   font-weight: 600;
   color: var(--button-text-color);
   padding-left: 3px;

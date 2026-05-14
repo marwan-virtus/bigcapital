@@ -4,6 +4,7 @@ import { ProgressBar, Intent } from '@blueprintjs/core';
 import * as R from 'ramda';
 import { x } from '@xstyled/emotion';
 import { css } from '@emotion/css';
+import { useIsDarkMode } from '@/hooks/useDarkMode';
 
 import { useJob, useCurrentOrganization } from '@/hooks/query';
 import { FormattedMessage as T } from '@/components';
@@ -73,13 +74,15 @@ export default R.compose(
  * State initializing failed state.
  */
 function SetupInitializingFailed() {
+  const isDarkMode = useIsDarkMode();
+
   return (
     <x.div>
       <x.div textAlign="center" mt={35}>
         <x.h1
           fontSize={'22px'}
           fontWeight={500}
-          color={'var(--text-on-tier-1)'}
+          color={isDarkMode ? 'rgba(255, 255, 255, 0.75)' : '#454c59'}
           mt={0}
           mb={'14px'}
         >
@@ -88,7 +91,7 @@ function SetupInitializingFailed() {
         <x.p
           w="70%"
           mx="auto"
-          color={'var(--text-on-tier-1-muted)'}
+          color={isDarkMode ? 'rgba(255, 255, 255, 0.7)' : '#2e4266'}
         >
           <T id={'setup.initializing.please_refresh_the_page'} />
         </x.p>
@@ -101,6 +104,8 @@ function SetupInitializingFailed() {
  * Setup initializing running state.
  */
 function SetupInitializingRunning() {
+  const isDarkMode = useIsDarkMode();
+
   const progressBarStyles = css`
     .bp4-progress-bar {
       border-radius: 40px;
@@ -112,7 +117,7 @@ function SetupInitializingRunning() {
       margin: 0 auto;
 
       .bp4-progress-meter {
-        background-color: var(--vv-slate-400);
+        background-color: #809cb3;
       }
     }
   `;
@@ -127,7 +132,7 @@ function SetupInitializingRunning() {
         <x.h1
           fontSize={'22px'}
           fontWeight={500}
-          color={'var(--text-on-tier-1)'}
+          color={isDarkMode ? 'rgba(255, 255, 255, 0.85)' : '#454c59'}
           mt={0}
           mb={'14px'}
         >
@@ -136,7 +141,7 @@ function SetupInitializingRunning() {
         <x.p
           w="70%"
           mx="auto"
-          color={'var(--text-on-tier-1-muted)'}
+          color={isDarkMode ? 'rgba(255, 255, 255, 0.7)' : '#2e4266'}
         >
           <T id={'setup.initializing.description'} />
         </x.p>
@@ -149,13 +154,15 @@ function SetupInitializingRunning() {
  * Setup initializing completed state.
  */
 function SetupInitializingCompleted() {
+  const isDarkMode = useIsDarkMode();
+
   return (
     <x.div>
       <x.div textAlign="center" mt={35}>
         <x.h1
           fontSize={'22px'}
           fontWeight={600}
-          color={'var(--text-on-tier-1)'}
+          color={isDarkMode ? 'rgba(255, 255, 255, 0.85)' : '#454c59'}
           mt={0}
           mb={'14px'}
         >
@@ -164,7 +171,7 @@ function SetupInitializingCompleted() {
         <x.p
           w="70%"
           mx="auto"
-          color={'var(--text-on-tier-1-muted)'}
+          color={isDarkMode ? 'rgba(255, 255, 255, 0.7)' : '#2e4266'}
         >
           <T
             id={'setup.initializing.refresh_the_page_if_redirect_not_worked'}

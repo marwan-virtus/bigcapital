@@ -73,7 +73,7 @@ export function MailNotificationForm({
 
 const MailMessageEditor = styled(FRichEditor)`
   padding: 15px;
-  border: 1px solid var(--border-on-tier-1);
+  border: 1px solid #dedfe9;
   border-top: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -82,8 +82,8 @@ const MailMessageEditor = styled(FRichEditor)`
 const HeaderBox = styled('div')`
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  border: 1px solid var(--border-on-tier-1);
-  border-bottom: 2px solid var(--border-on-tier-1);
+  border: 1px solid #dddfe9;
+  border-bottom: 2px solid #eaeaef;
   padding: 6px 15px;
 
   .bp4-form-group {
@@ -92,7 +92,7 @@ const HeaderBox = styled('div')`
     padding-bottom: 8px;
 
     &:not(:last-of-type) {
-      border-bottom: 1px solid var(--border-on-tier-1);
+      border-bottom: 1px solid #dddfe9;
     }
     &:first-of-type {
       padding-top: 0;
@@ -108,7 +108,7 @@ const HeaderBox = styled('div')`
 
   .bp4-label {
     min-width: 65px;
-    color: var(--text-on-tier-1-muted);
+    color: #738091;
   }
 
   .bp4-input {

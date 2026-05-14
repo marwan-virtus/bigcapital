@@ -94,7 +94,7 @@ function PaymentMethodSelect({
 }
 
 const PaymentMethodSelectRoot = styled(Group)`
-  border: 1px solid var(--border-on-tier-1);
+  border: 1px solid #d3d8de;
   border-radius: 5px;
   padding: 10px;
   gap: 0;
@@ -105,10 +105,10 @@ const PaymentMethodCheckbox = styled(Checkbox)`
   margin: 0;
 
   &.bp4-control .bp4-control-indicator {
-    box-shadow: 0 0 0 1px var(--border-on-tier-1);
+    box-shadow: 0 0 0 1px #c5cbd3;
   }
 `;
 
 const PaymentMethodText = styled(Text)`
-  color: var(--text-on-tier-1);
+  color: #404854;
 `;
