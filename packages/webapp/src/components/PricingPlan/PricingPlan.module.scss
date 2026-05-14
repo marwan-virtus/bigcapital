@@ -2,17 +2,17 @@
   border-radius: 5px;
   padding: 40px 15px;
   position: relative;
-  border: 1px solid var(--border-on-tier-1);
+  border: 1px solid #D8DEE4;
   padding-top: 45px;
   flex: 1;
 
   &.isFeatured {
-    background-color: var(--surface-tier-2);
+    background-color: #F5F6F8;
     border: 0;
   }
 }
 .featuredBox {
-  background-color: var(--text-on-tier-1-muted);
+  background-color: #A3ACBA;
   height: 30px;
   line-height: 30px;
   position: absolute;
@@ -28,12 +28,12 @@
 .label {
   font-size: 16px;
   font-weight: 600;
-  color: var(--text-on-tier-1);
-
+  color: #2F343C;
+  
 }
 .description{
   font-size: 14px;
-  color: var(--text-on-tier-1-muted);
+  color: #687385;
   line-height: 1.5;
 }
 .buttonCTA {
@@ -50,18 +50,18 @@
   font-size: 18px;
   line-height: 1;
   font-weight: 500;
-  color: var(--text-on-tier-1);
+  color: #252A31;
 }
 
-.pricePer{
-  color: var(--text-on-tier-1-muted);
+.pricePer{ 
+  color: #738091;
   font-size: 12px;
   line-height: 1;
 }
 
-.featureItem{
+.featureItem{ 
   flex: 1;
-  color: var(--text-on-tier-1);
+  color: #1C2127;
 }
 
 .featurePopover :global .bp4-popover-content{
