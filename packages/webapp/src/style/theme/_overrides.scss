@@ -109,12 +109,19 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
 .bp4-input {
   border-radius: var(--radius-md);
   box-shadow: 0 0 0 1px var(--color-ui-input-border);
-  transition: box-shadow 120ms ease;
+  transition: box-shadow 120ms ease, opacity 120ms ease;
 
-  &:focus,
+  &:focus-visible,
   &.bp4-active {
-    box-shadow: 0 0 0 1px var(--vv-emerald-500), 0 0 0 3px rgba(34, 197, 94, 0.18);
+    box-shadow:
+      0 0 0 1px var(--vv-emerald-500),
+      0 0 0 3px var(--state-focus-ring);
     outline: none;
+  }
+
+  &:disabled {
+    opacity: var(--state-disabled-opacity);
+    cursor: not-allowed;
   }
 }
 
