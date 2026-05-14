@@ -6,19 +6,30 @@
 // These override Blueprint's pre-compile Sass variables and cascade
 // through 100% of Blueprint components.
 
-$pt-border-radius:           8px !default;
-$pt-border-radius-large:     14px !default;
-$pt-intent-primary:          #22C55E !default;  // var(--vv-emerald-500), but Sass needs concrete value
-$pt-outline-color:           rgba(34, 197, 94, 0.30) !default;
-$pt-font-family:             'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif !default;
-$pt-monospace-font-family:   'Fira Code', Menlo, 'Courier New', monospace !default;
-
-// Note: !default means a previous `_variables.scss` definition would win.
-// _variables.scss does NOT redefine these, so our values apply.
+// Definitive assignments (no !default) — these MUST win over Blueprint's own
+// !default values and over any prior _variables.scss assignment.
+$pt-border-radius:           8px;
+$pt-border-radius-large:     14px;
+$pt-intent-primary:          #15803D;                        // emerald-700 (AA on light surfaces)
+$pt-link-color:              #15803D;                        // emerald-700
+$pt-outline-color:           rgba(34, 197, 94, 0.30);
+$pt-font-family:             'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+$pt-monospace-font-family:   'Fira Code', Menlo, 'Courier New', monospace;
 
 // ─── Layer B ──────────────────────────────────────────────
 // CSS selector overrides for surfaces that Sass variables don't reach.
 // Each block is independently commentable for regression isolation.
+
+// Link color — mode-aware via --color-primary
+// (Sass $pt-link-color is fixed at emerald-700; this lifts dark-mode links to emerald-500 for contrast.)
+a:not([class*="bp4-"]) {
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
 
 // Button — primary intent fill + states
 .bp4-button.bp4-intent-primary {
