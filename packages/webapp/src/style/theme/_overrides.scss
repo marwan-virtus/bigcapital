@@ -125,3 +125,19 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
     box-shadow: none;  // brand.md: no shadows on body cards
   }
 }
+
+// Dialog & Drawer headers — emerald left rule + refined padding
+.bp4-dialog .bp4-dialog-header,
+.bp4-drawer .bp4-drawer-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-drawer-header-border);
+  background-color: var(--color-drawer-header-background);
+  color: var(--color-drawer-header-text);
+  font-weight: var(--font-weight-semibold);
+  border-left: 3px solid var(--color-drawer-border-left);
+}
+
+body.bp4-dark .bp4-dialog .bp4-dialog-header,
+body.bp4-dark .bp4-drawer .bp4-drawer-header {
+  border-left-color: transparent;
+}
