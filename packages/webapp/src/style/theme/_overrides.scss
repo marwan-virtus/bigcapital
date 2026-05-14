@@ -15,3 +15,43 @@ $pt-monospace-font-family:   'Fira Code', Menlo, 'Courier New', monospace !defau
 
 // Note: !default means a previous `_variables.scss` definition would win.
 // _variables.scss does NOT redefine these, so our values apply.
+
+// ─── Layer B ──────────────────────────────────────────────
+// CSS selector overrides for surfaces that Sass variables don't reach.
+// Each block is independently commentable for regression isolation.
+
+// Button — primary intent fill + states
+.bp4-button.bp4-intent-primary {
+  background-color: var(--color-primary);
+  background-image: none;
+  color: #fff;
+  border-radius: var(--radius-md);
+  transition: background-color 120ms ease, box-shadow 120ms ease;
+
+  &:hover:not(:disabled) {
+    background-color: var(--vv-emerald-700);
+  }
+
+  &:active:not(:disabled),
+  &.bp4-active {
+    background-color: var(--vv-emerald-800);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-app-body), 0 0 0 4px var(--vv-emerald-300);
+  }
+}
+
+body.bp4-dark .bp4-button.bp4-intent-primary {
+  color: var(--vv-slate-900);
+
+  &:hover:not(:disabled) {
+    background-color: var(--vv-emerald-400);
+  }
+
+  &:active:not(:disabled),
+  &.bp4-active {
+    background-color: var(--vv-emerald-300);
+  }
+}
