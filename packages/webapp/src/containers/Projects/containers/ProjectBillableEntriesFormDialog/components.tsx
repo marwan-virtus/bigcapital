@@ -56,7 +56,7 @@ const BillableEntriesWrap = styled.div`
   border-radius: 5px;
   width: 360px;
   height: 121px;
-  border: 1px solid var(--border-on-tier-1);
+  border: 1px solid #d4d9df;
   padding: 15px 12px;
   margin-bottom: 15px;
   position: relative;
@@ -66,7 +66,7 @@ const BillableEntryType = styled.div`
   font-size: 14px;
   line-height: 1.5;
   font-weight: 500;
-  color: var(--text-on-tier-1);
+  color: #444444;
 `;
 const BillableEntryContent = styled.div`
   display: flex;
@@ -75,24 +75,24 @@ const BillableEntryContent = styled.div`
 const BillableEntryItem = styled.div`
   font-weight: 400;
   font-size: 10px;
-  color: var(--text-on-tier-1-muted);
+  color: #666666;
 `;
 
 const BillableEntriesContent = styled.div`
   flex: 1 0 auto;
   line-height: 2rem;
-  border-bottom: 1px solid var(--border-on-tier-1);
+  border-bottom: 1px solid #e3e3e3;
 `;
 
 const BillableEntryAmount = styled.div`
   font-size: 14px;
   font-weight: 500;
-  color: var(--text-on-tier-1);
+  color: #111111;
 `;
 
 export const ProjectRowDivider = styled.div`
   height: 1px;
-  background: var(--border-on-tier-1);
+  background: #e3e3e3;
   margin-bottom: 15px;
   margin-top: 15px;
 `;
@@ -105,7 +105,7 @@ const BillableEntryButton = styled(Button)`
   &.bp4-button.bp4-small,
   &.bp4-button:not([class*='bp4-intent-']):not(.bp4-minimal).bp4-small {
     font-size: 12px;
-    color: var(--vv-color-primary);
+    color: #2172ed;
     background: transparent;
     &:last-child {
       margin-right: 5px;
