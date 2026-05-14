@@ -91,7 +91,7 @@
   --color-dashboard-insider-background:           var(--surface-tier-1);
   --color-dashboard-topbar-background:            var(--surface-tier-1);
   --color-dashboard-fallback-loading-background:  var(--surface-tier-1);
-  --color-dashboard-topbar-border-color:          var(--vv-slate-200);
+  --color-dashboard-topbar-border-color:          var(--border-on-tier-1);
   --color-dashboard-datatable-background:         var(--surface-tier-1);
   --color-dashboard-datatable-border:             var(--vv-slate-200);
 
@@ -111,15 +111,15 @@
   --color-dashboard-topbar-title-text:            var(--vv-slate-900);
 
   // ─── Dashboard actionsbar ─────────────────────────────────
-  --color-dashboard-actionsbar-border:  var(--vv-slate-200);
-  --color-dashboard-actionsbar-divider: var(--vv-slate-300);
+  --color-dashboard-actionsbar-border:  var(--border-on-tier-1);
+  --color-dashboard-actionsbar-divider: var(--border-on-tier-1);
 
   // ─── DataTable ────────────────────────────────────────────
   --color-datatable-head-background:    var(--surface-tier-2);
   --color-datatable-head-text:          var(--vv-slate-600);
-  --color-datatable-head-border:        var(--vv-slate-200);
+  --color-datatable-head-border:        var(--border-on-tier-2);
   --color-datatable-cell-hover-background: var(--vv-slate-50);
-  --color-datatable-cell-border:        var(--vv-slate-200);
+  --color-datatable-cell-border:        var(--border-on-tier-2);
   --color-datatable-cell-focus-border:  var(--vv-emerald-500);
   --color-datatable-no-results-text:    var(--vv-slate-500);
   --color-datatable-caret:              var(--vv-slate-400);
@@ -136,7 +136,7 @@
   --color-datatable-constrant-head-border:   #000;
 
   --color-dashboard-card-background: var(--surface-tier-2);
-  --color-dashboard-card-border:     var(--vv-slate-200);
+  --color-dashboard-card-border:     var(--border-on-tier-2);
 
   // ─── Sidebar ──────────────────────────────────────────────
   // Sidebar stays slate-900 in both modes (brand identity)
@@ -169,34 +169,34 @@
 
   // ─── Card ─────────────────────────────────────────────────
   --color-card-background: var(--surface-tier-2);
-  --color-card-border:     var(--vv-slate-200);
+  --color-card-border:     var(--border-on-tier-2);
 
   // ─── Bank accounts ────────────────────────────────────────
   --color-bank-account-card-background:    var(--surface-tier-2);
   --color-bank-account-card-text:          var(--vv-slate-900);
-  --color-bank-account-card-border:        var(--vv-slate-200);
+  --color-bank-account-card-border:        var(--border-on-tier-2);
   --color-bank-account-card-hover-border:  var(--vv-emerald-500);
   --color-bank-account-card-tag-background: var(--vv-slate-100);
   --color-bank-account-code-text:          var(--vv-slate-900);
 
   --color-bank-transactions-details-bar-background: var(--surface-tier-1);
   --color-bank-transactions-details-bar-text:       var(--vv-slate-700);
-  --color-bank-transactions-details-bar-divider:    var(--vv-slate-200);
+  --color-bank-transactions-details-bar-divider:    var(--border-on-tier-1);
 
   --color-bank-transactions-content-background: var(--surface-tier-1);
-  --color-bank-transactions-content-border:     var(--vv-slate-200);
+  --color-bank-transactions-content-border:     var(--border-on-tier-1);
 
   --color-bank-transactions-datatable-card-background: var(--surface-tier-2);
-  --color-bank-transactions-datatable-card-border:     var(--vv-slate-200);
+  --color-bank-transactions-datatable-card-border:     var(--border-on-tier-2);
 
   --color-bank-transaction-matching-aside:        var(--vv-emerald-500);
-  --color-bank-transaction-matching-divider:      var(--vv-slate-200);
+  --color-bank-transaction-matching-divider:      var(--border-on-tier-1);
   --color-bank-transaction-matching-aside-header: var(--surface-tier-1);
   --color-bank-transaction-matching-aside-footer: var(--surface-tier-1);
 
   // ─── Preferences ──────────────────────────────────────────
   --color-sidebar-preferences-background: var(--surface-tier-1);
-  --color-sidebar-preferences-border:     var(--vv-slate-200);
+  --color-sidebar-preferences-border:     var(--border-on-tier-1);
 
   --color-sidebar-preferences-item-background: transparent;
   --color-sidebar-preferences-item-text:       var(--vv-slate-700);
@@ -204,17 +204,17 @@
   --color-sidebar-preferences-item-hover-background: rgba(255, 255, 255, 0.6);
   --color-sidebar-preferences-item-hover-text:       var(--vv-slate-900);
 
-  --color-preferences-sidebar-head-border: var(--vv-slate-300);
+  --color-preferences-sidebar-head-border: var(--border-on-tier-1);
   --color-preferences-sidebar-head-text:   var(--vv-slate-800);
 
   --color-preferences-topbar-background: var(--surface-tier-1);
-  --color-preferences-topbar-border:     var(--vv-slate-200);
+  --color-preferences-topbar-border:     var(--border-on-tier-1);
   --color-preferences-topbar-title:      var(--vv-slate-900);
 
   --color-preferences-content-background: var(--surface-tier-1);
 
   // ─── Financial sheet ──────────────────────────────────────
-  --color-financial-sheet-card-border:        var(--vv-slate-200);
+  --color-financial-sheet-card-border:        var(--border-on-tier-2);
   --color-financial-sheet-title-text:         var(--vv-slate-900);
   --color-financial-sheet-type-text:          var(--vv-slate-900);
   --color-financial-sheet-date-text:          var(--vv-slate-900);
@@ -230,8 +230,8 @@
   // ─── Report items ─────────────────────────────────────────
   --color-report-section-title-text: var(--vv-slate-900);
   --color-report-item-background:    #fff;
-  --color-report-item-border:        var(--vv-slate-200);
-  --color-report-item-top-border:    var(--vv-slate-200);
+  --color-report-item-border:        var(--border-on-tier-2);
+  --color-report-item-top-border:    var(--border-on-tier-2);
   --color-report-item-text:          var(--vv-slate-900);
 
   --color-financial-report-drawer-tab-text: var(--vv-slate-700);
@@ -244,19 +244,19 @@
   --color-element-customize-preview-background:       var(--vv-slate-100);
   --color-element-customize-header-tabs-background:   var(--surface-tier-2);
   --color-element-customize-header-tabs-text:         var(--vv-slate-600);
-  --color-element-customize-divider:                  var(--vv-slate-200);
+  --color-element-customize-divider:                  var(--border-on-tier-2);
 
   // ─── Universal search ─────────────────────────────────────
   --color-universal-search-background:      var(--surface-tier-2);
-  --color-universal-search-footer-divider:  var(--vv-slate-200);
+  --color-universal-search-footer-divider:  var(--border-on-tier-2);
   --color-universal-search-icon:            var(--vv-slate-500);
   --color-universal-search-tag-background:  var(--vv-slate-600);
   --color-universal-search-tag-text:        #fff;
-  --color-universal-search-menu-border:     var(--vv-slate-200);
+  --color-universal-search-menu-border:     var(--border-on-tier-2);
 
   // ─── Content tabs ─────────────────────────────────────────
   --color-content-tab-background:       var(--surface-tier-2);
-  --color-content-tab-border:           var(--vv-slate-200);
+  --color-content-tab-border:           var(--border-on-tier-2);
   --color-content-tab-hover-border:     var(--vv-emerald-500);
   --color-content-tab-active-border:    var(--vv-emerald-500);
   --color-content-tab-text:             var(--vv-slate-700);
@@ -265,10 +265,10 @@
   // ─── Aside ────────────────────────────────────────────────
   --color-aside-background:        var(--surface-tier-1);
   --color-aside-title-background:  var(--surface-tier-1);
-  --color-aside-divider:           var(--vv-slate-200);
+  --color-aside-divider:           var(--border-on-tier-1);
 
   // ─── App shell ────────────────────────────────────────────
-  --color-app-shell-divider: var(--vv-slate-200);
+  --color-app-shell-divider: var(--border-on-tier-1);
 
   // ─── Select ───────────────────────────────────────────────
   --color-select-button-background: transparent;
@@ -287,7 +287,7 @@
   // ─── Drawer ───────────────────────────────────────────────
   --color-drawer-border-left:        var(--color-primary);
   --color-drawer-header-background:  var(--surface-tier-2);
-  --color-drawer-header-border:      transparent;
+  --color-drawer-header-border:      var(--border-on-tier-2);
   --color-drawer-header-text:        var(--vv-slate-900);
   --color-drawer-insider-background: var(--surface-tier-1);
   --color-drawer-tabs-background:    var(--surface-tier-1);
@@ -324,7 +324,7 @@
 
   // ─── Form ─────────────────────────────────────────────────
   --color-form-floating-footer-background: var(--surface-tier-2);
-  --color-form-floating-footer-border: #ececec;
+  --color-form-floating-footer-border: var(--border-on-tier-2);
   --color-form-label-text: var(--vv-slate-700);
   --color-form-input-text: var(--vv-slate-800);
   --color-form-input-disabled-background: #e9ecef;
