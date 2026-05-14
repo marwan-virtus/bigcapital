@@ -289,6 +289,20 @@ body.bp4-dark {
   --color-drawer-template-row-border: rgba(255, 255, 255, 0.15);
   --color-drawer-template-bullet: rgba(255, 255, 255, 0.35);
 
+  // ─── Dashboard extended ───────────────────────────────────
+  --color-dashboard-topbar-navbar-text:       #6a9fef;
+  --color-dashboard-user-avatar-background:   #cb20e5;
+  --color-dashboard-filter-active-background: rgba(34, 197, 94, 0.12);
+  --color-dashboard-navbar-success-text:      var(--vv-emerald-400);
+  --color-dashboard-navbar-warning-text:      #ec9a3c;
+  --color-dashboard-navbar-primary-text:      #6a9fef;
+  --color-dashboard-navbar-blue-highlight:    rgba(0, 123, 255, 0.08);
+  --color-dashboard-table-views-icon:         #4a90d9;
+  --color-dashboard-switch-active:            #338fef;
+  --color-dashboard-views-tab-text:           rgba(255, 255, 255, 0.6);
+  --color-dashboard-navbar-danger-text:       var(--color-red-200);
+  --color-dashboard-org-name-text:            rgba(255, 255, 255, 0.55);
+
   // ─── DataTable Editable ───────────────────────────────────
   --color-datatable-editable-background:                  var(--vv-slate-900);
   --color-datatable-editable-input-border:                rgba(255, 255, 255, 0.08);
