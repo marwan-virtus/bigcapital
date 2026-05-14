@@ -103,7 +103,7 @@ export const CreditRemainingRoot = styled.div`
 
 export const CreditRemainingBalance = styled.span`
   font-weight: 600;
-  color: #343463;
+  color: var(--text-on-tier-1);
   margin-left: 5px;
 `;
 

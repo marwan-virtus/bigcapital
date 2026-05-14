@@ -8,7 +8,6 @@ import {
   TotalLinePrimitive,
 } from '@/components';
 import { Button } from '@blueprintjs/core';
-import { useIsDarkMode } from '@/hooks/useDarkMode';
 
 const inputGroupCss = css`
   & .bp4-input {
@@ -48,17 +47,11 @@ export function DiscountTotalLine({
     { text: '%', value: 'percentage', label: 'Percentage' },
   ];
 
-  const isDarkMode = useIsDarkMode();
-
   return (
     <TotalLinePrimitive>
       <TotalLinePrimitive.Title
-        borderBottom={'1px solid var(--x-border-bottom-color)'}
-        style={{
-          '--x-border-bottom-color': isDarkMode
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgb(210, 221, 226)',
-        }}
+        borderBottom={'1px solid var(--border-on-tier-1)'}
+        style={{}}
       >
         <x.div
           display={'flex'}
@@ -91,12 +84,8 @@ export function DiscountTotalLine({
 
       <TotalLinePrimitive.Amount
         textAlign={'right'}
-        borderBottom={'1px solid var(--x-border-bottom-color)'}
-        style={{
-          '--x-border-bottom-color': isDarkMode
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgb(210, 221, 226)',
-        }}
+        borderBottom={'1px solid var(--border-on-tier-1)'}
+        style={{}}
       >
         {discountAmount}
       </TotalLinePrimitive.Amount>

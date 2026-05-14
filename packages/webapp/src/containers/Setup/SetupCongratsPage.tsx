@@ -3,7 +3,6 @@ import React from 'react';
 import { Button, Intent } from '@blueprintjs/core';
 import { x } from '@xstyled/emotion';
 import { css } from '@emotion/css';
-import { useIsDarkMode } from '@/hooks/useDarkMode';
 
 import WorkflowIcon from './WorkflowIcon';
 import { FormattedMessage as T } from '@/components';
@@ -16,7 +15,6 @@ import { compose } from '@/utils';
  */
 function SetupCongratsPage({ setOrganizationSetupCompleted }) {
   const [isReloading, setIsReloading] = React.useState(false);
-  const isDarkMode = useIsDarkMode();
 
   const handleBtnClick = () => {
     setIsReloading(true);
@@ -36,7 +34,7 @@ function SetupCongratsPage({ setOrganizationSetupCompleted }) {
 
       <x.div mt={30}>
         <x.h2
-          color={isDarkMode ? 'rgba(255, 255, 255, 0.85)' : '#2d2b43'}
+          color={'var(--text-on-tier-1)'}
           mb={'12px'}
         >
           <T id={'setup.congrats.title'} />
@@ -46,7 +44,7 @@ function SetupCongratsPage({ setOrganizationSetupCompleted }) {
           fontSize={'16px'}
           opacity={0.85}
           mb={'14px'}
-          color={isDarkMode ? 'rgba(255, 255, 255, 0.7)' : undefined}
+          color={'var(--text-on-tier-1-muted)'}
         >
           <T id={'setup.congrats.description'} />
         </x.p>

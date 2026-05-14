@@ -6,7 +6,7 @@ export const BrandingThemeFormGroup = styled(FFormGroup)`
   margin-bottom: 0;
 
   .bp4-label {
-    color: #7a8492;
+    color: var(--text-on-tier-1-muted);
   }
 
   &.bp4-inline label.bp4-label {

@@ -51,14 +51,14 @@ const FinancialSectionCard = styled.div`
   width: 230px;
   height: 116px;
   padding: 16px;
-  background-color: #fff;
-  border: 1px solid #c8cad0;
+  background-color: var(--surface-tier-2);
+  border: 1px solid var(--border-on-tier-1);
   gap: 6px;
 `;
 
 const FinancialCardTitle = styled.div`
   font-size: 14px;
-  color: #203252;
+  color: var(--text-on-tier-1);
   white-space: nowrap;
   font-weight: 400;
 `;
@@ -73,7 +73,7 @@ const FinancialCartDesc = styled.div`
 
 export const FinancialCardText = styled.div`
   font-size: 13px;
-  color: #7b8195;
+  color: var(--text-on-tier-1-muted);
 `;
 export const FinancialCardProgressBar = styled(ProgressBar)`
   &.bp4-progress-bar {

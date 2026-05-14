@@ -56,10 +56,8 @@ export default function CustomersTransactionsTable({
 }
 
 const CustomersTransactionsDataTable = styled(DataTable)`
-  --color-table-border-left-color: #ececec;
-  --color-table-customer-border-color: #ddd;
-  --color-table-border-left-color: var(--color-dark-gray4);
-  --color-table-customer-border-color: var(--color-dark-gray4);
+  --color-table-border-left-color: var(--border-on-tier-1);
+  --color-table-customer-border-color: var(--border-on-tier-1);
 
   .table {
     .tbody {

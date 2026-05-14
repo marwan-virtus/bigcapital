@@ -105,7 +105,7 @@ const TaskTimeMinutesRoot = styled.div`
 const TaskTimeMinutes = styled.div``;
 const TaskTimeFull = styled.div`
   font-size: 12px;
-  color: #5b5c62;
+  color: var(--text-on-tier-1-muted);
 `;
 
 const TaskProgressBar = styled(ProgressBar)`

@@ -170,7 +170,7 @@ const ProjectItemContactName = styled.div`
   padding-right: 10px;
 `;
 const ProjectItemProjectName = styled.div`
-  color: #595b66;
+  color: var(--text-on-tier-1-muted);
 `;
 
 const ProjectItemDescription = styled.div`
@@ -224,7 +224,7 @@ export const ProjectName = styled.div`
 
 export const Avatar = styled.div`
   display: inline-block;
-  background: #adbcc9;
+  background: var(--vv-slate-300);
   border-radius: 8%;
   text-align: center;
   font-weight: 400;

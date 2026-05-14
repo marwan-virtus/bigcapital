@@ -7,7 +7,6 @@ import {
   FInputGroup,
   TotalLinePrimitive,
 } from '@/components';
-import { useIsDarkMode } from '@/hooks/useDarkMode';
 
 const inputGroupCss = css`
   & .bp4-input {
@@ -26,19 +25,13 @@ interface AdjustmentTotalLineProps {
 export function AdjustmentTotalLine({
   adjustmentAmount,
 }: AdjustmentTotalLineProps) {
-  const isDarkMode = useIsDarkMode();
-
   return (
     <TotalLinePrimitive>
       <x.div
         display={'table-cell'}
         padding={'8px'}
-        borderBottom={'1px solid var(--x-border-bottom-color)'}
-        style={{
-          '--x-border-bottom-color': isDarkMode
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgb(210, 221, 226)',
-        }}
+        borderBottom={'1px solid var(--border-on-tier-1)'}
+        style={{}}
       >
         <x.div
           display={'flex'}
@@ -73,12 +66,8 @@ export function AdjustmentTotalLine({
         display={'table-cell'}
         textAlign={'right'}
         padding={'8px'}
-        borderBottom={'1px solid var(--x-border-bottom-color)'}
-        style={{
-          '--x-border-bottom-color': isDarkMode
-            ? 'rgba(255, 255, 255, 0.1)'
-            : 'rgb(210, 221, 226)',
-        }}
+        borderBottom={'1px solid var(--border-on-tier-1)'}
+        style={{}}
       >
         {adjustmentAmount}
       </x.div>

@@ -376,7 +376,7 @@ export const RolesPermissionList = () => {
 const PermissionCheckbox = styled(Checkbox)`
   &.bp4-control.bp4-checkbox .bp4-control-indicator {
     border-radius: 2px;
-    border-color: #555;
+    border-color: var(--border-on-tier-2);
 
     &,
     &:before {
@@ -393,7 +393,7 @@ const ModulePermissionsRoot = styled(Card)`
 `;
 
 const ModulePermissionHead = styled.div`
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid var(--border-on-tier-1);
   height: 38px;
   padding: 0 15px;
   display: flex;
@@ -403,7 +403,7 @@ const ModulePermissionTitle = styled.div`
   font-weight: 500;
   font-size: 16px;
   line-height: 38px;
-  color: #878787;
+  color: var(--text-on-tier-1-muted);
 `;
 
 const ModulePermissionBodyRoot = styled.div``;
@@ -421,7 +421,7 @@ const ModulePermissionsTableRoot = styled.table`
         min-width: 70px;
       }
       &.full {
-        background-color: #fcfcfc;
+        background-color: var(--surface-tier-2);
       }
     }
   }
@@ -429,8 +429,8 @@ const ModulePermissionsTableRoot = styled.table`
   tbody {
     tr td,
     tr th {
-      border-bottom: 1px solid #eee;
-      border-left: 1px solid #eee;
+      border-bottom: 1px solid var(--border-on-tier-1);
+      border-left: 1px solid var(--border-on-tier-1);
       padding: 10px;
 
       &:first-of-type {
@@ -459,7 +459,7 @@ const ModulePermissionsTableRoot = styled.table`
       }
 
       &.full-access-permission {
-        background-color: #fcfcfc;
+        background-color: var(--surface-tier-2);
       }
 
       &.full-access-permission,
@@ -489,12 +489,12 @@ const ModulePermissionsVerticalTable = styled.table`
     tr td {
       padding: 10px;
       vertical-align: top;
-      border-left: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+      border-left: 1px solid var(--border-on-tier-1);
+      border-bottom: 1px solid var(--border-on-tier-1);
 
       &.service-label {
         min-width: 250px;
-        color: #333;
+        color: var(--text-on-tier-1);
       }
 
       &:first-of-type {
