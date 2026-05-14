@@ -1,21 +1,16 @@
 .emptyState{
-  --x-color-text: #738091;
-
-  :global(.bp4-dark) & {
-      --x-color-text: rgba(255, 255, 255, 0.6);
-  }
   text-align: center;
   font-size: 15px;
-  color: var(--x-color-text);
+  color: var(--text-on-tier-1-muted);
 
   :global ul{
     list-style: inside;
 
     li{
       margin-bottom: 12px;
-  
+
       &::marker{
-        color: #C5CBD3;
+        color: var(--text-on-tier-1-muted);
         font-size: 12px;
       }
     }

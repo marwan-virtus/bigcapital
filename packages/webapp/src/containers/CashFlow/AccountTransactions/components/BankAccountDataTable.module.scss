@@ -1,8 +1,8 @@
 .root {
-  :global .table{    
+  :global .table{
     .thead {
       .th {
-        // background: #fff;
+        // background: var(--surface-tier-1);
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 13px;
@@ -14,7 +14,7 @@
       .td {
         padding: 2rem 0;
         font-size: 14px;
-        color: #888;
+        color: var(--text-on-tier-1-muted);
         font-weight: 400;
         border-bottom: 0;
       }

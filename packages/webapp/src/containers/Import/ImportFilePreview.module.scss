@@ -4,13 +4,10 @@
   margin-top: 14px;
 
   :global(li) {
-    border-top: 1px solid #d9d9da;
+    border-top: 1px solid var(--border-on-tier-1);
     padding: 6px 0;
 
-    :global(.bp4-dark) &{
-      border-top-color: rgba(255, 255, 255, 0.1);
-    }
-    &:last-child{ 
+    &:last-child{
       padding-bottom: 0;
     }
   }
@@ -22,7 +19,7 @@
 
 table.skippedTable {
   width: 100%;
- 
+
   tbody{
     tr:first-child td {
       box-shadow: 0 0 0 0;
@@ -33,11 +30,7 @@ table.skippedTable {
     }
 
     tr:hover td{
-      background: #F6F7F9;
-
-      :global(.bp4-dark) &{
-        background: var(--color-dark-gray2);
-      }
+      background: var(--surface-tier-2);
     }
   }
 }

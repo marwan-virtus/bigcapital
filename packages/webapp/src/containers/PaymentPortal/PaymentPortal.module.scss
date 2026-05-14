@@ -1,11 +1,8 @@
 
-:root {
-  --payment-page-background-color: #fff;
-  --payment-page-primary-button: var(--color-primary);
-}
+// PaymentPortal is a public-facing, always-light payment page — hardcoded light values are intentional.
 
 .rootBodyPage {
-  background: var(--payment-page-background-color);
+  background: #fff;
 }
 
 .root {

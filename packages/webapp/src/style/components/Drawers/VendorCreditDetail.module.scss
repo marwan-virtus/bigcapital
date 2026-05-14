@@ -48,11 +48,11 @@
 
   .total_line {
     &_subtotal {
-      border-bottom: 1px solid #000;
+      border-bottom: 1px solid var(--border-on-tier-2);
     }
 
     &_total {
-      border-bottom: 3px double #000;
+      border-bottom: 3px double var(--border-on-tier-2);
       font-weight: 600;
     }
     &_dueAmount {

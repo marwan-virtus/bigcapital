@@ -1,12 +1,12 @@
 
 .root {
   width: 450px;
-  background: #fff;
+  background: var(--surface-tier-2);
   border-radius: 5px;
-  box-shadow:  0 -6px 0 0px #ccd6dd;
-  border: 1px solid #d2dde1;
+  box-shadow:  0 -6px 0 0px var(--border-on-tier-2);
+  border: 1px solid var(--border-on-tier-2);
   min-height: 420px;
-  display: flex;  
+  display: flex;
   flex-direction: column;
 }
 
@@ -14,12 +14,12 @@
   margin: 0;
   font-size: 18px;
   font-weight: 600;
-  color: #3D4C58;
+  color: var(--text-on-tier-2);
 }
 
 .description {
   line-height: 1.5;
-  color: #394B59;
+  color: var(--text-on-tier-2);
   margin-top: 14px;
 }
 
@@ -29,7 +29,7 @@
       content: " • ";
       text-align: center;
       margin-right: 3px;
-      color: #999;
+      color: var(--text-on-tier-2-muted);
       margin-left: 6px;
     }
   }
@@ -43,7 +43,7 @@
 .periodStatus{
   text-transform: uppercase;
   font-weight: 500;
-  
+
 }
 .priceAmount {
   font-size: 24px;
