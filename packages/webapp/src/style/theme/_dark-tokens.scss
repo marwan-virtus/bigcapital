@@ -289,6 +289,13 @@ body.bp4-dark {
   --color-drawer-template-row-border: rgba(255, 255, 255, 0.15);
   --color-drawer-template-bullet: rgba(255, 255, 255, 0.35);
 
+  // ─── DataTable Editable ───────────────────────────────────
+  --color-datatable-editable-background:                  var(--vv-slate-900);
+  --color-datatable-editable-input-border:                rgba(255, 255, 255, 0.08);
+  --color-datatable-editable-danger-border:               rgba(239, 68, 68, 0.4);
+  --color-datatable-editable-clear-btn-background:        rgba(239, 68, 68, 0.08);
+  --color-datatable-editable-clear-btn-hover-background:  rgba(239, 68, 68, 0.14);
+
   // ─── Form ─────────────────────────────────────────────────
   --color-form-floating-footer-background: var(--vv-slate-900);
   --color-form-floating-footer-border: rgba(255, 255, 255, 0.08);

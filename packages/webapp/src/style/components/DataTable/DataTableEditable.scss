@@ -6,11 +6,11 @@
   .table {
     border: 1px solid var(--vv-slate-200);
     border-left: transparent;
-    background-color: #FFF;
+    background-color: var(--color-datatable-editable-background);
 
     .th,
     .td {
-      border-left: 1px solid #e2e2e2;
+      border-left: 1px solid var(--color-app-shell-divider);
 
       &.index {
         text-align: center;
@@ -28,9 +28,9 @@
     .thead {
       .tr .th {
         padding: 10px 10px;
-        background-color: #f0f2f8;
+        background-color: var(--color-datatable-head-background);
         font-size: 14px;
-        color: #415060;
+        color: var(--color-datatable-head-text);
         border-bottom: 1px solid var(--vv-slate-200);
 
         &.index > div {
@@ -43,12 +43,12 @@
       .tr .td {
         padding: 4px;
         border-bottom: 0;
-        border-top: 1px solid #d8d8d8;
+        border-top: 1px solid var(--color-app-shell-divider);
         min-height: 40px;
 
         &.index {
-          background-color: #f0f2f8;
-          color: #718294;
+          background-color: var(--color-datatable-head-background);
+          color: var(--color-muted-text);
 
           > span {
             margin-top: auto;
@@ -65,15 +65,15 @@
           .bp4-control-indicator{
             height: 18px;
             width: 18px;
-            border-color: #dbdbdb;
+            border-color: var(--color-app-shell-divider);
           }
         }
       }
       .tr {
         .bp4-form-group:not(.bp4-intent-danger) .bp4-input,
         .form-group--select-list .bp4-button {
-          border-color: #ffffff;
-          color: #222;
+          border-color: var(--color-datatable-editable-input-border);
+          color: var(--color-form-input-text);
           border-radius: 3px;
         }
         .bp4-form-group:not(.bp4-intent-danger) .bp4-input {
@@ -98,7 +98,7 @@
           &.bp4-intent-danger {
             .bp4-button:not(.bp4-minimal),
             .bp4-input {
-              border-color: #f7b6b6;
+              border-color: var(--color-datatable-editable-danger-border);
             }
           }
         }
@@ -112,10 +112,10 @@
         .td.actions {
           .bp4-button {
             background-color: transparent;
-            color: #e66d6d;
+            color: var(--color-red-200);
 
             &:hover {
-              color: #c23030;
+              color: var(--color-red-300);
             }
 
             svg {
@@ -149,13 +149,13 @@
       }
     }
     .th {
-      color: #444;
+      color: var(--color-muted-text);
       font-weight: 600;
-      border-bottom: 1px dotted #666;
+      border-bottom: 1px dotted var(--color-muted-text);
     }
 
     .td {
-      border-bottom: 1px dotted #999;
+      border-bottom: 1px dotted var(--color-muted-text);
     }
 
     .actions.td {
@@ -188,7 +188,7 @@
     .tbody {
       .tr .td.actions .bp4-button {
         background-color: transparent;
-        color: #e66d6d;
+        color: var(--color-red-200);
 
         svg {
           color: inherit;
@@ -207,10 +207,10 @@
 
     .button--clear-lines {
       &.bp4-button:not([class*='bp4-intent-']):not(.bp4-minimal) {
-        background-color: #fcefef;
+        background-color: var(--color-datatable-editable-clear-btn-background);
 
         &:hover{
-          background-color: #f8e4e4;
+          background-color: var(--color-datatable-editable-clear-btn-hover-background);
         }
       }
     }
@@ -221,23 +221,23 @@
     .credit.td {
       > span {
         font-weight: 600;
-        color: #444;
+        color: var(--color-muted-text);
       }
     }
     .td {
       border-top-width: 2px;
-      border-top-color: #e9e9ef;
+      border-top-color: var(--color-app-shell-divider);
       border-top-style: solid;
       min-height: 40px;
       font-weight: 500;
 
 
       &:not(.index) {
-        background-color: #fcfcfd;
+        background-color: var(--color-ui-background-primary);
       }
 
       &:first-of-type{
-        background-color: #f0f2f8;
+        background-color: var(--color-datatable-head-background);
       }
 
 
