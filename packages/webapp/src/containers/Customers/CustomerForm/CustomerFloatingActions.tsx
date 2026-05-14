@@ -74,7 +74,7 @@ export function CustomerFloatingActions() {
 const FloatingActionsGroup = styled(Group)`
   padding: 10px 0;
   padding-left: 165px;
-  border-top: 1px solid var(--border-on-tier-2);
+  border-top: 1px solid #50555a;
   position: sticky;
   bottom: 0;
   background: var(--color-card-background);
