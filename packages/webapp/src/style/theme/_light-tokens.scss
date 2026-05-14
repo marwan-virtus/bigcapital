@@ -96,19 +96,19 @@
   --color-dashboard-datatable-border:             var(--vv-slate-200);
 
   // ─── Dashboard error boundary ─────────────────────────────
-  --color-dashboard-error-boundary-title-text:       var(--vv-slate-900);
-  --color-dashboard-error-boundary-description-text: var(--vv-slate-700);
+  --color-dashboard-error-boundary-title-text:       var(--text-on-tier-1);
+  --color-dashboard-error-boundary-description-text: var(--text-on-tier-1-muted);
   --color-dashboard-error-boundary-logo:             var(--vv-slate-400);
 
   // ─── Dashboard navbar ─────────────────────────────────────
   --color-dashboard-navbar-background:            transparent;
-  --color-dashboard-navbar-item-text:             var(--vv-slate-900);
-  --color-dashboard-navbar-item-hover-text:       var(--vv-slate-900);
+  --color-dashboard-navbar-item-text:             var(--text-on-tier-1);
+  --color-dashboard-navbar-item-hover-text:       var(--text-on-tier-1);
   --color-dashboard-navbar-item-hover-background: rgba(15, 23, 42, 0.06);
-  --color-dashboard-navbar-item-active-text:      var(--vv-slate-900);
+  --color-dashboard-navbar-item-active-text:      var(--text-on-tier-1);
   --color-dashboard-navbar-item-active-background: rgba(15, 23, 42, 0.10);
   --color-dashboard-navbar-item-icon:             var(--vv-slate-700);
-  --color-dashboard-topbar-title-text:            var(--vv-slate-900);
+  --color-dashboard-topbar-title-text:            var(--text-on-tier-1);
 
   // ─── Dashboard actionsbar ─────────────────────────────────
   --color-dashboard-actionsbar-border:  var(--border-on-tier-1);
@@ -116,20 +116,20 @@
 
   // ─── DataTable ────────────────────────────────────────────
   --color-datatable-head-background:    var(--surface-tier-2);
-  --color-datatable-head-text:          var(--vv-slate-600);
+  --color-datatable-head-text:          var(--text-on-tier-2-muted);
   --color-datatable-head-border:        var(--border-on-tier-2);
   --color-datatable-cell-hover-background: var(--vv-slate-50);
   --color-datatable-cell-border:        var(--border-on-tier-2);
   --color-datatable-cell-focus-border:  var(--vv-emerald-500);
-  --color-datatable-no-results-text:    var(--vv-slate-500);
+  --color-datatable-no-results-text:    var(--text-on-tier-1-muted);
   --color-datatable-caret:              var(--vv-slate-400);
   --color-datatable-caret-hover:        var(--vv-slate-600);
   --color-datatable-checkbox-border:    var(--vv-slate-300);
 
-  --color-datatable-empty-status-title:       var(--vv-slate-900);
-  --color-datatable-empty-status-description: var(--vv-slate-600);
+  --color-datatable-empty-status-title:       var(--text-on-tier-1);
+  --color-datatable-empty-status-description: var(--text-on-tier-1-muted);
 
-  --color-datatable-text:                    var(--vv-slate-900);
+  --color-datatable-text:                    var(--text-on-tier-1);
   --color-datatable-constrant-text:          #000;
   --color-datatable-constrant-cell-border:   #000;
   --color-datatable-constrant-head-text:     #000;
@@ -142,18 +142,18 @@
   // Sidebar stays slate-900 in both modes (brand identity)
   --color-sidebar-toggle:                  rgba(255, 255, 255, 0.6);
   --color-sidebar-background:              var(--surface-tier-0);
-  --color-sidebar-text:                    #fff;
+  --color-sidebar-text:                    var(--text-on-tier-0);
   --color-sidebar-scrollbars-background:   rgba(255, 255, 255, 0.25);
 
-  --color-sidebar-menu-item-text:              #fff;
+  --color-sidebar-menu-item-text:              var(--text-on-tier-0);
   --color-sidebar-menu-item-hover-background:  rgba(255, 255, 255, 0.06);
-  --color-sidebar-menu-item-text-hover:        #fff;
+  --color-sidebar-menu-item-text-hover:        var(--text-on-tier-0);
   --color-sidebar-menu-item-active-background: rgba(34, 197, 94, 0.12);
   --color-sidebar-menu-item-active-text:       var(--vv-emerald-400);
   --color-sidebar-menu-item-focus-background:  rgba(255, 255, 255, 0.08);
-  --color-sidebar-menu-label-color:            rgba(255, 255, 255, 0.5);
-  --color-sidebar-menu-item-icon:              #767b9b;
-  --color-sidebar-menu-divider-text:           #6b708c;
+  --color-sidebar-menu-label-color:            var(--text-on-tier-0-muted);
+  --color-sidebar-menu-item-icon:              var(--text-on-tier-0-muted);
+  --color-sidebar-menu-divider-text:           var(--text-on-tier-0-muted);
   --color-sidebar-org-logo-background:         var(--vv-emerald-700);  // was #CB22E5 magenta (AA on white)
 
   --color-sidebar-overlay-background:        var(--surface-tier-2);
@@ -173,14 +173,14 @@
 
   // ─── Bank accounts ────────────────────────────────────────
   --color-bank-account-card-background:    var(--surface-tier-2);
-  --color-bank-account-card-text:          var(--vv-slate-900);
+  --color-bank-account-card-text:          var(--text-on-tier-2);
   --color-bank-account-card-border:        var(--border-on-tier-2);
   --color-bank-account-card-hover-border:  var(--vv-emerald-500);
   --color-bank-account-card-tag-background: var(--vv-slate-100);
-  --color-bank-account-code-text:          var(--vv-slate-900);
+  --color-bank-account-code-text:          var(--text-on-tier-2-muted);
 
   --color-bank-transactions-details-bar-background: var(--surface-tier-1);
-  --color-bank-transactions-details-bar-text:       var(--vv-slate-700);
+  --color-bank-transactions-details-bar-text:       var(--text-on-tier-1);
   --color-bank-transactions-details-bar-divider:    var(--border-on-tier-1);
 
   --color-bank-transactions-content-background: var(--surface-tier-1);
@@ -199,27 +199,27 @@
   --color-sidebar-preferences-border:     var(--border-on-tier-1);
 
   --color-sidebar-preferences-item-background: transparent;
-  --color-sidebar-preferences-item-text:       var(--vv-slate-700);
+  --color-sidebar-preferences-item-text:       var(--text-on-tier-1);
 
   --color-sidebar-preferences-item-hover-background: rgba(255, 255, 255, 0.6);
-  --color-sidebar-preferences-item-hover-text:       var(--vv-slate-900);
+  --color-sidebar-preferences-item-hover-text:       var(--text-on-tier-1);
 
   --color-preferences-sidebar-head-border: var(--border-on-tier-1);
-  --color-preferences-sidebar-head-text:   var(--vv-slate-800);
+  --color-preferences-sidebar-head-text:   var(--text-on-tier-1);
 
   --color-preferences-topbar-background: var(--surface-tier-1);
   --color-preferences-topbar-border:     var(--border-on-tier-1);
-  --color-preferences-topbar-title:      var(--vv-slate-900);
+  --color-preferences-topbar-title:      var(--text-on-tier-1);
 
   --color-preferences-content-background: var(--surface-tier-1);
 
   // ─── Financial sheet ──────────────────────────────────────
   --color-financial-sheet-card-border:        var(--border-on-tier-2);
-  --color-financial-sheet-title-text:         var(--vv-slate-900);
-  --color-financial-sheet-type-text:          var(--vv-slate-900);
-  --color-financial-sheet-date-text:          var(--vv-slate-900);
-  --color-financial-sheet-footer-text:        var(--vv-slate-500);
-  --color-financial-sheet-minimal-title-text: var(--vv-slate-900);
+  --color-financial-sheet-title-text:         var(--text-on-tier-1);
+  --color-financial-sheet-type-text:          var(--text-on-tier-1);
+  --color-financial-sheet-date-text:          var(--text-on-tier-1);
+  --color-financial-sheet-footer-text:        var(--text-on-tier-1-muted);
+  --color-financial-sheet-minimal-title-text: var(--text-on-tier-1);
 
   // ─── Transaction locking ──────────────────────────────────
   --color-transaction-locking-item-background:      #fff;
@@ -228,28 +228,28 @@
   --color-transaction-locking-item-enabled-border:  var(--vv-slate-200);
 
   // ─── Report items ─────────────────────────────────────────
-  --color-report-section-title-text: var(--vv-slate-900);
+  --color-report-section-title-text: var(--text-on-tier-1);
   --color-report-item-background:    #fff;
   --color-report-item-border:        var(--border-on-tier-2);
   --color-report-item-top-border:    var(--border-on-tier-2);
-  --color-report-item-text:          var(--vv-slate-900);
+  --color-report-item-text:          var(--text-on-tier-1);
 
-  --color-financial-report-drawer-tab-text: var(--vv-slate-700);
+  --color-financial-report-drawer-tab-text: var(--text-on-tier-1-muted);
 
   // ─── Element customize ────────────────────────────────────
   // Fix: original typo `ekement` renamed to `element`.
   --color-element-customize-header-background:        var(--surface-tier-2);
-  --color-element-customize-header-title-text:        var(--vv-slate-900);
+  --color-element-customize-header-title-text:        var(--text-on-tier-2);
   --color-element-customize-background:               var(--surface-tier-2);
   --color-element-customize-preview-background:       var(--vv-slate-100);
   --color-element-customize-header-tabs-background:   var(--surface-tier-2);
-  --color-element-customize-header-tabs-text:         var(--vv-slate-600);
+  --color-element-customize-header-tabs-text:         var(--text-on-tier-2-muted);
   --color-element-customize-divider:                  var(--border-on-tier-2);
 
   // ─── Universal search ─────────────────────────────────────
   --color-universal-search-background:      var(--surface-tier-2);
   --color-universal-search-footer-divider:  var(--border-on-tier-2);
-  --color-universal-search-icon:            var(--vv-slate-500);
+  --color-universal-search-icon:            var(--text-on-tier-2-muted);
   --color-universal-search-tag-background:  var(--vv-slate-600);
   --color-universal-search-tag-text:        #fff;
   --color-universal-search-menu-border:     var(--border-on-tier-2);
@@ -259,8 +259,8 @@
   --color-content-tab-border:           var(--border-on-tier-2);
   --color-content-tab-hover-border:     var(--vv-emerald-500);
   --color-content-tab-active-border:    var(--vv-emerald-500);
-  --color-content-tab-text:             var(--vv-slate-700);
-  --color-content-tab-active-text:      var(--vv-emerald-700);
+  --color-content-tab-text:             var(--text-on-tier-2-muted);
+  --color-content-tab-active-text:      var(--text-on-tier-2);
 
   // ─── Aside ────────────────────────────────────────────────
   --color-aside-background:        var(--surface-tier-1);
@@ -288,7 +288,7 @@
   --color-drawer-border-left:        var(--color-primary);
   --color-drawer-header-background:  var(--surface-tier-2);
   --color-drawer-header-border:      var(--border-on-tier-2);
-  --color-drawer-header-text:        var(--vv-slate-900);
+  --color-drawer-header-text:        var(--text-on-tier-2);
   --color-drawer-insider-background: var(--surface-tier-1);
   --color-drawer-tabs-background:    var(--surface-tier-1);
 
