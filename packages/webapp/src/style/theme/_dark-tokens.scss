@@ -44,8 +44,8 @@ body.bp4-dark {
   --color-muted-text: rgba(255, 255, 255, 0.55);
 
   // ─── UI surface (fix: was using undefined --color-base-sand-*) ───
-  --color-ui-background-primary:   var(--vv-slate-900);
-  --color-ui-background-secondary: var(--vv-slate-800);
+  --color-ui-background-primary:   var(--surface-tier-2);
+  --color-ui-background-secondary: var(--surface-tier-1);
   --color-ui-background-tertiary:  var(--vv-slate-700);
 
   // ─── Alerts ───────────────────────────────────────────────
