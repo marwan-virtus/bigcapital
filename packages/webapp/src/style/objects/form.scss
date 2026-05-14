@@ -52,12 +52,12 @@ label.bp4-label {
 
   &.bp4-intent-danger {
     box-shadow: 0 0 0 transparent;
-    border-color: #db3737;
+    border-color: var(--vv-color-danger);
 
     &:focus,
     &.bp4-active {
-      box-shadow: 0 0 0 1px #db3737;
-      border-color: #db3737;
+      box-shadow: 0 0 0 1px var(--vv-color-danger);
+      border-color: var(--vv-color-danger);
     }
   }
 }
@@ -68,12 +68,12 @@ label.bp4-label {
     
     .bp4-input{
       box-shadow: 0 0 0 transparent;
-      border-color: #db3737;
+      border-color: var(--vv-color-danger);
 
       &:focus,
       &.bp4-active {
-        box-shadow: 0 0 0 1px #db3737;
-        border-color: #db3737;
+        box-shadow: 0 0 0 1px var(--vv-color-danger);
+        border-color: var(--vv-color-danger);
       }
     }
   }
@@ -85,7 +85,7 @@ label.bp4-label {
   &.#{$ns}-intent-danger {
     select {
       box-shadow: 0 0 0 0 rgba(228, 226, 226, 0), 0 0 0 0 rgba(2, 2, 2, 0),
-        inset 0 0 0 1px #db3737, inset 0 0 0 1px rgba(16, 22, 26, 0.15),
+        inset 0 0 0 1px var(--vv-color-danger), inset 0 0 0 1px rgba(16, 22, 26, 0.15),
         inset 0 1px 1px rgba(16, 22, 26, 0.2);
     }
   }
@@ -193,7 +193,7 @@ label.bp4-label {
 
   .form-group--select-list.bp4-intent-danger & {
     & {
-      border-color: #db3737;
+      border-color: var(--vv-color-danger);
     }
   }
 
@@ -258,7 +258,7 @@ label.bp4-label {
 
   &.bp4-intent-danger {
     .bp4-button:not(.bp4-minimal) {
-      border-color: #db3737;
+      border-color: var(--vv-color-danger);
     }
   }
 }
