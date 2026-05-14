@@ -105,3 +105,9 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
     text-align: right;
   }
 }
+
+// Sidebar — round the active item to an emerald pill
+// Active background/color tokens are already remapped in _light-tokens.scss / _dark-tokens.scss.
+.sidebar-menu .bp4-button.bp4-active.bp4-intent-primary {
+  border-radius: var(--radius-md);
+}
