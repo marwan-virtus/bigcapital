@@ -20,6 +20,16 @@ $pt-monospace-font-family:   'Fira Code', Menlo, 'Courier New', monospace;
 // CSS selector overrides for surfaces that Sass variables don't reach.
 // Each block is independently commentable for regression isolation.
 
+// Blueprint .bp4-menu in dark mode defaults to #2f343c (a slate-700-ish color from
+// Blueprint's own dark-mode CSS). The sidebar nav uses bp4-menu, so that #2f343c
+// leaks through and makes the sidebar look lighter than the body. Force menus
+// inside the sidebar to inherit the sidebar's background. Specificity:
+// `.bp4-dark .sidebar .bp4-menu` (030) beats Blueprint's `.bp4-dark .bp4-menu` (020).
+.sidebar .bp4-menu,
+.bp4-dark .sidebar .bp4-menu {
+  background: transparent;
+}
+
 // Link color — mode-aware via --color-primary
 // (Sass $pt-link-color is fixed at emerald-700; this lifts dark-mode links to emerald-500 for contrast.)
 a:not([class*="bp4-"]) {
