@@ -111,3 +111,17 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
 .sidebar-menu .bp4-button.bp4-active.bp4-intent-primary {
   border-radius: var(--radius-md);
 }
+
+// Card — soft surface for hierarchy in light mode, subtle border in both modes
+.bp4-card {
+  background-color: var(--color-card-background);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-card-border);
+  box-shadow: none;
+
+  &.bp4-elevation-1,
+  &.bp4-elevation-2,
+  &.bp4-elevation-3 {
+    box-shadow: none;  // brand.md: no shadows on body cards
+  }
+}
