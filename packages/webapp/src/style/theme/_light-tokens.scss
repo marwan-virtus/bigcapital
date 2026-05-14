@@ -292,6 +292,15 @@
   --color-drawer-insider-background: var(--vv-slate-50);
   --color-drawer-tabs-background:    #fff;
 
+  // ─── Drawer template (printed document style) ─────────────
+  --color-drawer-template-header-title: #1c4587;
+  --color-drawer-template-content-border: #1155cc;
+  --color-drawer-template-amount-text: #123163;
+  --color-drawer-template-body-text: #000;
+  --color-drawer-template-head-text: #1155cc;
+  --color-drawer-template-row-border: #cecbcb;
+  --color-drawer-template-bullet: #b7b7b7;
+
   // ─── Skeleton ─────────────────────────────────────────────
   --color-skeleton-background-start: rgba(15, 23, 42, 0.06);
   --color-skeleton-background-end:   rgba(15, 23, 42, 0.12);
