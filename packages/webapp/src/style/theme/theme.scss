@@ -1,9 +1,10 @@
 // packages/webapp/src/style/theme/theme.scss
-// Top-level theme entry. Order matters: foundational → semantic → overrides.
-
+// Order matters: foundational → tiers/states → semantic (light/dark) → overrides.
 @import 'palette';
 @import 'typography';
 @import 'radius';
+@import 'tiers';
+@import 'states';
 @import 'light-tokens';
 @import 'dark-tokens';
 @import 'overrides';
