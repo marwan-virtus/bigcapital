@@ -145,7 +145,7 @@ body.bp4-dark {
   --color-sidebar-menu-divider-text:           rgba(255, 255, 255, 0.5);
   --color-sidebar-org-logo-background:         var(--vv-emerald-500);  // was #CB22E5 magenta
 
-  --color-sidebar-overlay-background:        rgba(255, 255, 255, 0.04);  // standardised elevated surface (was vv-slate-800)
+  --color-sidebar-overlay-background:        var(--vv-slate-800);  // floating popover — solid elevation to obscure body beneath
   --color-sidebar-overlay-hover-background:  rgba(255, 255, 255, 0.06);
   --color-sidebar-overlay-item-text:         #fff;
   --color-sidebar-overlay-item-hover-text:   #fff;
@@ -235,7 +235,7 @@ body.bp4-dark {
   --color-element-customize-divider:                  rgba(255, 255, 255, 0.06);
 
   // ─── Universal search ─────────────────────────────────────
-  --color-universal-search-background:      rgba(255, 255, 255, 0.04);  // standardised elevated surface
+  --color-universal-search-background:      var(--vv-slate-800);  // floating popover — solid elevation
   --color-universal-search-footer-divider:  rgba(255, 255, 255, 0.06);
   --color-universal-search-icon:            rgba(255, 255, 255, 0.5);
   --color-universal-search-tag-background:  rgba(255, 255, 255, 0.10);
