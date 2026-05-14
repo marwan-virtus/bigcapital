@@ -50,8 +50,8 @@
   // ─── UI surface ───────────────────────────────────────────
   // Fix: --color-base-sand-* were referenced but never defined.
   // Re-map to concrete slate values.
-  --color-ui-background-primary:   var(--vv-slate-50);
-  --color-ui-background-secondary: var(--vv-slate-100);
+  --color-ui-background-primary:   var(--surface-tier-2);
+  --color-ui-background-secondary: var(--surface-tier-1);
   --color-ui-background-tertiary:  var(--vv-slate-200);
 
   // ─── Alerts ───────────────────────────────────────────────
