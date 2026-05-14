@@ -171,3 +171,23 @@ body.bp4-dark {
 body.bp4-dark ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.15);
 }
+
+// Print — force light theme regardless of preference (brand.md convention)
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #0F172A !important;
+  }
+  body.bp4-dark {
+    // Strip dark-mode token overrides while printing.
+    // Re-apply light-mode key values for print fidelity.
+    --color-app-body: #fff;
+    --color-card-background: #fff;
+    --color-card-border: #E2E8F0;
+    --color-datatable-text: #0F172A;
+    --color-financial-sheet-title-text: #0F172A;
+    --color-financial-sheet-type-text: #0F172A;
+    --color-financial-sheet-date-text: #0F172A;
+    --color-report-item-text: #0F172A;
+  }
+}
