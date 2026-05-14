@@ -30,7 +30,7 @@ body.bp4-dark {
   // Dark mode surfaces — all within the slate-blue family, no near-blacks.
   // Sidebar uses the same slate-900 as the body and is distinguished by
   // content structure (emerald active pill, section labels), not by surface tone.
-  --surface-tier-0: var(--vv-slate-900);
+  --surface-tier-0: #0B1220;  // between slate-950 (too black) and slate-900 (= body); subtle darker sidebar
   --surface-tier-1: var(--vv-slate-900);
   --surface-tier-2: var(--vv-slate-800);
 
