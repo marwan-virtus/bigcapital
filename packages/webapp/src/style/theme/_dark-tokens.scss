@@ -289,6 +289,15 @@ body.bp4-dark {
   --color-drawer-template-row-border: rgba(255, 255, 255, 0.15);
   --color-drawer-template-bullet: rgba(255, 255, 255, 0.35);
 
+  // ─── Form ─────────────────────────────────────────────────
+  --color-form-floating-footer-background: var(--vv-slate-900);
+  --color-form-floating-footer-border: rgba(255, 255, 255, 0.08);
+  --color-form-label-text: rgba(255, 255, 255, 0.75);
+  --color-form-input-text: rgba(255, 255, 255, 0.85);
+  --color-form-input-disabled-background: rgba(255, 255, 255, 0.06);
+  --color-form-checkbox-border: rgba(255, 255, 255, 0.4);
+  --color-form-select-open-background: rgba(255, 255, 255, 0.04);
+
   // ─── Setup page ───────────────────────────────────────────
   --color-setup-left-section-background: #2f343c;
   --color-setup-left-section-text: #ffffff;
