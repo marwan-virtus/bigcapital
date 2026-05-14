@@ -22,7 +22,7 @@
       margin: 0;
     }
     &--title p {
-      color: #666666;
+      color: var(--vv-slate-500);
     }
   }
 
@@ -95,7 +95,7 @@
     &__title h4 {
       font-size: 16px;
       font-weight: 400;
-      color: #666666;
+      color: var(--vv-slate-500);
       margin-bottom: 5px;
     }
 
