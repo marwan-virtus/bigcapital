@@ -105,6 +105,32 @@ body.bp4-dark .bp4-button.bp4-intent-primary {
   }
 }
 
+// Minimal / anchor primary buttons — Blueprint uses a separate dark-mode primary
+// text color (~#8abbff lavender) that the $pt-intent-primary Sass var does not reach.
+// Force them to use our mode-aware --color-primary token.
+.bp4-button.bp4-minimal.bp4-intent-primary,
+.bp4-button.bp4-minimal.bp4-intent-primary:not([disabled]),
+.bp4-anchor-button.bp4-minimal.bp4-intent-primary,
+body.bp4-dark .bp4-button.bp4-minimal.bp4-intent-primary,
+body.bp4-dark .bp4-anchor-button.bp4-minimal.bp4-intent-primary {
+  color: var(--color-primary);
+
+  &:hover:not(:disabled) {
+    color: var(--color-primary);
+    background: var(--state-hover-overlay);
+  }
+}
+
+// Input — force transparent background in both modes (Blueprint's dark default
+// `rgba(16,22,26,0.3)` has higher specificity than our token-driven rule).
+// Inputs sit ON the parent tier; the 1px border marks the input boundary.
+body .bp4-input,
+body.bp4-dark .bp4-input,
+body .bp4-input-group .bp4-input,
+body.bp4-dark .bp4-input-group .bp4-input {
+  background-color: var(--color-ui-input-background);  // transparent in both modes
+}
+
 // Input — focus ring + tabular numerals on numeric inputs
 .bp4-input {
   border-radius: var(--radius-md);
