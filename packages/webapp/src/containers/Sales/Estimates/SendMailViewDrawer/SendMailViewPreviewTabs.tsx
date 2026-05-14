@@ -13,9 +13,15 @@ export function SendMailViewPreviewTabs({
       id={'preview'}
       defaultSelectedTabId={'payment-page'}
       className={css`
-        --x-color-background: var(--surface-tier-1);
-        --x-color-border: var(--border-on-tier-1);
-        --x-color-tab-text: var(--text-on-tier-1-muted);
+        --x-color-background: var(--color-white);
+        --x-color-border: #dcdcdd;
+        --x-color-tab-text: #5f6b7c;
+
+        .bp4-dark & {
+          --x-color-background: var(--color-dark-gray2);
+          --x-color-border: rgba(255, 255, 255, 0.2);
+          --x-color-tab-text: rgba(255, 255, 255, 0.6);
+        }
         overflow: hidden;
         flex: 1 1;
         display: flex;
