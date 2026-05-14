@@ -1,0 +1,110 @@
+// packages/webapp/src/style/theme/_surface-sweeper.scss
+// Class-pattern catch-all that pins every common Blueprint and app surface
+// to a tier token. Imported LAST in theme.scss so it overrides earlier rules.
+//
+// Selector strategy:
+//   - :where() keeps specificity at (0,1,0) so component-level rules at (0,1,0)
+//     tie and the LATER rule (this file) wins.
+//   - body.bp4-dark prefix used where we need (0,2,0) to beat Blueprint's
+//     compiled .bp4-dark .X rules.
+//
+// Update this file (NOT individual component SCSS) when adding new surfaces.
+
+// ─── Tier 1 — body / page canvas ─────────────────────────────────
+:where(
+  .dashboard__insider,
+  .dashboard__topbar,
+  .dashboard__content,
+  .page-form__header,
+  [class*="PageForm"][class*="Header"]:not([class*="Big"]),
+  [class*="FormHeader"]:not([class*="MailHeader"]):not([class*="ReceiptHeader"]):not([class*="PreviewHeader"]),
+  .bp4-dialog-body,
+  .bp4-drawer .bp4-drawer-body,
+  .bp4-drawer-footer
+) {
+  background-color: var(--surface-tier-1);
+}
+
+// ─── Tier 2 — elevated surfaces ───────────────────────────────────
+:where(
+  .bp4-card,
+  .bp4-popover-content,
+  .bp4-popover2-content,
+  .bp4-popover .bp4-popover-content,
+  .bp4-popover2 .bp4-popover2-content,
+  .bp4-dialog,
+  .bp4-toast,
+  .bp4-tooltip .bp4-popover2-content,
+  .bp4-tooltip .bp4-popover-content,
+  .bp4-html-select select,
+  .bp4-numeric-input .bp4-input-group,
+  .bp4-tabs > .bp4-tab-list,
+  .page-form__footer,
+  .page-form__floating-actions,
+  [class*="FloatingActions"],
+  [class*="Paper"]:not([class*="PaperPreview"]):not([class*="PaperTemplate"]):not([class*="MailPaper"])
+) {
+  background-color: var(--surface-tier-2);
+}
+
+// ─── Sidebar exceptions ───────────────────────────────────────────
+.sidebar .bp4-menu,
+body.bp4-dark .sidebar .bp4-menu {
+  background: transparent;  // inherit sidebar Tier 0, not Tier 2
+}
+
+// ─── Borders on tier surfaces ─────────────────────────────────────
+:where(
+  .page-form__header,
+  [class*="FormHeader"]:not([class*="MailHeader"]):not([class*="ReceiptHeader"]):not([class*="PreviewHeader"])
+) {
+  border-bottom: 1px solid var(--border-on-tier-1);
+}
+
+:where(
+  .bp4-card,
+  .bp4-dialog,
+  [class*="Paper"]:not([class*="PaperPreview"]):not([class*="PaperTemplate"]):not([class*="MailPaper"])
+) {
+  border: 1px solid var(--border-on-tier-2);
+}
+
+// ─── Inline fillable controls — transparent so parent tier shows ──
+body .bp4-input,
+body .bp4-text-area,
+body .bp4-tag-input,
+body .bp4-input-group .bp4-input,
+body.bp4-dark .bp4-input,
+body.bp4-dark .bp4-text-area,
+body.bp4-dark .bp4-tag-input,
+body.bp4-dark .bp4-input-group .bp4-input {
+  background-color: transparent;
+}
+
+// ─── Datatable surfaces (legacy DataTable + Blueprint table) ──────
+:where(.bp4-html-table, .DataTable) thead,
+:where(.bp4-html-table, .DataTable) .table-thead {
+  background-color: var(--surface-tier-2);
+}
+
+:where(.bp4-html-table, .DataTable) tbody tr,
+:where(.bp4-html-table, .DataTable) .table-tbody .tr {
+  background-color: transparent;
+}
+
+// ─── DataTable editable (entries) ─────────────────────────────────
+// Bills/Invoices/Estimates entries tables — pin head and footer to Tier 2
+:where(.datatable-editor) .table {
+  background-color: var(--surface-tier-2);
+}
+
+// ─── Tags ─────────────────────────────────────────────────────────
+body.bp4-dark .bp4-tag:not(.bp4-intent-primary):not(.bp4-intent-success):not(.bp4-intent-warning):not(.bp4-intent-danger) {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-on-tier-1);
+}
+
+// ─── Form controls (checkbox / radio indicators) ──────────────────
+body.bp4-dark .bp4-control .bp4-control-indicator {
+  background-color: var(--surface-tier-2);
+}
