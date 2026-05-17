@@ -63,6 +63,11 @@ export const PreferencesMenu = [
     disabled: false,
     href: '/preferences/items',
   },
+  {
+    text: <T id={'preferences.malaysia.title'} />,
+    disabled: false,
+    href: '/preferences/malaysia',
+  },
   // {
   //   text: 'Integrations',
   //   disabled: false,
