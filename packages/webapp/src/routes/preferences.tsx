@@ -122,6 +122,11 @@ export const getPreferenceRoutes = () => [
     exact: true,
   },
   {
+    path: `${BASE_URL}/malaysia`,
+    component: lazy(() => import('@/containers/Preferences/Malaysia')),
+    exact: true,
+  },
+  {
     path: `${BASE_URL}/api-keys`,
     component: lazy(() => import('@/containers/Preferences/ApiKeys/ApiKeys')),
     exact: true,
