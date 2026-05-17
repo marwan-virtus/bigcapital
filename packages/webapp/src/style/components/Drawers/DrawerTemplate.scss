@@ -18,23 +18,23 @@
     margin: 0px 35px 20px 5px;
     &--title h1 {
       font-weight: 600;
-      color: #1c4587;
+      color: var(--color-drawer-template-header-title);
       margin: 0;
     }
     &--title p {
-      color: #666666;
+      color: var(--vv-slate-500);
     }
   }
 
   &__content {
     display: flex;
     flex-wrap: wrap;
-    border-bottom: 2px solid #1155cc;
+    border-bottom: 2px solid var(--color-drawer-template-content-border);
     padding: 2px 2px 30px;
     &__info {
       flex: 0 1 22%;
       padding-left: 5px;
-      color: #999999;
+      color: var(--color-muted-text);
       font-size: 16px;
       font-weight: 400;
       line-height: 1.6rem;
@@ -42,14 +42,14 @@
 
       .info-paragraph-amount {
         margin-top: 8px;
-        color: #123163;
+        color: var(--color-drawer-template-amount-text);
         font-size: 26px;
         font-weight: 500;
       }
 
       .info-paragraph {
         font-size: 15px;
-        color: #000;
+        color: var(--color-drawer-template-body-text);
       }
     }
   }
@@ -63,7 +63,7 @@
     .bigcapital-datatable {
       .table {
         font-size: 15px;
-        color: #000;
+        color: var(--color-drawer-template-body-text);
 
         .thead .tr .th .resizer {
           display: none;
@@ -77,14 +77,14 @@
           font-size: 16px;
           font-weight: 400;
           border-bottom: none;
-          color: #1155cc;
+          color: var(--color-drawer-template-head-text);
           // padding-left: 1px;
         }
         .tbody .tr .td {
           font-size: 15px;
           padding: 10px;
           // padding-left: 1px;
-          border-bottom: 1px solid #cecbcb;
+          border-bottom: 1px solid var(--color-drawer-template-row-border);
         }
       }
     }
@@ -95,7 +95,7 @@
     &__title h4 {
       font-size: 16px;
       font-weight: 400;
-      color: #666666;
+      color: var(--vv-slate-500);
       margin-bottom: 5px;
     }
 
@@ -103,12 +103,12 @@
       list-style: none;
     }
     ul li {
-      color: #000;
+      color: var(--color-drawer-template-body-text);
       font-size: 14px;
     }
     ul li::before {
       content: '•';
-      color: #b7b7b7;
+      color: var(--color-drawer-template-bullet);
       display: inline-block;
       width: 1em;
       margin-left: 0.7em;
@@ -133,6 +133,6 @@
     margin: 0;
     font-size: 18px;
     font-weight: 600;
-    color: #0d244a;
+    color: var(--color-drawer-header-text);
   }
 }

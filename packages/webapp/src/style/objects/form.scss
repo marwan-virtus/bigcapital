@@ -3,9 +3,9 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    background: #fff;
+    background: var(--color-form-floating-footer-background);
     padding: 14px 18px;
-    border-top: 1px solid #ececec;
+    border-top: 1px solid var(--color-form-floating-footer-border);
 
     .has-mini-sidebar & {
       left: 50px;
@@ -15,7 +15,7 @@
 
 // Form form.
 label.bp4-label {
-  color: #353535;
+  color: var(--color-form-label-text);
   font-weight: 400;
 
   .required {
@@ -33,7 +33,7 @@ label.bp4-label {
   border-radius: 2px;
   height: 32px;
   line-height: 32px;
-  color: #333;
+  color: var(--color-form-input-text);
 
   &,
   .bp4-dark & {
@@ -41,23 +41,23 @@ label.bp4-label {
   }
   &:focus,
   &.bp4-active {
-    box-shadow: 0 0 0 1px #116cd0;
-    border-color: #116cd0;
+    box-shadow: 0 0 0 1px var(--color-primary);
+    border-color: var(--color-primary);
   }
 
   &.bp4-disabled,
   &:disabled {
-    background: #e9ecef;
+    background: var(--color-form-input-disabled-background);
   }
 
   &.bp4-intent-danger {
     box-shadow: 0 0 0 transparent;
-    border-color: #db3737;
+    border-color: var(--vv-color-danger);
 
     &:focus,
     &.bp4-active {
-      box-shadow: 0 0 0 1px #db3737;
-      border-color: #db3737;
+      box-shadow: 0 0 0 1px var(--vv-color-danger);
+      border-color: var(--vv-color-danger);
     }
   }
 }
@@ -68,12 +68,12 @@ label.bp4-label {
     
     .bp4-input{
       box-shadow: 0 0 0 transparent;
-      border-color: #db3737;
+      border-color: var(--vv-color-danger);
 
       &:focus,
       &.bp4-active {
-        box-shadow: 0 0 0 1px #db3737;
-        border-color: #db3737;
+        box-shadow: 0 0 0 1px var(--vv-color-danger);
+        border-color: var(--vv-color-danger);
       }
     }
   }
@@ -85,7 +85,7 @@ label.bp4-label {
   &.#{$ns}-intent-danger {
     select {
       box-shadow: 0 0 0 0 rgba(228, 226, 226, 0), 0 0 0 0 rgba(2, 2, 2, 0),
-        inset 0 0 0 1px #db3737, inset 0 0 0 1px rgba(16, 22, 26, 0.15),
+        inset 0 0 0 1px var(--vv-color-danger), inset 0 0 0 1px rgba(16, 22, 26, 0.15),
         inset 0 1px 1px rgba(16, 22, 26, 0.2);
     }
   }
@@ -180,7 +180,7 @@ label.bp4-label {
   height: 0;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 5px solid #8d8d8d;
+  border-top: 5px solid var(--color-muted-text);
   position: absolute;
   right: 0;
   top: 50%;
@@ -193,12 +193,12 @@ label.bp4-label {
 
   .form-group--select-list.bp4-intent-danger & {
     & {
-      border-color: #db3737;
+      border-color: var(--vv-color-danger);
     }
   }
 
   .#{$ns}-button {
-    color: #8d8d8d;
+    color: var(--color-muted-text);
     position: relative;
     padding-right: 25px;
     justify-content: start;
@@ -209,16 +209,16 @@ label.bp4-label {
       &:hover {
         outline: none;
         box-shadow: 0 0 0 transparent;
-        border: 1px solid #ced4da;
+        border: 1px solid var(--color-ui-input-border);
 
         &:not(:disabled) {
-          background: #fff;
+          background: var(--color-ui-input-background);
         }
       }
 
       &:focus {
-        box-shadow: 0 0 0 1px #116cd0;
-        border-color: #116cd0;
+        box-shadow: 0 0 0 1px var(--color-primary);
+        border-color: var(--color-primary);
       }
     }
   }
@@ -233,7 +233,7 @@ label.bp4-label {
 
       &:not([class*="bp4-intent-"]):not(.bp4-minimal):not(:disabled),
       &:not([class*="bp4-intent-"]):not(.bp4-minimal):hover:not(:disabled) {
-        background-color: #fafafa;
+        background-color: var(--color-form-select-open-background);
       }
     }
   }
@@ -252,13 +252,13 @@ label.bp4-label {
 
     .bp4-button {
       padding-left: 10px;
-      color: #333;
+      color: var(--color-form-input-text);
     }
   }
 
   &.bp4-intent-danger {
     .bp4-button:not(.bp4-minimal) {
-      border-color: #db3737;
+      border-color: var(--vv-color-danger);
     }
   }
 }
@@ -277,7 +277,7 @@ label.bp4-label {
 }
 .bp4-menu-item::before,
 .bp4-menu-item>.bp4-icon {
-  color: #4b5d6b;
+  color: var(--color-muted-text);
 }
 
 .bp4-control-group {
@@ -296,7 +296,7 @@ label.bp4-label {
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.5;
-      color: #495057;
+      color: var(--color-form-input-text);
       text-align: center;
       white-space: nowrap;
       background-color: var(--color-ui-input-group-prepend-background);
@@ -304,12 +304,12 @@ label.bp4-label {
       border-radius: 0 3px 3px 0;
 
       .bp4-icon {
-        color: #848da0;
+        color: var(--color-muted-text);
       }
     }
   }
 }
 
 .bp4-control.bp4-checkbox .bp4-control-indicator{
-  border-color: #666;
+  border-color: var(--color-form-checkbox-border);
 }

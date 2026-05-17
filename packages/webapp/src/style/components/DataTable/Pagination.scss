@@ -14,7 +14,7 @@
     min-height: 24px;
 
     &:not([class*="bp4-intent-"]){
-      color: #666666; 
+      color: var(--vv-slate-500); 
       border-radius: 5px;
 
       &:hover{
@@ -24,7 +24,7 @@
 
     .bp4-icon{
       margin-right: 4px;
-      color: #666666;
+      color: var(--vv-slate-500);
     }
 
     .pagination .pagination__buttons-group .bp4-button-group &{

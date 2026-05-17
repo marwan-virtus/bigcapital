@@ -62,7 +62,7 @@
         font-size: 15px;
 
         &:not([class*="bp4-intent-"]):not(.bp4-minimal) {
-          color: rgb(255, 255, 255);
+          color: var(--color-sidebar-text);
         }
 
         &:hover,
@@ -160,7 +160,7 @@
         color: var(--color-sidebar-menu-item-active-text);
       }
       >.#{$ns}-icon {
-        color: #767b9b;
+        color: var(--color-sidebar-menu-item-icon);
         margin-right: 16px;
         margin-top: 0;
       }
@@ -232,7 +232,7 @@
 
     .#{$ns}-menu-divider {
       border-top-color: rgba(255, 255, 255, 0.1);
-      color: #6b708c;
+      color: var(--color-sidebar-menu-divider-text);
       margin: 4px 0;
     }
 
@@ -350,11 +350,11 @@
       width: 40px;
       line-height: 40px;
       border-radius: 3px;
-      background-color: #CB22E5;
+      background-color: var(--color-sidebar-org-logo-background);
       text-align: center;
       font-weight: 400;
       font-size: 16px;
-      color: #fff;
+      color: var(--color-sidebar-text);
     }
 
     &__name {
@@ -365,7 +365,7 @@
     &__divider {
       margin: 4px 0;
       height: 1px;
-      background: #ebebeb;
+      background: var(--color-app-shell-divider);
     }
   }
 }

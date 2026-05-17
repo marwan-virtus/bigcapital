@@ -4,13 +4,9 @@
 
 .groupTitle {
   margin-bottom: 1.2rem;
-  color: #738091;
+  color: var(--text-on-tier-1-muted);
   font-weight: 700;
   padding: 0 11px;
-
-  :global(.bp4-dark) &{
-    color: var(--color-light-gray1);
-  }
 }
 
 .table {
@@ -23,19 +19,14 @@
 
   thead{
     th{
-      border-top: 1px solid #d9d9da;
+      border-top: 1px solid var(--border-on-tier-1);
       padding-top: 8px;
       padding-bottom: 8px;
-      color: #738091;
+      color: var(--text-on-tier-1-muted);
       font-weight: 500;
-
-      :global(.bp4-dark) &{
-        color: var(--color-light-gray1);
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-      }
     }
   }
-  
+
   tbody{
     tr td {
       vertical-align: middle;

@@ -11,6 +11,7 @@ import GeneralForm from './GeneralForm';
 import { PreferencesGeneralSchema } from './General.schema';
 import { useGeneralFormContext } from './GeneralFormProvider';
 import { withDashboardActions } from '@/containers/Dashboard/withDashboardActions';
+import { ThemeAppearanceSection } from './ThemeAppearanceSection';
 
 import { compose, transformToForm } from '@/utils';
 
@@ -27,55 +28,43 @@ const defaultValues = {
   address: {},
 };
 
-/**
- * Preferences - General form Page.
- */
-function GeneralFormPage({
-  // #withDashboardActions
-  changePreferencesPageTitle,
-}) {
+function GeneralFormPage({ changePreferencesPageTitle }) {
   const { updateOrganization, organization } = useGeneralFormContext();
 
   useEffect(() => {
     changePreferencesPageTitle(intl.get('general'));
   }, [changePreferencesPageTitle]);
 
-  // Initial values.
   const initialValues = {
     ...defaultValues,
     ...transformToForm(organization.metadata, defaultValues),
   };
-  // Handle the form submit.
-  const handleFormSubmit = (values, { setSubmitting, resetForm }) => {
-    // Handle request success.
-    const onSuccess = (response) => {
+
+  const handleFormSubmit = (values, { setSubmitting }) => {
+    const onSuccess = () => {
       AppToaster.show({
         message: intl.get('preferences.general.success_message'),
         intent: Intent.SUCCESS,
       });
       setSubmitting(false);
-
-      // Reboot the application if the application's language is mutated.
       if (organization.metadata?.language !== values.language) {
         window.location.reload();
       }
     };
-    // Handle request error.
-    const onError = (errors) => {
-      setSubmitting(false);
-    };
-    updateOrganization({ ...values })
-      .then(onSuccess)
-      .catch(onError);
+    const onError = () => setSubmitting(false);
+    updateOrganization({ ...values }).then(onSuccess).catch(onError);
   };
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={PreferencesGeneralSchema}
-      onSubmit={handleFormSubmit}
-      component={GeneralForm}
-    />
+    <>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={PreferencesGeneralSchema}
+        onSubmit={handleFormSubmit}
+        component={GeneralForm}
+      />
+      <ThemeAppearanceSection />
+    </>
   );
 }
 

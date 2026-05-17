@@ -1,0 +1,380 @@
+// packages/webapp/src/style/theme/_overrides.scss
+// Layer A: Sass variable overrides (apply before Blueprint compiles).
+// Layer B: CSS selector overrides (apply after Blueprint compiles).
+
+// ─── Layer A ──────────────────────────────────────────────
+// These override Blueprint's pre-compile Sass variables and cascade
+// through 100% of Blueprint components.
+
+// Definitive assignments (no !default) — these MUST win over Blueprint's own
+// !default values and over any prior _variables.scss assignment.
+$pt-border-radius:           8px;
+$pt-border-radius-large:     14px;
+$pt-intent-primary:          #15803D;                        // emerald-700 (AA on light surfaces)
+$pt-link-color:              #15803D;                        // emerald-700
+$pt-outline-color:           rgba(34, 197, 94, 0.30);
+$pt-font-family:             'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+$pt-monospace-font-family:   'Fira Code', Menlo, 'Courier New', monospace;
+
+// ─── Layer B ──────────────────────────────────────────────
+// CSS selector overrides for surfaces that Sass variables don't reach.
+// Each block is independently commentable for regression isolation.
+
+// Blueprint .bp4-menu in dark mode defaults to #2f343c (a slate-700-ish color from
+// Blueprint's own dark-mode CSS). The sidebar nav uses bp4-menu, so that #2f343c
+// leaks through and makes the sidebar look lighter than the body. Force menus
+// inside the sidebar to inherit the sidebar's background. Specificity:
+// `.bp4-dark .sidebar .bp4-menu` (030) beats Blueprint's `.bp4-dark .bp4-menu` (020).
+.sidebar .bp4-menu,
+.bp4-dark .sidebar .bp4-menu {
+  background: transparent;
+}
+
+// Link color — mode-aware via --color-primary
+// (Sass $pt-link-color is fixed at emerald-700; this lifts dark-mode links to emerald-500 for contrast.)
+a:not([class*="bp4-"]) {
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+}
+
+// Button — primary intent (emerald) + unified states
+.bp4-button.bp4-intent-primary {
+  background-color: var(--color-primary);
+  background-image: none;
+  color: #fff;
+  border-radius: var(--radius-md);
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+
+  &:hover:not(:disabled) {
+    background-color: var(--vv-emerald-700);  // darker emerald
+  }
+
+  &:active:not(:disabled),
+  &.bp4-active {
+    background-color: var(--vv-emerald-800);  // darker still
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 1px var(--surface-tier-1),
+      0 0 0 3px var(--state-focus-ring);
+  }
+
+  &:disabled {
+    opacity: var(--state-disabled-opacity);
+    cursor: not-allowed;
+  }
+}
+
+// Button — default (non-intent) — hover/active overlay only
+.bp4-button:not([class*="bp4-intent-"]):not(.bp4-minimal):not(.bp4-disabled) {
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+
+  &:hover {
+    background-color: var(--state-hover-overlay);
+  }
+
+  &:active,
+  &.bp4-active {
+    background-color: var(--state-active-overlay);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 1px var(--surface-tier-1),
+      0 0 0 3px var(--state-focus-ring);
+  }
+}
+
+body.bp4-dark .bp4-button.bp4-intent-primary {
+  color: var(--vv-slate-900);
+
+  &:hover:not(:disabled) {
+    background-color: var(--vv-emerald-400);
+  }
+
+  &:active:not(:disabled),
+  &.bp4-active {
+    background-color: var(--vv-emerald-300);
+  }
+}
+
+// Minimal / anchor primary buttons — Blueprint uses a separate dark-mode primary
+// text color (~#8abbff lavender) that the $pt-intent-primary Sass var does not reach.
+// Force them to use our mode-aware --color-primary token.
+.bp4-button.bp4-minimal.bp4-intent-primary,
+.bp4-button.bp4-minimal.bp4-intent-primary:not([disabled]),
+.bp4-anchor-button.bp4-minimal.bp4-intent-primary,
+body.bp4-dark .bp4-button.bp4-minimal.bp4-intent-primary,
+body.bp4-dark .bp4-anchor-button.bp4-minimal.bp4-intent-primary {
+  color: var(--color-primary);
+
+  &:hover:not(:disabled) {
+    color: var(--color-primary);
+    background: var(--state-hover-overlay);
+  }
+}
+
+// Input — force transparent background in both modes (Blueprint's dark default
+// `rgba(16,22,26,0.3)` has higher specificity than our token-driven rule).
+// Inputs sit ON the parent tier; the 1px border marks the input boundary.
+body .bp4-input,
+body.bp4-dark .bp4-input,
+body .bp4-input-group .bp4-input,
+body.bp4-dark .bp4-input-group .bp4-input {
+  background-color: var(--color-ui-input-background);  // transparent in both modes
+}
+
+// Input — focus ring + tabular numerals on numeric inputs
+.bp4-input {
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 0 1px var(--color-ui-input-border);
+  transition: box-shadow 120ms ease, opacity 120ms ease;
+
+  &:focus-visible,
+  &.bp4-active {
+    box-shadow:
+      0 0 0 1px var(--vv-emerald-500),
+      0 0 0 3px var(--state-focus-ring);
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: var(--state-disabled-opacity);
+    cursor: not-allowed;
+  }
+}
+
+.bp4-input[type='number'] {
+  font-variant-numeric: tabular-nums;
+}
+
+// DataTable — head tint, row hover, focus cell border, tabular nums on amounts
+.bp4-html-table,
+.DataTable {
+  thead th,
+  .table-thead .tr {
+    background-color: var(--color-datatable-head-background);
+    color: var(--color-datatable-head-text);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 11px;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  tbody tr,
+  .table-tbody .tr {
+    transition: background-color 100ms ease;
+  }
+
+  tbody tr:hover,
+  .table-tbody .tr:hover {
+    background-color: var(--state-hover-overlay);
+  }
+
+  // Tabular nums on every column that contains amount-style content.
+  td.amount,
+  td[data-type='amount'],
+  .td-amount,
+  .DataTable-cell--amount {
+    font-variant-numeric: tabular-nums;
+    text-align: right;
+  }
+}
+
+// Sidebar — round the active item to an emerald pill
+// Active background/color tokens are already remapped in _light-tokens.scss / _dark-tokens.scss.
+.sidebar-menu .bp4-button.bp4-active.bp4-intent-primary {
+  border-radius: var(--radius-md);
+}
+
+// Card — Tier 2 surface, no drop shadow, interactive hover when clickable
+.bp4-card {
+  background-color: var(--color-card-background);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-card-border);
+  box-shadow: none;
+  transition: border-color 120ms ease, transform 120ms ease;
+
+  &.bp4-elevation-1,
+  &.bp4-elevation-2,
+  &.bp4-elevation-3 {
+    box-shadow: none;
+  }
+
+  // Interactive cards (anchors, buttons): hover slightly strengthens the border
+  &.bp4-interactive {
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--state-hover-overlay);
+    }
+
+    &:active {
+      transform: scale(0.99);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow:
+        0 0 0 1px var(--surface-tier-1),
+        0 0 0 3px var(--state-focus-ring);
+    }
+  }
+}
+
+// Dialog & Drawer headers — emerald left rule + refined padding
+.bp4-dialog .bp4-dialog-header,
+.bp4-drawer .bp4-drawer-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-drawer-header-border);
+  background-color: var(--color-drawer-header-background);
+  color: var(--color-drawer-header-text);
+  font-weight: var(--font-weight-semibold);
+  border-left: 3px solid var(--color-drawer-border-left);
+}
+
+body.bp4-dark .bp4-dialog .bp4-dialog-header,
+body.bp4-dark .bp4-drawer .bp4-drawer-header {
+  border-left-color: transparent;
+}
+
+// Scrollbar — both modes (today's dark mode scrollbars remained white)
+:root {
+  scrollbar-color: var(--vv-slate-300) transparent;
+  scrollbar-width: thin;
+}
+
+body.bp4-dark {
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--vv-slate-300);
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+body.bp4-dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+// Print — force light theme regardless of preference (brand.md convention)
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #0F172A !important;
+  }
+  body.bp4-dark {
+    // Strip dark-mode token overrides while printing.
+    // Re-apply light-mode key values for print fidelity.
+    --color-app-body: #fff;
+    --color-card-background: #fff;
+    --color-card-border: #E2E8F0;
+    --color-datatable-text: #0F172A;
+    --color-financial-sheet-title-text: #0F172A;
+    --color-financial-sheet-type-text: #0F172A;
+    --color-financial-sheet-date-text: #0F172A;
+    --color-report-item-text: #0F172A;
+  }
+}
+
+// Skeleton — align loading placeholders with new palette
+.bp4-skeleton,
+.TableSkeletonRows {
+  background: linear-gradient(
+    90deg,
+    var(--color-skeleton-background-start) 0%,
+    var(--color-skeleton-background-end) 50%,
+    var(--color-skeleton-background-start) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: var(--radius-sm);
+}
+
+// Drawer header — slightly elevated above the drawer body (Tier 2)
+.bp4-drawer .bp4-drawer-header {
+  background-color: var(--surface-tier-2);
+  border-bottom: 1px solid var(--border-on-tier-2);
+}
+
+// Toast — Tier 2 surface, replaces Blueprint's default #2f343c
+.bp4-dark .bp4-toast,
+.bp4-toast {
+  background-color: var(--surface-tier-2);
+  color: var(--text-on-tier-2);
+  border: 1px solid var(--border-on-tier-2);
+}
+
+// Tooltip — Tier 2 surface in both modes
+.bp4-tooltip .bp4-popover2-content,
+.bp4-tooltip .bp4-popover-content {
+  background-color: var(--surface-tier-2);
+  color: var(--text-on-tier-2);
+  border: 1px solid var(--border-on-tier-2);
+}
+
+// Dialog body — explicitly Tier 2 (Blueprint mostly defaults here, but we anchor it)
+.bp4-dialog {
+  background-color: var(--surface-tier-2);
+  color: var(--text-on-tier-2);
+}
+
+// ─── Blueprint dark-mode surface sweeper ──────────────────
+// Blueprint compiles dark-mode defaults (#2f343c, rgba(16,22,26,0.3), etc.)
+// that beat our token cascade via .bp4-dark .X (0,2,0) specificity.
+// These pin every floating / interactive surface to the right tier.
+
+// Floating elevated surfaces → Tier 2
+body.bp4-dark .bp4-popover-content,
+body.bp4-dark .bp4-popover2-content,
+body.bp4-dark .bp4-menu,
+body.bp4-dark .bp4-dialog,
+body.bp4-dark .bp4-dialog-body,
+body.bp4-dark .bp4-card,
+body.bp4-dark .bp4-tabs .bp4-tab-list,
+body.bp4-dark .bp4-html-select select,
+body.bp4-dark .bp4-html-select.bp4-large select,
+body.bp4-dark .bp4-numeric-input .bp4-input-group {
+  background-color: var(--surface-tier-2);
+}
+
+// Sidebar menu is the ONE exception — it inherits the sidebar (Tier 0)
+body.bp4-dark .sidebar .bp4-menu {
+  background: transparent;
+}
+
+// Inline fillable controls — transparent so they show parent tier surface
+body.bp4-dark .bp4-input,
+body.bp4-dark .bp4-text-area,
+body.bp4-dark .bp4-tag-input,
+body.bp4-dark .bp4-input-group .bp4-input {
+  background-color: transparent;
+}
+
+// Tag pills inside content — Tier 2-ish translucent
+body.bp4-dark .bp4-tag:not(.bp4-intent-primary):not(.bp4-intent-success):not(.bp4-intent-warning):not(.bp4-intent-danger) {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-on-tier-1);
+}
+
+// Checkbox / radio control indicator → Tier 2 surface so it's visible against Tier 1 body
+body.bp4-dark .bp4-control .bp4-control-indicator {
+  background-color: var(--surface-tier-2);
+}
