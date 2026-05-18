@@ -1,5 +1,5 @@
 .root {
-  background: #fff;
+  background: var(--surface-tier-1);
 }
 
 .mainFields{
@@ -15,7 +15,7 @@
 
 .footerActions{
   padding: 10px 16px;
-  border-top: 1px solid #d9d9d9;
+  border-top: 1px solid var(--border-on-tier-1);
   flex-flow: row-reverse;
 }
 

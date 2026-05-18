@@ -136,6 +136,7 @@
   "scripts": {
     "dev": "cross-env PORT=4000 vite",
     "build": "vite build",
+    "theme:check": "node scripts/theme-parity-check.mjs",
     "preview": "cross-env PORT=4173 vite preview",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,md}\"",

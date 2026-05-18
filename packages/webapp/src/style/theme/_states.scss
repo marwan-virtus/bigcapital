@@ -1,0 +1,23 @@
+// packages/webapp/src/style/theme/_states.scss
+// Unified interactive state tokens. Used by _overrides.scss Layer B for every
+// hoverable/focusable/clickable element. Single source of truth so hover looks
+// the same on a button as on a table row as on a menu item.
+
+:root {
+  // Light mode
+  --state-hover-overlay:    rgba(15, 23, 42, 0.04);   // slate-900 at 4%
+  --state-active-overlay:   rgba(15, 23, 42, 0.08);
+  --state-selected-bg:      rgba(34, 197, 94, 0.10);  // emerald tint
+  --state-selected-fg:      var(--vv-emerald-700);
+  --state-focus-ring:       rgba(34, 197, 94, 0.30);
+  --state-disabled-opacity: 0.5;
+}
+
+body.bp4-dark {
+  --state-hover-overlay:    rgba(255, 255, 255, 0.06);
+  --state-active-overlay:   rgba(255, 255, 255, 0.10);
+  --state-selected-bg:      rgba(34, 197, 94, 0.18);
+  --state-selected-fg:      var(--vv-emerald-400);
+  --state-focus-ring:       rgba(34, 197, 94, 0.30);
+  --state-disabled-opacity: 0.4;
+}

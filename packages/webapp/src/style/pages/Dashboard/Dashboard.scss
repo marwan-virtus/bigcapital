@@ -49,7 +49,7 @@ $dashboard-views-bar-height: 44px;
       margin-right: 4px;
 
       .#{$ns}-button {
-        color: #1552c8;
+        color: var(--color-dashboard-topbar-navbar-text);
         font-weight: 5000;
         font-size: 14px;
 
@@ -59,7 +59,7 @@ $dashboard-views-bar-height: 44px;
         }
 
         .#{$ns}-icon {
-          color: #1552c8;
+          color: var(--color-dashboard-topbar-navbar-text);
         }
       }
 
@@ -69,7 +69,7 @@ $dashboard-views-bar-height: 44px;
 
       .form-group-quick-new-downDrop {
         .bp4-popover-target .bp4-button {
-          color: #1552c8;
+          color: var(--color-dashboard-topbar-navbar-text);
         }
 
         .bp4-button::after {
@@ -92,13 +92,13 @@ $dashboard-views-bar-height: 44px;
 
         .user-text {
           font-size: 12px;
-          color: #fff;
+          color: var(--color-sidebar-text);
         }
 
         &,
         &:hover,
         &:focus {
-          background-color: #cb20e5;
+          background-color: var(--color-dashboard-user-avatar-background);
           border: 0;
           box-shadow: none;
         }
@@ -159,7 +159,7 @@ $dashboard-views-bar-height: 44px;
   &__organization-name {
     font-size: 14px;
     font-weight: 400;
-    color: #818ca9;
+    color: var(--color-dashboard-org-name-text);
     margin: 0 0 0 15px;
     display: flex;
     align-items: center;
@@ -209,7 +209,7 @@ $dashboard-views-bar-height: 44px;
           &,
           &.bp4-active,
           &:active {
-            background: #eafbe4;
+            background: var(--color-dashboard-filter-active-background);
           }
         }
 
@@ -218,41 +218,41 @@ $dashboard-views-bar-height: 44px;
         }
 
         &.#{$ns}-minimal.#{$ns}-intent-danger {
-          color: rgb(194, 48, 48);
+          color: var(--color-dashboard-navbar-danger-text);
 
           &:not(.bp4-disabled) &:hover,
           &:focus {
             background: rgba(219, 55, 55, 0.1);
           }
           &.bp4-disabled {
-            color: rgb(194, 48, 48, 0.6);
+            color: rgba(194, 48, 48, 0.6);
           }
         }
         &.#{$ns}-minimal.#{$ns}-intent-success {
-          color: #1c6e42;
+          color: var(--color-dashboard-navbar-success-text);
 
           &:hover,
           &:focus {
             background: rgba(35, 133, 81, 0.1);
-            color: #1c6e42;
+            color: var(--color-dashboard-navbar-success-text);
           }
         }
 
         &.#{$ns}-minimal.#{$ns}-intent-warning {
-          color: #cc7e25;
+          color: var(--color-dashboard-navbar-warning-text);
         }
         &.#{$ns}-minimal.#{$ns}-intent-primary {
-          color: #223fc5;
+          color: var(--color-dashboard-navbar-primary-text);
 
           &:hover,
           &:focus {
-            color: #223fc5;
+            color: var(--color-dashboard-navbar-primary-text);
             background: rgba(34, 63, 197, 0.08);
           }
         }
 
         &.button--blue-highlight {
-          background-color: #ebfaff;
+          background-color: var(--color-dashboard-navbar-blue-highlight);
 
           &:hover,
           &:focus {
@@ -267,7 +267,7 @@ $dashboard-views-bar-height: 44px;
 
       .button--table-views {
         .#{$ns}-icon {
-          color: #1183da;
+          color: var(--color-dashboard-table-views-icon);
         }
 
         .#{$ns}-button-text {
@@ -298,7 +298,7 @@ $dashboard-views-bar-height: 44px;
         }
 
         input:checked ~ .bp4-control-indicator {
-          background: #0069ff;
+          background: var(--color-dashboard-switch-active);
         }
       }
     }
@@ -327,13 +327,13 @@ $dashboard-views-bar-height: 44px;
 
     .button--view-edit {
       svg {
-        color: #929699;
+        color: var(--color-muted-text);
       }
 
       &:hover,
       &:focus {
         svg {
-          color: #5c7080;
+          color: var(--color-muted-text);
         }
       }
     }
@@ -476,7 +476,7 @@ $dashboard-views-bar-height: 44px;
   &__footer {
     margin-top: auto;
     padding: 8px 0;
-    border-top: 1px solid #d2dce2;
+    border-top: 1px solid var(--vv-slate-200);
 
     .footer-links {
       text-align: center;
@@ -487,7 +487,7 @@ $dashboard-views-bar-height: 44px;
         display: inline;
 
         a {
-          color: #8c8c8c;
+          color: var(--color-muted-text);
 
           &:hover {
             color: $blue2;
@@ -537,7 +537,7 @@ $dashboard-views-bar-height: 44px;
   user-select: none;
 
   .#{$ns}-tab {
-    color: #646a7d;
+    color: var(--color-dashboard-views-tab-text);
     font-size: 14px;
     line-height: $dashboard-views-bar-height - 2px;
     font-weight: 400;
@@ -548,7 +548,7 @@ $dashboard-views-bar-height: 44px;
     padding-top: 2px;
 
     &[aria-selected='true'] {
-      color: #0052cc;
+      color: var(--color-primary);
       font-weight: 600;
     }
   }
@@ -576,14 +576,14 @@ $dashboard-views-bar-height: 44px;
     }
 
     .#{$ns}-icon {
-      color: #a7a7a7;
+      color: var(--color-muted-text);
     }
   }
 }
 
 .navbar--dashboard-views {
   box-shadow: 0 0 0;
-  border-bottom: 1px solid #d2dce2;
+  border-bottom: 1px solid var(--vv-slate-200);
   height: $dashboard-views-bar-height;
   padding: 0 20px;
 
@@ -592,13 +592,13 @@ $dashboard-views-bar-height: 44px;
   }
 
   .bp4-tab[aria-selected='true'] {
-    box-shadow: inset 0 -2px 0 #0052cc;
+    box-shadow: inset 0 -2px 0 var(--color-primary);
   }
 
   .bp4-button {
     &:hover {
       background: rgba(167, 182, 194, 0.12);
-      color: #32304a;
+      color: var(--color-muted-text);
     }
   }
 }
@@ -615,7 +615,7 @@ $dashboard-views-bar-height: 44px;
     0 0 0 1px rgba(16, 22, 26, 0.1),
     0 4px 8px rgba(16, 22, 26, 0.2),
     0 18px 46px 6px rgba(16, 22, 26, 0.2);
-  background-color: #fff;
+  background-color: var(--color-card-background);
   width: 600px;
 
   .bp4-input {
@@ -627,7 +627,7 @@ $dashboard-views-bar-height: 44px;
   .menu-item--profile {
     .org {
       font-size: 12px;
-      color: #777;
+      color: var(--color-muted-text);
     }
   }
 }

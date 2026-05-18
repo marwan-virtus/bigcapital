@@ -13,39 +13,23 @@ export function FormTopbar({ className, children }) {
 }
 
 const FormTopBarRoot = styled(Navbar)`
-  --color-form-topbar-background: #fff;
-  --color-form-topbar-border: #c7d5db;
-  --color-divider-color: #d2dce2;
-
-  .bp4-dark & {
-    --color-form-topbar-background: var(--color-dark-gray1);
-    --color-form-topbar-border: rgba(255, 255, 255, 0.15);
-    --color-divider-color: rgba(255, 255, 255, 0.25);
-  }
   height: 35px;
   padding: 0 20px;
-
-  &,
-  .bp4-dark & {
-    border-bottom: 1px solid var(--color-form-topbar-border);
-    background-color: var(--color-form-topbar-background);
-    box-shadow: 0 0 0;
-  }
+  border-bottom: 1px solid var(--border-on-tier-1);
+  background-color: var(--surface-tier-1);
+  box-shadow: 0 0 0;
 
   .bp4-navbar-group {
     height: 35px;
   }
   .bp4-navbar-divider {
-    border-left-color: var(--color-divider-color);
+    border-left-color: var(--border-on-tier-1);
   }
   .bp4-skeleton {
     max-height: 10px;
   }
-  .bp4-button {
-    &:hover {
-      background: rgba(167, 182, 194, 0.12);
-      color: #32304a;
-    }
+  .bp4-button:hover {
+    background: var(--state-hover-overlay);
   }
 `;
 

@@ -4,7 +4,7 @@
 //   > .page-form__floating-actions
 .page-form {
   --color-page-form-header-background: #fff;
-  --color-page-form-header-border: #d2dce2;
+  --color-page-form-header-border: var(--vv-slate-200);
   
   --color-page-form-floating-actions-background: #fff;
   --color-page-form-floating-actions-border: rgb(210, 221, 226);

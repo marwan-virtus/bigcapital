@@ -1,0 +1,9 @@
+// packages/webapp/src/style/theme/_radius.scss
+// Radius scale per VV brand.md.
+
+:root {
+  --radius-sm: 6px;     // pills, badges
+  --radius-md: 8px;     // buttons, inputs (default)
+  --radius-lg: 10px;    // base / brand default
+  --radius-xl: 14px;    // cards (default)
+}

@@ -50,15 +50,8 @@ const PageFormHeader: FC<GroupProps> = ({ className, ...props }) => {
 };
 
 const pageFormHeaderStyle = `
-  --color-invoice-form-header-background: #fff;
-  --color-invoice-form-header-border: #d2dce2;
-
-  .bp4-dark & {
-    --color-invoice-form-header-background: var(--color-dark-gray1);
-    --color-invoice-form-header-border: rgba(255, 255, 255, 0.1);
-  }    
-  border-bottom: 1px solid var(--color-invoice-form-header-border);
-  background-color: var(--color-invoice-form-header-background);
+  border-bottom: 1px solid var(--border-on-tier-1);
+  background-color: var(--surface-tier-1);
 `;
 
 /**
@@ -74,17 +67,10 @@ const PageFormFooter: FC<{ children: React.ReactNode } & SystemProps> = ({
 PageFormFooter.displayName = 'PageFormFooter';
 
 const footerActionsStyle = `
-  --x-color-background: #fff;
-  --x-color-border: rgb(210, 221, 226);
-
-  .bp4-dark & {
-    --x-color-background: var(--color-dark-gray1);
-    --x-color-border: rgba(255, 255, 255, 0.1);
-  }
   width: 100%;
-  background: var(--x-color-background);
+  background: var(--surface-tier-1);
   padding: 14px 20px;
-  border-top: 1px solid var(--x-color-border);
+  border-top: 1px solid var(--border-on-tier-1);
   box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.05);
 
   .bp4-button-group{

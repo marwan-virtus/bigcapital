@@ -29,12 +29,8 @@
 }
 
 .asideContent{
-  background: #F6F7F9;
+  background: var(--surface-tier-1);
   height: 335px;
-
-  :global(.bp4-dark) & {
-    background: var(--color-dark-gray2);
-  }
 }
 
 .asideRoot {
@@ -47,9 +43,5 @@
 }
 
 .asideFooter {
-  background: #F6F7F9; 
-
-  :global(.bp4-dark) & {
-    background: var(--color-dark-gray2);
-  }
+  background: var(--surface-tier-1);
 }
